@@ -82,6 +82,55 @@ export default function HeroSection() {
                   </div>
                 </div>
 
+                {/* Wall Street Journal Featured Section */}
+                <div className="mt-24 max-w-5xl mx-auto">
+                  <div className="bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-950/20 dark:to-yellow-950/20 rounded-3xl p-8 md:p-12 border border-amber-200/50 dark:border-amber-800/30">
+                    <div className="text-center mb-8">
+                      <div className="inline-flex items-center gap-3 mb-4">
+                        <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
+                          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L3.09 8.26L12 22L20.91 8.26L12 2Z"/>
+                          </svg>
+                        </div>
+                        <span className="text-sm font-medium text-amber-700 dark:text-amber-300 uppercase tracking-wider">
+                          As Featured In
+                        </span>
+                      </div>
+                      <h2 className="wsj-font text-4xl md:text-5xl lg:text-6xl text-amber-900 dark:text-amber-100 mb-4">
+                        The Wall Street Journal
+                      </h2>
+                      <p className="text-lg text-amber-800 dark:text-amber-200 max-w-2xl mx-auto leading-relaxed">
+                        David Chau&apos;s innovative approach to SPX options trading and quantitative 
+                        strategies has been recognized by one of the world&apos;s most prestigious 
+                        financial publications.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white/80 dark:bg-black/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm border border-amber-200/30 dark:border-amber-700/30">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="text-white text-sm font-bold">&ldquo;</span>
+                        </div>
+                        <div>
+                          <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed italic mb-4">
+                            Highlighting David Chau&apos;s systematic approach to options trading 
+                            and his unique methodology for managing risk in volatile markets.
+                          </p>
+                          <div className="flex items-center gap-3">
+                            <div className="wsj-font text-lg font-bold text-amber-900 dark:text-amber-100">
+                              The Wall Street Journal
+                            </div>
+                            <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+                            <span className="text-sm text-amber-700 dark:text-amber-300">
+                              Financial Markets Coverage
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row">
                   <Button 
                     size="lg" 

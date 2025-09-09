@@ -1,5 +1,20 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Wall Street Journal Font - Mencken Standard Head Compressed Bold */
+@import url('https://fonts.cdnfonts.com/css/mencken-standard-head');
+
+.wsj-font {
+  font-family: 'Mencken Standard Head Compressed', 'Times New Roman', serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-stretch: condensed;
+}
 
 @custom-variant dark (&:is(.dark *));
 
