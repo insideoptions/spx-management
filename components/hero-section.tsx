@@ -83,7 +83,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Wall Street Journal Featured Section */}
-                <div className="mt-24 max-w-5xl mx-auto">
+                <div className="mt-24 max-w-6xl mx-auto">
                   <div className="bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-950/20 dark:to-yellow-950/20 rounded-3xl p-8 md:p-12 border border-amber-200/50 dark:border-amber-800/30">
                     <div className="text-center mb-8">
                       <div className="inline-flex items-center gap-3 mb-4">
@@ -99,11 +99,21 @@ export default function HeroSection() {
                       <h2 className="wsj-font text-4xl md:text-5xl lg:text-6xl text-amber-900 dark:text-amber-100 mb-4">
                         The Wall Street Journal
                       </h2>
-                      <p className="text-lg text-amber-800 dark:text-amber-200 max-w-2xl mx-auto leading-relaxed">
-                        David Chau&apos;s innovative approach to SPX options trading and quantitative 
-                        strategies has been recognized by one of the world&apos;s most prestigious 
-                        financial publications.
+                      <p className="text-lg text-amber-800 dark:text-amber-200 max-w-2xl mx-auto leading-relaxed mb-8">
+                        &ldquo;Meet &apos;Captain Condor,&apos; the Options Trader Whose Crew Can Move Markets&rdquo;
                       </p>
+                    </div>
+                    
+                    {/* Article Screenshot */}
+                    <div className="mb-8">
+                      <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
+                        <img
+                          src="/wsj-article-screenshot.png"
+                          alt="Wall Street Journal article featuring David Chau as Captain Condor"
+                          className="w-full h-auto"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+                      </div>
                     </div>
                     
                     <div className="bg-white/80 dark:bg-black/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm border border-amber-200/30 dark:border-amber-700/30">
@@ -113,8 +123,7 @@ export default function HeroSection() {
                         </div>
                         <div>
                           <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed italic mb-4">
-                            Highlighting David Chau&apos;s systematic approach to options trading 
-                            and his unique methodology for managing risk in volatile markets.
+                            &ldquo;An options trader&apos;s gutsy bets have drawn followers, and a few nicknames&rdquo;
                           </p>
                           <div className="flex items-center gap-3">
                             <div className="wsj-font text-lg font-bold text-amber-900 dark:text-amber-100">
@@ -122,7 +131,7 @@ export default function HeroSection() {
                             </div>
                             <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
                             <span className="text-sm text-amber-700 dark:text-amber-300">
-                              Financial Markets Coverage
+                              Markets & Finance | Investing
                             </span>
                           </div>
                         </div>
