@@ -13,7 +13,7 @@ export default function HeroSection() {
       <HeroHeader />
       <main className="overflow-x-hidden">
         <section className="relative">
-          <BackgroundPaths title="SPXMGT" />
+          <BackgroundPaths title="SPXMGMT" />
           <div className="absolute inset-0 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm"></div>
           <div className="relative z-20 pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-44">
             <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
