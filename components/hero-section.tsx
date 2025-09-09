@@ -5,18 +5,21 @@ import Image from "next/image";
 import { HeroHeader } from "@/components/hero8-header";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 
 export default function HeroSection() {
   return (
     <>
       <HeroHeader />
       <main className="overflow-x-hidden">
-        <section>
-          <div className="pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-44">
+        <section className="relative">
+          <BackgroundPaths title="SPX Management" />
+          <div className="absolute inset-0 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm"></div>
+          <div className="relative z-20 pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-44">
             <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
               <div className="mx-auto max-w-lg text-center lg:ml-0 lg:w-1/2 lg:text-left">
                 <h1 className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">
-                  Ship 10x Faster with NS
+                  Ship 10x Faster with SPX
                 </h1>
                 <p className="mt-8 max-w-2xl text-pretty text-lg">
                   Highly customizable components for building modern websites
