@@ -17,32 +17,50 @@ export default function HeroSection() {
           <div className="absolute inset-0 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm"></div>
           <div className="relative z-20 pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-44">
             <div className="relative mx-auto max-w-6xl px-6">
-              <div className="mx-auto max-w-2xl text-center">
-                <h1 className="mt-8 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">
-                  Ship 10x Faster with SPX
+              <div className="mx-auto max-w-4xl text-center">
+                <h1 className="mt-8 max-w-4xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">
+                  Meet Our Founder
                 </h1>
-                <p className="mt-8 max-w-2xl text-pretty text-lg">
-                  Highly customizable components for building modern websites
-                  and applications that look and feel the way you mean it.
-                </p>
+                <div className="mt-8 max-w-3xl mx-auto">
+                  <h2 className="text-2xl font-semibold mb-4">
+                    David Chau, Founder and Chief Investment Officer
+                  </h2>
+                  <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+                    <p>
+                      David Chau is the Founder and Chief Investment Officer of SPX MGMT LLC, 
+                      a boutique alternative investment firm specializing in non-directional 
+                      options strategies. He is also the founder of InsideOptions, an online 
+                      options training community that has mentored more than 1,100 traders 
+                      ranging from beginners to advanced professionals.
+                    </p>
+                    
+                    <p>
+                      A serial entrepreneur, David has built and invested in multiple start-ups 
+                      and emerging companies. His work and unique approach to SPX options have 
+                      been featured in the Wall Street Journal and on FintechTV, where he has 
+                      shared insights into quantitative trading strategies and market efficiency.
+                    </p>
+                    
+                    <p>
+                      As CIO of SPX MGMT LLC, David is responsible for all investment management 
+                      and trading decisions, bringing his systematic, risk-managed approach to 
+                      every aspect of the firm&apos;s strategy.
+                    </p>
+                  </div>
+                </div>
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row">
-                  <Button asChild size="lg" className="px-5 text-base">
-                    <Link href="#link">
-                      <span className="text-nowrap">Start Building</span>
-                    </Link>
-                  </Button>
-                  <Button
-                    key={2}
-                    asChild
-                    size="lg"
-                    variant="ghost"
-                    className="px-5 text-base"
+                  <Button 
+                    size="lg" 
+                    className="px-8 py-3 text-base font-semibold"
+                    disabled
                   >
-                    <Link href="#link">
-                      <span className="text-nowrap">Request a demo</span>
-                    </Link>
+                    Learn More About Our Approach
+                    <span className="ml-2 opacity-60">→</span>
                   </Button>
+                  <p className="text-sm text-muted-foreground mt-2">
+                    Form submission coming soon
+                  </p>
                 </div>
               </div>
             </div>
