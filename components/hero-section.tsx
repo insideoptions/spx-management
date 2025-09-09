@@ -21,31 +21,62 @@ export default function HeroSection() {
                 <h1 className="mt-8 max-w-4xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">
                   Meet Our Founder
                 </h1>
-                <div className="mt-8 max-w-3xl mx-auto">
-                  <h2 className="text-2xl font-semibold mb-4">
+                
+                {/* Video Interview Centerpiece */}
+                <div className="mt-12 max-w-4xl mx-auto">
+                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black/5 dark:bg-white/5">
+                    <iframe
+                      src="https://fintech.tv/?p=33722&embed=1"
+                      className="absolute inset-0 w-full h-full"
+                      frameBorder="0"
+                      allowFullScreen
+                      title="David Chau Live Interview on FinTech TV"
+                    />
+                  </div>
+                  <p className="text-center text-sm text-muted-foreground mt-4 font-medium">
+                    🔴 LIVE Interview: David Chau on FinTech TV
+                  </p>
+                </div>
+
+                <div className="mt-16 max-w-3xl mx-auto">
+                  <h2 className="text-2xl font-semibold mb-8 text-center">
                     David Chau, Founder and Chief Investment Officer
                   </h2>
-                  <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
-                    <p>
-                      David Chau is the Founder and Chief Investment Officer of SPX MGMT LLC, 
-                      a boutique alternative investment firm specializing in non-directional 
-                      options strategies. He is also the founder of InsideOptions, an online 
-                      options training community that has mentored more than 1,100 traders 
-                      ranging from beginners to advanced professionals.
-                    </p>
+                  
+                  {/* Mobile-optimized sections */}
+                  <div className="space-y-8">
+                    <div className="bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800 rounded-xl p-6 md:p-8">
+                      <h3 className="text-lg font-semibold mb-3 text-primary">Leadership & Expertise</h3>
+                      <p className="text-base text-muted-foreground leading-relaxed">
+                        David Chau is the Founder and Chief Investment Officer of SPX MGMT LLC, 
+                        a boutique alternative investment firm specializing in non-directional 
+                        options strategies.
+                      </p>
+                    </div>
                     
-                    <p>
-                      A serial entrepreneur, David has built and invested in multiple start-ups 
-                      and emerging companies. His work and unique approach to SPX options have 
-                      been featured in the Wall Street Journal and on FintechTV, where he has 
-                      shared insights into quantitative trading strategies and market efficiency.
-                    </p>
+                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 rounded-xl p-6 md:p-8">
+                      <h3 className="text-lg font-semibold mb-3 text-blue-700 dark:text-blue-300">Community Impact</h3>
+                      <p className="text-base text-muted-foreground leading-relaxed">
+                        Founder of InsideOptions, an online options training community that has 
+                        mentored more than 1,100 traders ranging from beginners to advanced professionals.
+                      </p>
+                    </div>
                     
-                    <p>
-                      As CIO of SPX MGMT LLC, David is responsible for all investment management 
-                      and trading decisions, bringing his systematic, risk-managed approach to 
-                      every aspect of the firm&apos;s strategy.
-                    </p>
+                    <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 rounded-xl p-6 md:p-8">
+                      <h3 className="text-lg font-semibold mb-3 text-green-700 dark:text-green-300">Media Recognition</h3>
+                      <p className="text-base text-muted-foreground leading-relaxed">
+                        Featured in the Wall Street Journal and on FinTech TV, sharing insights 
+                        into quantitative trading strategies and market efficiency.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-950 dark:to-violet-950 rounded-xl p-6 md:p-8">
+                      <h3 className="text-lg font-semibold mb-3 text-purple-700 dark:text-purple-300">Investment Philosophy</h3>
+                      <p className="text-base text-muted-foreground leading-relaxed">
+                        Responsible for all investment management and trading decisions, bringing 
+                        a systematic, risk-managed approach to every aspect of the firm&apos;s strategy.
+                      </p>
+                    </div>
                   </div>
                 </div>
 
