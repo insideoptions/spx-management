@@ -108,7 +108,7 @@ export default function HeroSection() {
                     <div className="mb-8">
                       <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
                         <img
-                          src="/wsj-article-screenshot.png"
+                          src="/Screenshot 2025-09-09 at 4.34.25 PM.png"
                           alt="Wall Street Journal article featuring David Chau as Captain Condor"
                           className="w-full h-auto"
                         />
