@@ -38,50 +38,46 @@ export default function HeroSection() {
                   </p>
                 </div>
 
-                <div className="mt-16 max-w-3xl mx-auto">
-                  <h2 className="text-2xl font-semibold mb-8 text-center">
-                    David Chau, Founder and Chief Investment Officer
-                  </h2>
+                <div className="mt-16 max-w-4xl mx-auto">
+                  <div className="text-center mb-12">
+                    <h2 className="text-3xl font-bold mb-4">
+                      David Chau
+                    </h2>
+                    <p className="text-xl text-muted-foreground">
+                      Founder and Chief Investment Officer
+                    </p>
+                  </div>
                   
-                  {/* Unified bio section with subtle dividers */}
-                  <div className="space-y-6 text-center">
-                    <div className="space-y-4">
-                      <h3 className="text-lg font-semibold">Leadership & Expertise</h3>
-                      <p className="text-base text-muted-foreground leading-relaxed">
-                        David Chau is the Founder and Chief Investment Officer of SPX MGMT LLC, 
-                        a boutique alternative investment firm specializing in non-directional 
-                        options strategies.
+                  {/* Modern founder bio layout */}
+                  <div className="prose prose-lg mx-auto text-center max-w-3xl">
+                    <p className="text-lg leading-relaxed mb-6">
+                      David Chau is the Founder and Chief Investment Officer of SPX MGMT LLC, 
+                      a boutique alternative investment firm specializing in non-directional 
+                      options strategies. A serial entrepreneur, David has built and invested 
+                      in multiple start-ups and emerging companies.
+                    </p>
+                    
+                    <p className="text-lg leading-relaxed mb-6">
+                      He is also the founder of InsideOptions, an online options training 
+                      community that has mentored more than 1,100 traders ranging from 
+                      beginners to advanced professionals.
+                    </p>
+                    
+                    <p className="text-lg leading-relaxed mb-8">
+                      David&apos;s work and unique approach to SPX options have been featured in 
+                      the Wall Street Journal and on FinTech TV, where he has shared insights 
+                      into quantitative trading strategies and market efficiency.
+                    </p>
+                    
+                    <div className="bg-muted/30 rounded-2xl p-8 mt-8">
+                      <p className="text-base italic text-muted-foreground leading-relaxed">
+                        &ldquo;Unlike most quant strategies optimized only in backtests, ours was 
+                        forged and fine-tuned in live markets. As CIO of SPX MGMT LLC, I&apos;m 
+                        responsible for all investment management and trading decisions, 
+                        bringing a systematic, risk-managed approach to every aspect of 
+                        our firm&apos;s strategy.&rdquo;
                       </p>
-                    </div>
-                    
-                    <div className="w-24 h-px bg-gradient-to-r from-transparent via-border to-transparent mx-auto"></div>
-                    
-                    <div className="space-y-4">
-                      <h3 className="text-lg font-semibold">Community Impact</h3>
-                      <p className="text-base text-muted-foreground leading-relaxed">
-                        Founder of InsideOptions, an online options training community that has 
-                        mentored more than 1,100 traders ranging from beginners to advanced professionals.
-                      </p>
-                    </div>
-                    
-                    <div className="w-24 h-px bg-gradient-to-r from-transparent via-border to-transparent mx-auto"></div>
-                    
-                    <div className="space-y-4">
-                      <h3 className="text-lg font-semibold">Media Recognition</h3>
-                      <p className="text-base text-muted-foreground leading-relaxed">
-                        Featured in the Wall Street Journal and on FinTech TV, sharing insights 
-                        into quantitative trading strategies and market efficiency.
-                      </p>
-                    </div>
-                    
-                    <div className="w-24 h-px bg-gradient-to-r from-transparent via-border to-transparent mx-auto"></div>
-                    
-                    <div className="space-y-4">
-                      <h3 className="text-lg font-semibold">Investment Philosophy</h3>
-                      <p className="text-base text-muted-foreground leading-relaxed">
-                        Responsible for all investment management and trading decisions, bringing 
-                        a systematic, risk-managed approach to every aspect of the firm&apos;s strategy.
-                      </p>
+                      <div className="mt-4 text-sm font-medium">— David Chau</div>
                     </div>
                   </div>
                 </div>
