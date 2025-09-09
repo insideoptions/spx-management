@@ -43,10 +43,10 @@ export default function HeroSection() {
                     David Chau, Founder and Chief Investment Officer
                   </h2>
                   
-                  {/* Mobile-optimized sections */}
-                  <div className="space-y-8">
-                    <div className="bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-800 rounded-xl p-6 md:p-8">
-                      <h3 className="text-lg font-semibold mb-3 text-primary">Leadership & Expertise</h3>
+                  {/* Unified bio section with subtle dividers */}
+                  <div className="space-y-6 text-center">
+                    <div className="space-y-4">
+                      <h3 className="text-lg font-semibold">Leadership & Expertise</h3>
                       <p className="text-base text-muted-foreground leading-relaxed">
                         David Chau is the Founder and Chief Investment Officer of SPX MGMT LLC, 
                         a boutique alternative investment firm specializing in non-directional 
@@ -54,24 +54,30 @@ export default function HeroSection() {
                       </p>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 rounded-xl p-6 md:p-8">
-                      <h3 className="text-lg font-semibold mb-3 text-blue-700 dark:text-blue-300">Community Impact</h3>
+                    <div className="w-24 h-px bg-gradient-to-r from-transparent via-border to-transparent mx-auto"></div>
+                    
+                    <div className="space-y-4">
+                      <h3 className="text-lg font-semibold">Community Impact</h3>
                       <p className="text-base text-muted-foreground leading-relaxed">
                         Founder of InsideOptions, an online options training community that has 
                         mentored more than 1,100 traders ranging from beginners to advanced professionals.
                       </p>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 rounded-xl p-6 md:p-8">
-                      <h3 className="text-lg font-semibold mb-3 text-green-700 dark:text-green-300">Media Recognition</h3>
+                    <div className="w-24 h-px bg-gradient-to-r from-transparent via-border to-transparent mx-auto"></div>
+                    
+                    <div className="space-y-4">
+                      <h3 className="text-lg font-semibold">Media Recognition</h3>
                       <p className="text-base text-muted-foreground leading-relaxed">
                         Featured in the Wall Street Journal and on FinTech TV, sharing insights 
                         into quantitative trading strategies and market efficiency.
                       </p>
                     </div>
                     
-                    <div className="bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-950 dark:to-violet-950 rounded-xl p-6 md:p-8">
-                      <h3 className="text-lg font-semibold mb-3 text-purple-700 dark:text-purple-300">Investment Philosophy</h3>
+                    <div className="w-24 h-px bg-gradient-to-r from-transparent via-border to-transparent mx-auto"></div>
+                    
+                    <div className="space-y-4">
+                      <h3 className="text-lg font-semibold">Investment Philosophy</h3>
                       <p className="text-base text-muted-foreground leading-relaxed">
                         Responsible for all investment management and trading decisions, bringing 
                         a systematic, risk-managed approach to every aspect of the firm&apos;s strategy.
