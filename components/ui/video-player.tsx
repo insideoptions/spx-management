@@ -61,6 +61,10 @@ const togglePlay = () => {
     if (isPlaying) {
       videoRef.current.pause();
     } else {
+      // Set start time to 43 seconds if video hasn't been played yet
+      if (videoRef.current.currentTime === 0) {
+        videoRef.current.currentTime = 43;
+      }
       videoRef.current.play();
     }
     setIsPlaying(!isPlaying);
