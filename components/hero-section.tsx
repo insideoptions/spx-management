@@ -6,6 +6,7 @@ import { HeroHeader } from "@/components/hero8-header";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 import { BackgroundPaths } from "@/components/ui/background-paths";
+import VideoPlayer from "@/components/ui/video-player";
 
 export default function HeroSection() {
   return (
@@ -27,15 +28,7 @@ export default function HeroSection() {
                 
                 {/* Video Interview Centerpiece */}
                 <div className="mt-8 max-w-4xl mx-auto">
-                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black/5 dark:bg-white/5">
-                    <iframe
-                      src="https://fintech.tv/?p=33722&embed=1"
-                      className="absolute inset-0 w-full h-full"
-                      frameBorder="0"
-                      allowFullScreen
-                      title="David Chau Live Interview on FinTech TV"
-                    />
-                  </div>
+                  <VideoPlayer src="/path-to-your-video.mp4" />
                   <p className="text-center text-sm text-muted-foreground mt-4 font-medium">
                     🔴 LIVE Interview: David Chau on FinTech TV
                   </p>
