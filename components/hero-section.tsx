@@ -107,9 +107,12 @@ export default function HeroSection() {
                         <p className="text-sm font-medium text-slate-300 uppercase tracking-wider mb-4">
                           AS FEATURED IN
                         </p>
-                        <div className="mb-6">
-                          <h2 className="wsj-font text-4xl md:text-5xl font-bold mb-2">WSJ</h2>
-                          <p className="text-sm text-slate-300">THE WALL STREET JOURNAL</p>
+                        <div className="mb-6 flex justify-center">
+                          <img 
+                            src="/wsjlogo.png" 
+                            alt="The Wall Street Journal Logo"
+                            className="w-48 md:w-56 h-auto"
+                          />
                         </div>
                       </div>
                       
@@ -137,9 +140,12 @@ export default function HeroSection() {
                         <p className="text-sm font-medium text-slate-300 uppercase tracking-wider mb-6">
                           AS FEATURED IN
                         </p>
-                        <div>
-                          <h2 className="wsj-font text-5xl xl:text-6xl font-bold mb-3">WSJ</h2>
-                          <p className="text-sm text-slate-300 tracking-wide">THE WALL STREET JOURNAL</p>
+                        <div className="flex justify-center lg:justify-start">
+                          <img 
+                            src="/wsjlogo.png" 
+                            alt="The Wall Street Journal Logo"
+                            className="w-52 xl:w-60 h-auto"
+                          />
                         </div>
                       </div>
 
