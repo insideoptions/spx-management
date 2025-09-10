@@ -4,7 +4,7 @@ import React, { useRef, ReactNode } from 'react';
 import { motion, useScroll, useTransform, useInView, Variants } from 'framer-motion';
 
 // Individual animated section component
-const AnimatedSection = ({ children, className = "", delay = 0 }: {
+const AnimatedSection = ({ children, className = "", delay = 0, ...props }: {
   children: ReactNode;
   className?: string;
   delay?: number;
@@ -47,6 +47,7 @@ const AnimatedSection = ({ children, className = "", delay = 0 }: {
       style={{
         transformStyle: "preserve-3d"
       }}
+      {...props}
     >
       {children}
     </motion.div>
