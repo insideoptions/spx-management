@@ -56,7 +56,7 @@ export const HeroHeader = () => {
                               console.log('Founder section found:', founderSection);
                               if (founderSection) {
                                 const rect = founderSection.getBoundingClientRect();
-                                const offsetTop = window.pageYOffset + rect.top - 80;
+                                const offsetTop = window.pageYOffset + rect.top - 120;
                                 window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                               }
                             }, 200);
@@ -98,7 +98,7 @@ export const HeroHeader = () => {
                               console.log('Mobile founder section found:', founderSection);
                               if (founderSection) {
                                 const rect = founderSection.getBoundingClientRect();
-                                const offsetTop = window.pageYOffset + rect.top - 80;
+                                const offsetTop = window.pageYOffset + rect.top - 120;
                                 window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                               }
                             }, 200);
