@@ -66,7 +66,7 @@ export const HeroHeader = () => {
                               const wsjSection = document.querySelector('[data-section="wsj"]');
                               if (wsjSection) {
                                 const rect = wsjSection.getBoundingClientRect();
-                                const offsetTop = window.pageYOffset + rect.top - 80;
+                                const offsetTop = window.pageYOffset + rect.top - 120;
                                 window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                               }
                             }, 100);
@@ -109,7 +109,7 @@ export const HeroHeader = () => {
                               const wsjSection = document.querySelector('[data-section="wsj"]');
                               if (wsjSection) {
                                 const rect = wsjSection.getBoundingClientRect();
-                                const offsetTop = window.pageYOffset + rect.top - 80;
+                                const offsetTop = window.pageYOffset + rect.top - 120;
                                 window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                               }
                             }, 100);
