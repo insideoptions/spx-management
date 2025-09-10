@@ -22,16 +22,20 @@ export default function HeroSection() {
         <AnimatedSection className="relative" delay={0.2} data-section="founder">
           <div className="relative z-20 pb-16 pt-4 md:pb-24 md:pt-8 lg:pb-32 lg:pt-12">
             <div className="relative mx-auto max-w-6xl px-6">
-              <div className="mx-auto max-w-4xl text-center">
+              {/* Header - centered on all devices */}
+              <div className="mx-auto max-w-4xl text-center mb-12">
                 <h1 className="mt-2 max-w-4xl text-balance text-3xl font-medium md:text-4xl lg:mt-4 xl:text-5xl">
                   Meet Our Founder
                 </h1>
                 <p className="mt-3 text-lg md:text-xl font-medium text-muted-foreground">
                   David Chau &ldquo;aka&rdquo; Captain Condor
                 </p>
-                
-                {/* Video Interview Centerpiece */}
-                <div className="mt-8 max-w-4xl mx-auto">
+              </div>
+
+              {/* Desktop: Side by side layout, Mobile: Stacked */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+                {/* Video Section - Left on desktop */}
+                <div className="order-1 lg:order-1">
                   <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black/5 dark:bg-white/5">
                     <iframe
                       src="https://fintech.tv/?p=33722&embed=1"
@@ -46,9 +50,9 @@ export default function HeroSection() {
                   </p>
                 </div>
 
-                <div className="mt-12 max-w-4xl mx-auto">
-                  {/* Modern founder bio layout */}
-                  <div className="prose prose-lg mx-auto text-center max-w-3xl">
+                {/* Text Content - Right on desktop */}
+                <div className="order-2 lg:order-2">
+                  <div className="prose prose-lg max-w-none text-left">
                     <p className="text-lg leading-relaxed mb-6">
                       David Chau is the Founder and Chief Investment Officer of SPX MGMT LLC, 
                       a boutique alternative investment firm specializing in non-directional 
@@ -68,7 +72,7 @@ export default function HeroSection() {
                       into quantitative trading strategies and market efficiency.
                     </p>
                     
-                    <div className="bg-muted/30 rounded-2xl p-8 mt-8">
+                    <div className="bg-muted/30 rounded-2xl p-6 lg:p-8">
                       <p className="text-base italic text-muted-foreground leading-relaxed">
                         &ldquo;Unlike most quant strategies optimized only in backtests, ours was 
                         forged and fine-tuned in live markets. As CIO of SPX MGMT LLC, I&apos;m 
