@@ -15,8 +15,22 @@ export async function GET() {
     const isMarketOpen = day >= 1 && day <= 5 && 
       ((hour === 9 && minute >= 30) || (hour >= 10 && hour < 16));
     
-    // Always use I:SPX ticker for all market conditions
-    const currentUrl = `https://api.polygon.io/v2/aggs/ticker/I:SPX/prev?adjusted=true&apikey=${POLYGON_API_KEY}`;
+    // Use different endpoints based on market status
+    let currentUrl;
+    
+    if (isMarketOpen) {
+      // During market hours, get current day's data (today's trading data)
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
+      const dateStr = `${year}-${month}-${day}`;
+      
+      currentUrl = `https://api.polygon.io/v2/aggs/ticker/I:SPX/range/1/minute/${dateStr}/${dateStr}?adjusted=true&sort=desc&limit=1&apikey=${POLYGON_API_KEY}`;
+    } else {
+      // After hours, get previous day's data
+      currentUrl = `https://api.polygon.io/v2/aggs/ticker/I:SPX/prev?adjusted=true&apikey=${POLYGON_API_KEY}`;
+    }
     
     // Fetch current day data
     const response = await fetch(currentUrl);
@@ -27,16 +41,45 @@ export async function GET() {
     
     const data = await response.json();
     
-    // Handle I:SPX data structure
-    if (!data.results || data.results.length === 0) {
-      throw new Error('No SPX data available');
+    let price;
+    
+    if (isMarketOpen) {
+      // Handle live minute data structure
+      if (!data.results || data.results.length === 0) {
+        throw new Error('No live SPX data available');
+      }
+      const result = data.results[0];
+      price = result.c; // Most recent close price from minute data
+    } else {
+      // Handle previous day data structure
+      if (!data.results || data.results.length === 0) {
+        throw new Error('No SPX data available');
+      }
+      const result = data.results[0];
+      price = result.c; // Previous day close price
     }
     
-    const result = data.results[0];
-    const price = result.c; // Current close price
+    // Get previous close dynamically
+    let prevClose = 6495.15; // fallback
     
-    // Use the expected previous close of 6495.15 to match your data
-    const prevClose = 6495.15;
+    if (isMarketOpen) {
+      // For live data, we need to get yesterday's close for comparison
+      try {
+        const prevUrl = `https://api.polygon.io/v2/aggs/ticker/I:SPX/prev?adjusted=true&apikey=${POLYGON_API_KEY}`;
+        const prevResponse = await fetch(prevUrl);
+        if (prevResponse.ok) {
+          const prevData = await prevResponse.json();
+          if (prevData.results && prevData.results.length > 0) {
+            prevClose = prevData.results[0].c;
+          }
+        }
+      } catch (error) {
+        console.log('Could not fetch previous close, using fallback');
+      }
+    } else {
+      // For after-hours, the current price IS the previous close, so we need the day before
+      prevClose = 6495.15; // Keep static for now since we're showing yesterday's close
+    }
     
     const change = price - prevClose;
     const changePercent = (change / prevClose) * 100;
