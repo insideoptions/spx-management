@@ -2,24 +2,9 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
 
 function FloatingPaths({ position }: { position: number }) {
-    const [isMobile, setIsMobile] = useState(false);
-    
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-        
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
-    }, []);
-
-    // Reduce paths on mobile for better performance
-    const pathCount = isMobile ? 12 : 36;
-    const paths = Array.from({ length: pathCount }, (_, i) => ({
+    const paths = Array.from({ length: 36 }, (_, i) => ({
         id: i,
         d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
             380 - i * 5 * position
@@ -46,15 +31,15 @@ function FloatingPaths({ position }: { position: number }) {
                         d={path.d}
                         stroke="currentColor"
                         strokeWidth={path.width}
-                        strokeOpacity={isMobile ? 0.15 + path.id * 0.05 : 0.1 + path.id * 0.03}
-                        initial={{ pathLength: 0.3, opacity: isMobile ? 0.8 : 0.6 }}
+                        strokeOpacity={0.1 + path.id * 0.03}
+                        initial={{ pathLength: 0.3, opacity: 0.6 }}
                         animate={{
                             pathLength: 1,
-                            opacity: isMobile ? [0.4, 0.8, 0.4] : [0.3, 0.6, 0.3],
+                            opacity: [0.3, 0.6, 0.3],
                             pathOffset: [0, 1, 0],
                         }}
                         transition={{
-                            duration: isMobile ? 30 + Math.random() * 15 : 20 + Math.random() * 10,
+                            duration: 20 + Math.random() * 10,
                             repeat: Number.POSITIVE_INFINITY,
                             ease: "linear",
                         }}
@@ -70,25 +55,13 @@ export function BackgroundPaths({
 }: {
     title?: string;
 }) {
-    const [isMobile, setIsMobile] = useState(false);
-    
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-        
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
-    }, []);
-
     const words = title.split(" ");
 
     return (
-        <div className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950">
+        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950">
             <div className="absolute inset-0">
                 <FloatingPaths position={1} />
-                {!isMobile && <FloatingPaths position={-1} />}
+                <FloatingPaths position={-1} />
             </div>
 
             <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
@@ -98,7 +71,7 @@ export function BackgroundPaths({
                     transition={{ duration: 2 }}
                     className="max-w-4xl mx-auto"
                 >
-                    <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 tracking-tighter">
+                    <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-8 tracking-tighter">
                         {words.map((word, wordIndex) => (
                             <span
                                 key={wordIndex}
@@ -112,10 +85,10 @@ export function BackgroundPaths({
                                         transition={{
                                             delay:
                                                 wordIndex * 0.1 +
-                                                letterIndex * (isMobile ? 0.05 : 0.03),
+                                                letterIndex * 0.03,
                                             type: "spring",
-                                            stiffness: isMobile ? 100 : 150,
-                                            damping: isMobile ? 30 : 25,
+                                            stiffness: 150,
+                                            damping: 25,
                                         }}
                                         className="inline-block text-transparent bg-clip-text 
                                         bg-gradient-to-r from-neutral-900 to-neutral-700/80 
