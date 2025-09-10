@@ -52,16 +52,20 @@ export const HeroHeader = () => {
                         onClick={(e) => {
                           if (item.href === "#founder") {
                             e.preventDefault();
-                            const founderSection = document.querySelector('[data-section="founder"]');
-                            if (founderSection) {
-                              founderSection.scrollIntoView({ behavior: 'smooth' });
-                            }
+                            setTimeout(() => {
+                              const founderSection = document.querySelector('[data-section="founder"]');
+                              if (founderSection) {
+                                founderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                              }
+                            }, 100);
                           } else if (item.href === "#wsj") {
                             e.preventDefault();
-                            const wsjSection = document.querySelector('[data-section="wsj"]');
-                            if (wsjSection) {
-                              wsjSection.scrollIntoView({ behavior: 'smooth' });
-                            }
+                            setTimeout(() => {
+                              const wsjSection = document.querySelector('[data-section="wsj"]');
+                              if (wsjSection) {
+                                wsjSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                              }
+                            }, 100);
                           }
                         }}
                       >
@@ -84,18 +88,22 @@ export const HeroHeader = () => {
                         onClick={(e) => {
                           if (item.href === "#founder") {
                             e.preventDefault();
-                            const founderSection = document.querySelector('[data-section="founder"]');
-                            if (founderSection) {
-                              founderSection.scrollIntoView({ behavior: 'smooth' });
-                            }
-                            setMenuState(false); // Close mobile menu
+                            setMenuState(false); // Close mobile menu first
+                            setTimeout(() => {
+                              const founderSection = document.querySelector('[data-section="founder"]');
+                              if (founderSection) {
+                                founderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                              }
+                            }, 100);
                           } else if (item.href === "#wsj") {
                             e.preventDefault();
-                            const wsjSection = document.querySelector('[data-section="wsj"]');
-                            if (wsjSection) {
-                              wsjSection.scrollIntoView({ behavior: 'smooth' });
-                            }
-                            setMenuState(false); // Close mobile menu
+                            setMenuState(false); // Close mobile menu first
+                            setTimeout(() => {
+                              const wsjSection = document.querySelector('[data-section="wsj"]');
+                              if (wsjSection) {
+                                wsjSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                              }
+                            }, 100);
                           }
                         }}
                       >

@@ -12,8 +12,10 @@ const GridBackground = ({
 }) => {
   const { resolvedTheme } = useTheme();
   const [isMobile, setIsMobile] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -22,8 +24,10 @@ const GridBackground = ({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Determine if we're in dark mode
-  const isDarkMode = resolvedTheme === 'dark';
+  // Determine if we're in dark mode - fallback to system preference if not mounted
+  const isDarkMode = mounted 
+    ? resolvedTheme === 'dark' 
+    : typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
   
   // Theme-aware dot colors with mobile enhancement
   const themeDotColor = isDarkMode 
