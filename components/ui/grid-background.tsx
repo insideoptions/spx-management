@@ -24,14 +24,46 @@ const GridBackground = ({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Always show grid - use system preference as fallback but don't wait for theme resolution
-  const systemPrefersDark = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const isDarkMode = mounted ? resolvedTheme === 'dark' : systemPrefersDark;
+  // Force grid to always be visible - use dark theme as default to ensure visibility
+  const systemPrefersDark = typeof window !== 'undefined' ? window.matchMedia('(prefers-color-scheme: dark)').matches : true;
+  const isDarkMode = resolvedTheme === 'dark' || (!mounted && systemPrefersDark) || (!mounted && !resolvedTheme);
   
-  // Theme-aware dot colors with mobile enhancement - always visible
+  // Always visible dot colors - default to white dots for dark theme
   const themeDotColor = isDarkMode 
-    ? `rgba(255, 255, 255, ${isMobile ? 0.4 : 0.25})` // Enhanced for mobile
-    : `rgba(0, 0, 0, ${isMobile ? 0.4 : 0.25})`; // Enhanced for mobile
+    ? `rgba(255, 255, 255, ${isMobile ? 0.4 : 0.25})` // White dots for dark theme
+    : `rgba(0, 0, 0, ${isMobile ? 0.4 : 0.25})`; // Black dots for light theme
+
+  // Force render immediately without waiting for hydration
+  if (!mounted) {
+    const fallbackDotColor = `rgba(255, 255, 255, ${isMobile ? 0.4 : 0.25})`;
+    return (
+      <div className="absolute inset-0 min-h-screen overflow-hidden" style={{ backgroundColor }}>
+        <div 
+          className={`absolute inset-0 ${isMobile ? 'opacity-80' : 'opacity-60'}`}
+          style={{
+            backgroundImage: `radial-gradient(circle at center, ${fallbackDotColor} ${dotSize}px, transparent ${dotSize}px)`,
+            backgroundSize: `${gridSize}px ${gridSize}px`,
+            backgroundPosition: '0 0, 20px 20px'
+          }}
+        />
+        <div 
+          className={`absolute inset-0 ${isMobile ? 'opacity-30' : 'opacity-20'}`}
+          style={{
+            backgroundImage: `radial-gradient(circle at center, ${fallbackDotColor} 1px, transparent 1px)`,
+            backgroundSize: `${gridSize * 2}px ${gridSize * 2}px`,
+            backgroundPosition: `${gridSize}px ${gridSize}px`
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20" />
+        {animated && (
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+          </div>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="absolute inset-0 min-h-screen overflow-hidden" style={{ backgroundColor }}>
