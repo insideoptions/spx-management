@@ -5,7 +5,7 @@ export default function CallToAction() {
   return (
     <section className="py-16 md:py-32">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="bg-white/5 dark:bg-black/10 backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12">
+        <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12">
           <div className="text-center">
             <h2 className="text-balance text-4xl font-semibold lg:text-5xl text-black dark:text-white">
               Start Building

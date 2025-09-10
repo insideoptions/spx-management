@@ -6,7 +6,7 @@ export default function FoundersSection() {
   return (
     <section className="py-16 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="bg-white/5 dark:bg-black/10 backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12">
+        <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-medium md:text-5xl lg:text-6xl mb-6 text-black dark:text-white">
               Meet Our Founder
@@ -17,7 +17,7 @@ export default function FoundersSection() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <Card className="overflow-hidden border-0 shadow-lg bg-white/20 dark:bg-black/15 backdrop-blur-sm border-white/15 dark:border-white/10">
+            <Card className="overflow-hidden border-0 shadow-lg backdrop-blur-sm border border-white/10 dark:border-white/5">
               <CardContent className="p-8 md:p-12">
               <div className="grid gap-8 md:grid-cols-3 md:gap-12">
                 {/* Placeholder for future photo */}

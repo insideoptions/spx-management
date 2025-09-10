@@ -32,7 +32,7 @@ export default function FooterSection() {
   return (
     <footer className="py-16 md:py-32">
       <div className="mx-auto max-w-5xl px-6">
-        <div className="bg-white/5 dark:bg-black/10 backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12">
+        <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12">
           <Link href="/" aria-label="go home" className="mx-auto block size-fit">
             <Logo />
           </Link>
