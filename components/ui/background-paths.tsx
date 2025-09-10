@@ -25,22 +25,25 @@ export function BackgroundPaths({
 
     return (
         <div className="relative min-h-screen md:min-h-screen h-screen md:h-auto w-full flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0">
-                <Waves 
-                    lineColor="rgba(var(--wave-color), 0.3)"
-                    backgroundColor="transparent"
-                    waveSpeedX={0.0125}
-                    waveSpeedY={0.005}
-                    waveAmpX={32}
-                    waveAmpY={16}
-                    xGap={isMobile ? 16 : 10}
-                    yGap={isMobile ? 40 : 32}
-                    friction={0.925}
-                    tension={0.005}
-                    maxCursorMove={100}
-                    className="animate-wave-pulse"
-                />
-            </div>
+            {/* Only show waves on desktop to prevent mobile scrolling issues */}
+            {!isMobile && (
+                <div className="absolute inset-0">
+                    <Waves 
+                        lineColor="rgba(var(--wave-color), 0.3)"
+                        backgroundColor="transparent"
+                        waveSpeedX={0.0125}
+                        waveSpeedY={0.005}
+                        waveAmpX={32}
+                        waveAmpY={16}
+                        xGap={10}
+                        yGap={32}
+                        friction={0.925}
+                        tension={0.005}
+                        maxCursorMove={100}
+                        className="animate-wave-pulse"
+                    />
+                </div>
+            )}
 
             <div className="relative z-10 container mx-auto px-4 md:px-6 text-center transform translate-y-[-2vh] md:translate-y-0">
                 <motion.div
