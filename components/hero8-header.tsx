@@ -62,38 +62,26 @@ export const HeroHeader = () => {
                         onClick={(e) => {
                           if (item.href === "#founder") {
                             e.preventDefault();
-                            // Wait for any animations/layout changes to complete
-                            setTimeout(() => {
-                              const founderSection = document.querySelector('[data-section="founder"]');
-                              if (founderSection) {
-                                // Force multiple layout recalculations to ensure accurate positioning
-                                founderSection.getBoundingClientRect();
-                                requestAnimationFrame(() => {
-                                  requestAnimationFrame(() => {
-                                    const rect = founderSection.getBoundingClientRect();
-                                    const targetY = window.pageYOffset + rect.top - 120;
-                                    window.scrollTo({ top: targetY, behavior: 'smooth' });
-                                  });
-                                });
-                              }
-                            }, 200);
+                            const founderSection = document.querySelector('[data-section="founder"]');
+                            if (founderSection) {
+                              // Force immediate layout calculation
+                              founderSection.getBoundingClientRect();
+                              // Get fresh position immediately
+                              const rect = founderSection.getBoundingClientRect();
+                              const targetY = window.pageYOffset + rect.top - 120;
+                              window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            }
                           } else if (item.href === "#wsj") {
                             e.preventDefault();
-                            // Wait for any animations/layout changes to complete
-                            setTimeout(() => {
-                              const wsjSection = document.querySelector('[data-section="wsj"]');
-                              if (wsjSection) {
-                                // Force multiple layout recalculations to ensure accurate positioning
-                                wsjSection.getBoundingClientRect();
-                                requestAnimationFrame(() => {
-                                  requestAnimationFrame(() => {
-                                    const rect = wsjSection.getBoundingClientRect();
-                                    const targetY = window.pageYOffset + rect.top - 120;
-                                    window.scrollTo({ top: targetY, behavior: 'smooth' });
-                                  });
-                                });
-                              }
-                            }, 200);
+                            const wsjSection = document.querySelector('[data-section="wsj"]');
+                            if (wsjSection) {
+                              // Force immediate layout calculation
+                              wsjSection.getBoundingClientRect();
+                              // Get fresh position immediately
+                              const rect = wsjSection.getBoundingClientRect();
+                              const targetY = window.pageYOffset + rect.top - 120;
+                              window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            }
                           }
                         }}
                       >
@@ -117,39 +105,29 @@ export const HeroHeader = () => {
                           if (item.href === "#founder") {
                             e.preventDefault();
                             setMenuState(false); // Close mobile menu first
-                            // Wait for menu close animation and layout changes
-                            setTimeout(() => {
-                              const founderSection = document.querySelector('[data-section="founder"]');
-                              if (founderSection) {
-                                // Force multiple layout recalculations to ensure accurate positioning
-                                founderSection.getBoundingClientRect();
-                                requestAnimationFrame(() => {
-                                  requestAnimationFrame(() => {
-                                    const rect = founderSection.getBoundingClientRect();
-                                    const targetY = window.pageYOffset + rect.top - 120;
-                                    window.scrollTo({ top: targetY, behavior: 'smooth' });
-                                  });
-                                });
-                              }
-                            }, 400);
+                            // Immediate scroll without waiting
+                            const founderSection = document.querySelector('[data-section="founder"]');
+                            if (founderSection) {
+                              // Force immediate layout calculation
+                              founderSection.getBoundingClientRect();
+                              // Get fresh position immediately
+                              const rect = founderSection.getBoundingClientRect();
+                              const targetY = window.pageYOffset + rect.top - 120;
+                              window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            }
                           } else if (item.href === "#wsj") {
                             e.preventDefault();
                             setMenuState(false); // Close mobile menu first
-                            // Wait for menu close animation and layout changes
-                            setTimeout(() => {
-                              const wsjSection = document.querySelector('[data-section="wsj"]');
-                              if (wsjSection) {
-                                // Force multiple layout recalculations to ensure accurate positioning
-                                wsjSection.getBoundingClientRect();
-                                requestAnimationFrame(() => {
-                                  requestAnimationFrame(() => {
-                                    const rect = wsjSection.getBoundingClientRect();
-                                    const targetY = window.pageYOffset + rect.top - 120;
-                                    window.scrollTo({ top: targetY, behavior: 'smooth' });
-                                  });
-                                });
-                              }
-                            }, 400);
+                            // Immediate scroll without waiting
+                            const wsjSection = document.querySelector('[data-section="wsj"]');
+                            if (wsjSection) {
+                              // Force immediate layout calculation
+                              wsjSection.getBoundingClientRect();
+                              // Get fresh position immediately
+                              const rect = wsjSection.getBoundingClientRect();
+                              const targetY = window.pageYOffset + rect.top - 120;
+                              window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            }
                           }
                         }}
                       >
