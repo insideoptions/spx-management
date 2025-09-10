@@ -7,9 +7,9 @@ export default function Features() {
     <section className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent">
       <div className="@container mx-auto max-w-6xl px-6">
         <div className="text-center mb-12 md:mb-20">
-          <h2 className="text-balance text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
+          <p className="text-balance text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-muted-foreground max-w-4xl mx-auto">
             SPX MGMT LLC is an alternative investment firm formed in 2023 to provide sophisticated investors with an alternative to traditional active trading. Our strategies were developed and refined in live markets, not just back-tests, with the goal of delivering consistent returns while managing market risk.
-          </h2>
+          </p>
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
