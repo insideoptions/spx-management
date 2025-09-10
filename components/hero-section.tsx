@@ -15,13 +15,13 @@ export default function HeroSection() {
         <section className="relative">
           <BackgroundPaths title="SPXMGMT" />
           <div className="absolute inset-0 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm"></div>
-          <div className="relative z-20 pb-16 pt-8 md:pb-24 lg:pb-32 lg:pt-16">
+          <div className="relative z-20 pb-16 pt-4 md:pb-24 md:pt-8 lg:pb-32 lg:pt-12">
             <div className="relative mx-auto max-w-6xl px-6">
               <div className="mx-auto max-w-4xl text-center">
-                <h1 className="mt-4 max-w-4xl text-balance text-3xl font-medium md:text-4xl lg:mt-8 xl:text-5xl">
+                <h1 className="mt-2 max-w-4xl text-balance text-3xl font-medium md:text-4xl lg:mt-4 xl:text-5xl">
                   Meet Our Founder
                 </h1>
-                <p className="mt-4 text-xl md:text-2xl font-semibold text-muted-foreground">
+                <p className="mt-3 text-lg md:text-xl font-medium text-muted-foreground">
                   David Chau &ldquo;aka&rdquo; Captain Condor
                 </p>
                 
