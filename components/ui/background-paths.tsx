@@ -106,13 +106,13 @@ export function BackgroundPaths({
                                 {word.split("").map((letter, letterIndex) => (
                                     <motion.span
                                         key={`${wordIndex}-${letterIndex}`}
-                                        initial={{ y: isMobile ? 150 : 100, opacity: 0 }}
+                                        initial={{ y: isMobile ? 250 : 100, opacity: 0 }}
                                         animate={{ y: 0, opacity: 1 }}
                                         transition={
                             isMobile
                                 ? {
                                       delay: wordIndex * 0.05 + letterIndex * 0.01,
-                                      duration: 0.4,
+                                      duration: 0.6,
                                       ease: "easeOut",
                                   }
                                 : {
@@ -134,11 +134,11 @@ export function BackgroundPaths({
                     </h1>
 
                     <motion.p
-                        initial={{ opacity: 0, y: isMobile ? 50 : 20 }}
+                        initial={{ opacity: 0, y: isMobile ? 100 : 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={
                             isMobile
-                                ? { delay: 0.6, duration: 0.6 }
+                                ? { delay: 0.6, duration: 0.8 }
                                 : { delay: 1.5, duration: 0.8 }
                         }
                         className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-neutral-600 dark:text-white max-w-4xl mx-auto leading-relaxed"
