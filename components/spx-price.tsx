@@ -19,7 +19,12 @@ const SPXPrice = () => {
     const fetchSPXPrice = async () => {
       try {
         // Use Next.js API route to keep API key secure
-        const response = await fetch('/api/spx-price');
+        const response = await fetch('/api/spx-price', {
+          cache: 'no-store',
+          headers: {
+            'Cache-Control': 'no-cache'
+          }
+        });
         
         if (!response.ok) {
           throw new Error('Failed to fetch SPX data');
@@ -34,8 +39,13 @@ const SPXPrice = () => {
       }
     };
 
-    // Fetch price only once on component mount
+    // Fetch price on component mount
     fetchSPXPrice();
+    
+    // Set up interval to refresh price every 30 seconds during market hours
+    const interval = setInterval(fetchSPXPrice, 30000);
+    
+    return () => clearInterval(interval);
   }, []);
 
   if (loading) {
