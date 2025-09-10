@@ -15,7 +15,6 @@ export default function HeroSection() {
       <main className="overflow-x-hidden">
         <section className="relative">
           <BackgroundPaths title="SPXMGMT" />
-          <div className="absolute inset-0 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm"></div>
           <div className="relative z-20 pb-16 pt-4 md:pb-24 md:pt-8 lg:pb-32 lg:pt-12">
             <div className="relative mx-auto max-w-6xl px-6">
               <div className="mx-auto max-w-4xl text-center">
@@ -152,7 +151,7 @@ export default function HeroSection() {
             </div>
           </div>
         </section>
-        <section className="bg-background pb-16 md:pb-32">
+        <section className="pb-16 md:pb-32">
           <div className="group relative m-auto max-w-6xl px-6">
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:pr-6">

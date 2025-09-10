@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function FoundersSection() {
   return (
-    <section className="py-16 md:py-32 bg-background">
+    <section className="py-16 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-medium md:text-5xl lg:text-6xl mb-6">
