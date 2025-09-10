@@ -55,31 +55,33 @@ export const HeroHeader = () => {
                               const founderSection = document.querySelector('[data-section="founder"]');
                               console.log('Founder section found:', founderSection);
                               if (founderSection) {
-                                // Force layout recalculation and wait longer for content to stabilize
-                                founderSection.getBoundingClientRect(); // Force layout
+                                founderSection.scrollIntoView({ 
+                                  behavior: 'smooth', 
+                                  block: 'start',
+                                  inline: 'nearest'
+                                });
+                                // Add additional offset after scroll completes
                                 setTimeout(() => {
-                                  const rect = founderSection.getBoundingClientRect();
-                                  const offsetTop = window.pageYOffset + rect.top - 140;
-                                  console.log('Founder scroll calculation:', { rect, offsetTop, pageYOffset: window.pageYOffset });
-                                  window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                                }, 300);
+                                  window.scrollBy({ top: -120, behavior: 'smooth' });
+                                }, 800);
                               }
-                            }, 200);
+                            }, 100);
                           } else if (item.href === "#wsj") {
                             e.preventDefault();
                             setTimeout(() => {
                               const wsjSection = document.querySelector('[data-section="wsj"]');
                               if (wsjSection) {
-                                // Force layout recalculation and wait longer for content to stabilize
-                                wsjSection.getBoundingClientRect(); // Force layout
+                                wsjSection.scrollIntoView({ 
+                                  behavior: 'smooth', 
+                                  block: 'start',
+                                  inline: 'nearest'
+                                });
+                                // Add additional offset after scroll completes
                                 setTimeout(() => {
-                                  const rect = wsjSection.getBoundingClientRect();
-                                  const offsetTop = window.pageYOffset + rect.top - 140;
-                                  console.log('WSJ scroll calculation:', { rect, offsetTop, pageYOffset: window.pageYOffset });
-                                  window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                                }, 300);
+                                  window.scrollBy({ top: -120, behavior: 'smooth' });
+                                }, 800);
                               }
-                            }, 200);
+                            }, 100);
                           }
                         }}
                       >
@@ -107,32 +109,34 @@ export const HeroHeader = () => {
                               const founderSection = document.querySelector('[data-section="founder"]');
                               console.log('Mobile founder section found:', founderSection);
                               if (founderSection) {
-                                // Force layout recalculation and wait longer for content to stabilize
-                                founderSection.getBoundingClientRect(); // Force layout
+                                founderSection.scrollIntoView({ 
+                                  behavior: 'smooth', 
+                                  block: 'start',
+                                  inline: 'nearest'
+                                });
+                                // Add additional offset after scroll completes
                                 setTimeout(() => {
-                                  const rect = founderSection.getBoundingClientRect();
-                                  const offsetTop = window.pageYOffset + rect.top - 140;
-                                  console.log('Mobile founder scroll calculation:', { rect, offsetTop, pageYOffset: window.pageYOffset });
-                                  window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                                }, 300);
+                                  window.scrollBy({ top: -120, behavior: 'smooth' });
+                                }, 800);
                               }
-                            }, 200);
+                            }, 300);
                           } else if (item.href === "#wsj") {
                             e.preventDefault();
                             setMenuState(false); // Close mobile menu first
                             setTimeout(() => {
                               const wsjSection = document.querySelector('[data-section="wsj"]');
                               if (wsjSection) {
-                                // Force layout recalculation and wait longer for content to stabilize
-                                wsjSection.getBoundingClientRect(); // Force layout
+                                wsjSection.scrollIntoView({ 
+                                  behavior: 'smooth', 
+                                  block: 'start',
+                                  inline: 'nearest'
+                                });
+                                // Add additional offset after scroll completes
                                 setTimeout(() => {
-                                  const rect = wsjSection.getBoundingClientRect();
-                                  const offsetTop = window.pageYOffset + rect.top - 140;
-                                  console.log('Mobile WSJ scroll calculation:', { rect, offsetTop, pageYOffset: window.pageYOffset });
-                                  window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                                }, 300);
+                                  window.scrollBy({ top: -120, behavior: 'smooth' });
+                                }, 800);
                               }
-                            }, 200);
+                            }, 300);
                           }
                         }}
                       >
