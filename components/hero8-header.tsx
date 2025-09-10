@@ -8,6 +8,7 @@ import { ModeToggle } from "./mode-toggle";
 
 const menuItems = [
   { name: "Founder", href: "#founder" },
+  { name: "Features", href: "#wsj" },
   { name: "Solution", href: "#link" },
   { name: "Pricing", href: "#link" },
   { name: "About", href: "#link" },
@@ -55,6 +56,12 @@ export const HeroHeader = () => {
                             if (founderSection) {
                               founderSection.scrollIntoView({ behavior: 'smooth' });
                             }
+                          } else if (item.href === "#wsj") {
+                            e.preventDefault();
+                            const wsjSection = document.querySelector('[data-section="wsj"]');
+                            if (wsjSection) {
+                              wsjSection.scrollIntoView({ behavior: 'smooth' });
+                            }
                           }
                         }}
                       >
@@ -80,6 +87,13 @@ export const HeroHeader = () => {
                             const founderSection = document.querySelector('[data-section="founder"]');
                             if (founderSection) {
                               founderSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                            setMenuState(false); // Close mobile menu
+                          } else if (item.href === "#wsj") {
+                            e.preventDefault();
+                            const wsjSection = document.querySelector('[data-section="wsj"]');
+                            if (wsjSection) {
+                              wsjSection.scrollIntoView({ behavior: 'smooth' });
                             }
                             setMenuState(false); // Close mobile menu
                           }
