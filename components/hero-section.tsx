@@ -103,17 +103,12 @@ export default function HeroSection() {
                   <div className="bg-gradient-to-br from-slate-700 to-slate-800 rounded-3xl p-8 md:p-12 lg:p-16 border border-slate-600/30 hover:border-slate-500/50 transition-colors cursor-pointer">
                     {/* Mobile: Stacked Layout */}
                     <div className="lg:hidden text-center text-white">
-                      <div className="mb-8">
-                        <p className="text-sm font-medium text-slate-300 uppercase tracking-wider mb-4">
-                          AS FEATURED IN
-                        </p>
-                        <div className="mb-6 flex justify-center">
-                          <img 
-                            src="/wsjlogo.png" 
-                            alt="The Wall Street Journal Logo"
-                            className="w-48 md:w-56 h-auto"
-                          />
-                        </div>
+                      <div className="mb-8 flex justify-center">
+                        <img 
+                          src="/wsjlogo.png" 
+                          alt="The Wall Street Journal Logo"
+                          className="w-56 md:w-64 h-auto"
+                        />
                       </div>
                       
                       <div className="mb-8">
@@ -136,17 +131,12 @@ export default function HeroSection() {
                     {/* Desktop: Three Column Layout */}
                     <div className="hidden lg:grid lg:grid-cols-3 lg:gap-12 lg:items-center text-white">
                       {/* Left Side - WSJ Logo */}
-                      <div className="text-center lg:text-left">
-                        <p className="text-sm font-medium text-slate-300 uppercase tracking-wider mb-6">
-                          AS FEATURED IN
-                        </p>
-                        <div className="flex justify-center lg:justify-start">
-                          <img 
-                            src="/wsjlogo.png" 
-                            alt="The Wall Street Journal Logo"
-                            className="w-52 xl:w-60 h-auto"
-                          />
-                        </div>
+                      <div className="flex justify-center lg:justify-start items-center">
+                        <img 
+                          src="/wsjlogo.png" 
+                          alt="The Wall Street Journal Logo"
+                          className="w-60 xl:w-72 h-auto"
+                        />
                       </div>
 
                       {/* Middle - Content */}
