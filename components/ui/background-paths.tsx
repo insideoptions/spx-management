@@ -84,13 +84,13 @@ export function BackgroundPaths({
     }, []);
 
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden md:items-center items-start pt-16 sm:pt-12">
+        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0">
                 <FloatingPaths position={1} />
                 {!isMobile && <FloatingPaths position={-1} />}
             </div>
 
-            <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
+            <div className="relative z-10 container mx-auto px-4 md:px-6 text-center transform translate-y-[-10vh] md:translate-y-0">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

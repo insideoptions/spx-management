@@ -15,11 +15,11 @@ export default function HeroSection() {
       <ScrollProgress />
       <HeroHeader />
       <main className="overflow-x-hidden">
-        <AnimatedSection className="relative pb-0 mb-0" delay={0}>
+        <AnimatedSection className="relative" delay={0}>
           <BackgroundPaths title="SPXMGMT" />
         </AnimatedSection>
         
-        <AnimatedSection className="relative -mt-32 md:mt-0" delay={0.2} data-section="founder">
+        <AnimatedSection className="relative" delay={0.2} data-section="founder">
           <div className="relative z-20 pb-16 pt-4 md:pb-24 md:pt-8 lg:pb-32 lg:pt-12">
             <div className="relative mx-auto max-w-6xl px-6">
               <div className="mx-auto max-w-4xl text-center">
