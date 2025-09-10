@@ -24,12 +24,11 @@ const GridBackground = ({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Determine if we're in dark mode - always show grid with fallback to system preference
-  const isDarkMode = mounted 
-    ? resolvedTheme === 'dark' 
-    : typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  // Always show grid - use system preference as fallback but don't wait for theme resolution
+  const systemPrefersDark = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isDarkMode = mounted ? resolvedTheme === 'dark' : systemPrefersDark;
   
-  // Theme-aware dot colors with mobile enhancement
+  // Theme-aware dot colors with mobile enhancement - always visible
   const themeDotColor = isDarkMode 
     ? `rgba(255, 255, 255, ${isMobile ? 0.4 : 0.25})` // Enhanced for mobile
     : `rgba(0, 0, 0, ${isMobile ? 0.4 : 0.25})`; // Enhanced for mobile
@@ -44,9 +43,7 @@ const GridBackground = ({
             radial-gradient(circle at center, ${themeDotColor} ${dotSize}px, transparent ${dotSize}px)
           `,
           backgroundSize: `${gridSize}px ${gridSize}px`,
-          backgroundPosition: '0 0, 20px 20px',
-          // Force immediate visibility
-          opacity: mounted ? undefined : (isMobile ? 0.8 : 0.6)
+          backgroundPosition: '0 0, 20px 20px'
         }}
       />
       
@@ -58,9 +55,7 @@ const GridBackground = ({
             radial-gradient(circle at center, ${themeDotColor} 1px, transparent 1px)
           `,
           backgroundSize: `${gridSize * 2}px ${gridSize * 2}px`,
-          backgroundPosition: `${gridSize}px ${gridSize}px`,
-          // Force immediate visibility
-          opacity: mounted ? undefined : (isMobile ? 0.3 : 0.2)
+          backgroundPosition: `${gridSize}px ${gridSize}px`
         }}
       />
 
