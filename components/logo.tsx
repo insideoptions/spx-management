@@ -3,13 +3,22 @@ import Image from 'next/image'
 
 export const Logo = ({ className }: { className?: string }) => {
     return (
-        <Image
-            src="/logo.png"
-            alt="SPX MGMT"
-            width={120}
-            height={40}
-            className={cn('h-8 w-auto', className)}
-        />
+        <>
+            <Image
+                src="/logowhite.png"
+                alt="SPX MGMT"
+                width={120}
+                height={40}
+                className={cn('h-8 w-auto dark:hidden', className)}
+            />
+            <Image
+                src="/logo.png"
+                alt="SPX MGMT"
+                width={120}
+                height={40}
+                className={cn('h-8 w-auto hidden dark:block', className)}
+            />
+        </>
     )
 }
 
