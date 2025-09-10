@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import { useTheme } from 'next-themes';
 
 const GridBackground = ({ 
   gridSize = 40,
@@ -10,6 +11,7 @@ const GridBackground = ({
   animated = true 
 }) => {
   const [isMobile, setIsMobile] = useState(false);
+  const { theme, resolvedTheme } = useTheme();
 
   useEffect(() => {
     const checkMobile = () => {
@@ -21,11 +23,19 @@ const GridBackground = ({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Mobile optimizations - increase visibility for iPhone
+  // Determine if we're in dark mode
+  const isDarkMode = resolvedTheme === 'dark';
+  
+  // Mobile optimizations - revert to original lower opacity
   const mobileGridSize = isMobile ? gridSize : gridSize;
-  const mobileOpacity = isMobile ? 0.8 : 0.6;
-  const showSecondaryGrid = true; // Keep on mobile but lighter
+  const mobileOpacity = isMobile ? 0.4 : 0.6; // Reverted mobile opacity back to 0.4
+  const showSecondaryGrid = true;
   const showGlowEffects = !isMobile && animated;
+
+  // Theme-aware dot colors
+  const themeDotColor = isDarkMode 
+    ? 'rgba(255, 255, 255, 0.3)' // White dots for dark mode
+    : 'rgba(0, 0, 0, 0.15)'; // Dark dots for light mode
 
   return (
     <div className="absolute inset-0 min-h-screen overflow-hidden" style={{ backgroundColor }}>
@@ -35,7 +45,7 @@ const GridBackground = ({
         style={{
           opacity: mobileOpacity,
           backgroundImage: `
-            radial-gradient(circle at center, ${dotColor} ${dotSize}px, transparent ${dotSize}px)
+            radial-gradient(circle at center, ${themeDotColor} ${dotSize}px, transparent ${dotSize}px)
           `,
           backgroundSize: `${mobileGridSize}px ${mobileGridSize}px`,
           backgroundPosition: '0 0, 20px 20px'
@@ -45,10 +55,10 @@ const GridBackground = ({
       {/* Secondary Grid Layer for Depth */}
       {showSecondaryGrid && (
         <div 
-          className={`absolute inset-0 ${isMobile ? 'opacity-30' : 'opacity-20'}`}
+          className={`absolute inset-0 ${isMobile ? 'opacity-10' : 'opacity-20'}`}
           style={{
             backgroundImage: `
-              radial-gradient(circle at center, ${dotColor} 1px, transparent 1px)
+              radial-gradient(circle at center, ${themeDotColor} 1px, transparent 1px)
             `,
             backgroundSize: `${mobileGridSize * 2}px ${mobileGridSize * 2}px`,
             backgroundPosition: `${mobileGridSize}px ${mobileGridSize}px`

@@ -39,7 +39,7 @@ export default function RootLayout({
             <GridBackground 
               gridSize={40}
               dotSize={2}
-              dotColor="rgba(255, 255, 255, 0.6)"
+              dotColor="rgba(255, 255, 255, 0.3)"
               backgroundColor="transparent"
               animated={true}
             />
