@@ -24,7 +24,7 @@ const GridBackground = ({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Determine if we're in dark mode - fallback to system preference if not mounted
+  // Determine if we're in dark mode - always show grid with fallback to system preference
   const isDarkMode = mounted 
     ? resolvedTheme === 'dark' 
     : typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -36,7 +36,7 @@ const GridBackground = ({
 
   return (
     <div className="absolute inset-0 min-h-screen overflow-hidden" style={{ backgroundColor }}>
-      {/* Animated Grid Pattern */}
+      {/* Animated Grid Pattern - Always visible */}
       <div 
         className={`absolute inset-0 ${isMobile ? 'opacity-80' : 'opacity-60'} ${animated ? 'animate-pulse' : ''}`}
         style={{
@@ -44,7 +44,9 @@ const GridBackground = ({
             radial-gradient(circle at center, ${themeDotColor} ${dotSize}px, transparent ${dotSize}px)
           `,
           backgroundSize: `${gridSize}px ${gridSize}px`,
-          backgroundPosition: '0 0, 20px 20px'
+          backgroundPosition: '0 0, 20px 20px',
+          // Force immediate visibility
+          opacity: mounted ? undefined : (isMobile ? 0.8 : 0.6)
         }}
       />
       
@@ -56,7 +58,9 @@ const GridBackground = ({
             radial-gradient(circle at center, ${themeDotColor} 1px, transparent 1px)
           `,
           backgroundSize: `${gridSize * 2}px ${gridSize * 2}px`,
-          backgroundPosition: `${gridSize}px ${gridSize}px`
+          backgroundPosition: `${gridSize}px ${gridSize}px`,
+          // Force immediate visibility
+          opacity: mounted ? undefined : (isMobile ? 0.3 : 0.2)
         }}
       />
 
