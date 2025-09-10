@@ -21,9 +21,9 @@ const GridBackground = ({
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Mobile optimizations - keep grid but reduce effects
-  const mobileGridSize = isMobile ? gridSize * 1.2 : gridSize;
-  const mobileOpacity = isMobile ? 0.4 : 0.6;
+  // Mobile optimizations - increase visibility for iPhone
+  const mobileGridSize = isMobile ? gridSize : gridSize;
+  const mobileOpacity = isMobile ? 0.8 : 0.6;
   const showSecondaryGrid = true; // Keep on mobile but lighter
   const showGlowEffects = !isMobile && animated;
 
@@ -45,7 +45,7 @@ const GridBackground = ({
       {/* Secondary Grid Layer for Depth */}
       {showSecondaryGrid && (
         <div 
-          className={`absolute inset-0 ${isMobile ? 'opacity-10' : 'opacity-20'}`}
+          className={`absolute inset-0 ${isMobile ? 'opacity-30' : 'opacity-20'}`}
           style={{
             backgroundImage: `
               radial-gradient(circle at center, ${dotColor} 1px, transparent 1px)
