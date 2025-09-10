@@ -69,6 +69,7 @@ export const HeroHeader = () => {
                               // Get fresh position immediately
                               const rect = founderSection.getBoundingClientRect();
                               const targetY = window.pageYOffset + rect.top - 120;
+                              console.log('FOUNDER CLICK - Current scroll:', window.pageYOffset, 'Element top:', rect.top, 'Target Y:', targetY);
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
                             }
                           } else if (item.href === "#wsj") {
