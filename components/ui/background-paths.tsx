@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { Waves } from "./waves";
+import { useTheme } from "next-themes";
 
 export function BackgroundPaths({
     title = "Background Paths",
@@ -11,7 +12,16 @@ export function BackgroundPaths({
     title?: string;
 }) {
     const [isMobile, setIsMobile] = useState(false);
+    const { theme } = useTheme();
     const words = title.split(" ");
+    
+    // Get wave color based on theme
+    const getWaveColor = () => {
+        if (theme === 'dark') {
+            return "rgba(255, 255, 255, 0.3)"; // White for dark mode
+        }
+        return "rgba(59, 130, 246, 0.3)"; // Blue for light mode
+    };
 
     useEffect(() => {
         const checkMobile = () => {
@@ -29,7 +39,7 @@ export function BackgroundPaths({
             {!isMobile && (
                 <div className="absolute inset-0">
                     <Waves 
-                        lineColor="rgba(var(--wave-color), 0.3)"
+                        lineColor={getWaveColor()}
                         backgroundColor="transparent"
                         waveSpeedX={0.0125}
                         waveSpeedY={0.005}
