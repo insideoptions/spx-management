@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import GridBackground from "@/components/ui/grid-background";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,18 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="relative min-h-screen">
+            <GridBackground 
+              gridSize={40}
+              dotSize={2}
+              dotColor="rgba(255, 255, 255, 0.1)"
+              backgroundColor="transparent"
+              animated={true}
+            />
+            <div className="relative z-10">
+              {children}
+            </div>
+          </div>
         </ThemeProvider>
       </body>
     </html>
