@@ -62,25 +62,19 @@ export const HeroHeader = () => {
                         onClick={(e) => {
                           if (item.href === "#founder") {
                             e.preventDefault();
-                            const founderSection = document.querySelector('[data-section="founder"]');
+                            const founderSection = document.querySelector('[data-section="founder"]') as HTMLElement;
                             if (founderSection) {
-                              // Force immediate layout calculation
-                              founderSection.getBoundingClientRect();
-                              // Get fresh position immediately
-                              const rect = founderSection.getBoundingClientRect();
-                              const targetY = window.pageYOffset + rect.top - 120;
-                              console.log('FOUNDER CLICK - Current scroll:', window.pageYOffset, 'Element top:', rect.top, 'Target Y:', targetY);
+                              // Use offsetTop for consistent positioning regardless of current scroll
+                              const targetY = founderSection.offsetTop - 120;
+                              console.log('FOUNDER CLICK - OffsetTop:', founderSection.offsetTop, 'Target Y:', targetY);
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
                             }
                           } else if (item.href === "#wsj") {
                             e.preventDefault();
-                            const wsjSection = document.querySelector('[data-section="wsj"]');
+                            const wsjSection = document.querySelector('[data-section="wsj"]') as HTMLElement;
                             if (wsjSection) {
-                              // Force immediate layout calculation
-                              wsjSection.getBoundingClientRect();
-                              // Get fresh position immediately
-                              const rect = wsjSection.getBoundingClientRect();
-                              const targetY = window.pageYOffset + rect.top - 120;
+                              // Use offsetTop for consistent positioning regardless of current scroll
+                              const targetY = wsjSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
                             }
                           }
@@ -106,27 +100,19 @@ export const HeroHeader = () => {
                           if (item.href === "#founder") {
                             e.preventDefault();
                             setMenuState(false); // Close mobile menu first
-                            // Immediate scroll without waiting
-                            const founderSection = document.querySelector('[data-section="founder"]');
+                            const founderSection = document.querySelector('[data-section="founder"]') as HTMLElement;
                             if (founderSection) {
-                              // Force immediate layout calculation
-                              founderSection.getBoundingClientRect();
-                              // Get fresh position immediately
-                              const rect = founderSection.getBoundingClientRect();
-                              const targetY = window.pageYOffset + rect.top - 120;
+                              // Use offsetTop for consistent positioning regardless of current scroll
+                              const targetY = founderSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
                             }
                           } else if (item.href === "#wsj") {
                             e.preventDefault();
                             setMenuState(false); // Close mobile menu first
-                            // Immediate scroll without waiting
-                            const wsjSection = document.querySelector('[data-section="wsj"]');
+                            const wsjSection = document.querySelector('[data-section="wsj"]') as HTMLElement;
                             if (wsjSection) {
-                              // Force immediate layout calculation
-                              wsjSection.getBoundingClientRect();
-                              // Get fresh position immediately
-                              const rect = wsjSection.getBoundingClientRect();
-                              const targetY = window.pageYOffset + rect.top - 120;
+                              // Use offsetTop for consistent positioning regardless of current scroll
+                              const targetY = wsjSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
                             }
                           }
