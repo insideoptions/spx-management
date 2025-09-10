@@ -2,9 +2,24 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 function FloatingPaths({ position }: { position: number }) {
-    const paths = Array.from({ length: 36 }, (_, i) => ({
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    // Reduce paths on mobile for better performance
+    const pathCount = isMobile ? 12 : 36;
+    const paths = Array.from({ length: pathCount }, (_, i) => ({
         id: i,
         d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
             380 - i * 5 * position
@@ -39,7 +54,7 @@ function FloatingPaths({ position }: { position: number }) {
                             pathOffset: [0, 1, 0],
                         }}
                         transition={{
-                            duration: 20 + Math.random() * 10,
+                            duration: isMobile ? 30 + Math.random() * 15 : 20 + Math.random() * 10,
                             repeat: Number.POSITIVE_INFINITY,
                             ease: "linear",
                         }}
@@ -55,13 +70,24 @@ export function BackgroundPaths({
 }: {
     title?: string;
 }) {
+    const [isMobile, setIsMobile] = useState(false);
     const words = title.split(" ");
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     return (
         <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white dark:bg-neutral-950">
             <div className="absolute inset-0">
                 <FloatingPaths position={1} />
-                <FloatingPaths position={-1} />
+                {!isMobile && <FloatingPaths position={-1} />}
             </div>
 
             <div className="relative z-10 container mx-auto px-4 md:px-6 text-center">
@@ -90,7 +116,7 @@ export function BackgroundPaths({
                                             stiffness: 150,
                                             damping: 25,
                                         }}
-                                        className="inline-block text-transparent bg-clip-text 
+                                                        className="inline-block text-transparent bg-clip-text 
                                         bg-gradient-to-r from-neutral-900 to-neutral-700/80 
                                         dark:from-white dark:to-white/80"
                                     >
