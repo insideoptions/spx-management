@@ -55,7 +55,9 @@ export const HeroHeader = () => {
                               const founderSection = document.querySelector('[data-section="founder"]');
                               console.log('Founder section found:', founderSection);
                               if (founderSection) {
-                                founderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                const rect = founderSection.getBoundingClientRect();
+                                const offsetTop = window.pageYOffset + rect.top - 100;
+                                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                               }
                             }, 200);
                           } else if (item.href === "#wsj") {
@@ -63,7 +65,9 @@ export const HeroHeader = () => {
                             setTimeout(() => {
                               const wsjSection = document.querySelector('[data-section="wsj"]');
                               if (wsjSection) {
-                                wsjSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                const rect = wsjSection.getBoundingClientRect();
+                                const offsetTop = window.pageYOffset + rect.top - 100;
+                                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                               }
                             }, 100);
                           }
@@ -93,7 +97,9 @@ export const HeroHeader = () => {
                               const founderSection = document.querySelector('[data-section="founder"]');
                               console.log('Mobile founder section found:', founderSection);
                               if (founderSection) {
-                                founderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                const rect = founderSection.getBoundingClientRect();
+                                const offsetTop = window.pageYOffset + rect.top - 100;
+                                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                               }
                             }, 200);
                           } else if (item.href === "#wsj") {
@@ -102,7 +108,9 @@ export const HeroHeader = () => {
                             setTimeout(() => {
                               const wsjSection = document.querySelector('[data-section="wsj"]');
                               if (wsjSection) {
-                                wsjSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                const rect = wsjSection.getBoundingClientRect();
+                                const offsetTop = window.pageYOffset + rect.top - 100;
+                                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                               }
                             }, 100);
                           }
