@@ -141,7 +141,7 @@ export function BackgroundPaths({
                                 ? { delay: 0.8, duration: 0.5 }
                                 : { delay: 1.5, duration: 0.8 }
                         }
-                        className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-neutral-600 dark:text-neutral-400 max-w-4xl mx-auto leading-relaxed"
+                        className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-neutral-600 dark:text-white max-w-4xl mx-auto leading-relaxed"
                     >
                         Unlike most quant strategies optimized only in backtests, ours was forged and<br />fine-tuned in live markets
                     </motion.p>
