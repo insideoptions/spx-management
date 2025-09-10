@@ -56,7 +56,7 @@ export const HeroHeader = () => {
                               const founderSection = document.querySelector('[data-section="founder"]');
                               console.log('Founder section found:', founderSection);
                               if (founderSection) {
-                                founderSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                founderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                               }
                             }, 200);
                           } else if (item.href === "#wsj") {
@@ -94,7 +94,7 @@ export const HeroHeader = () => {
                               const founderSection = document.querySelector('[data-section="founder"]');
                               console.log('Mobile founder section found:', founderSection);
                               if (founderSection) {
-                                founderSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                founderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
                               }
                             }, 200);
                           } else if (item.href === "#wsj") {
