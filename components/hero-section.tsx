@@ -5,7 +5,7 @@ import Image from "next/image";
 import { HeroHeader } from "@/components/hero8-header";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
-import { BackgroundPaths } from "@/components/ui/background-paths";
+import { StockTickerBackground } from "@/components/ui/stock-ticker-background";
 import VideoPlayer from "@/components/ui/video-player";
 import { AnimatedSection, ScrollProgress } from "@/components/ui/scroll-animations";
 
@@ -16,7 +16,7 @@ export default function HeroSection() {
       <HeroHeader />
       <main className="overflow-x-hidden">
         <AnimatedSection className="relative" delay={0}>
-          <BackgroundPaths title="SPXMGMT" />
+          <StockTickerBackground />
         </AnimatedSection>
         
         <AnimatedSection className="relative" delay={0.2}>
