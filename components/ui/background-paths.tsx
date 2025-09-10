@@ -90,7 +90,7 @@ export function BackgroundPaths({
                 {!isMobile && <FloatingPaths position={-1} />}
             </div>
 
-            <div className="relative z-10 container mx-auto px-4 md:px-6 text-center transform translate-y-[-10vh] md:translate-y-0">
+            <div className="relative z-10 container mx-auto px-4 md:px-6 text-center transform translate-y-[-2vh] md:translate-y-0">
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
