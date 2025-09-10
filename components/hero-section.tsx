@@ -93,82 +93,60 @@ export default function HeroSection() {
         <AnimatedSection className="relative" delay={0.4} data-section="wsj">
           <div className="relative z-20 pb-16 pt-4 md:pb-24 md:pt-8 lg:pb-32 lg:pt-12">
             <div className="relative mx-auto max-w-6xl px-6">
-              <div className="mx-auto max-w-4xl text-center">
-                <div className="mt-16 max-w-6xl mx-auto">
-                  <a 
-                    href="https://www.wsj.com/finance/investing/meet-captain-condor-the-options-trader-whose-crew-can-move-markets-71e4942d"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block transition-transform hover:scale-[1.02] duration-300"
-                  >
-                    <div className="bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-950/20 dark:to-yellow-950/20 rounded-3xl p-8 md:p-12 border border-amber-200/50 dark:border-amber-800/30 hover:border-amber-300/70 dark:hover:border-amber-700/50 transition-colors cursor-pointer">
-                      <div className="text-center mb-8">
-                        <div className="inline-flex items-center gap-3 mb-4">
-                          <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
-                            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 2L3.09 8.26L12 22L20.91 8.26L12 2Z"/>
-                            </svg>
-                          </div>
-                          <span className="text-sm font-medium text-amber-700 dark:text-amber-300 uppercase tracking-wider">
-                            As Featured In
-                          </span>
-                        </div>
-                        <h2 className="wsj-font text-4xl md:text-5xl lg:text-6xl text-amber-900 dark:text-amber-100 mb-2">
-                          The Wall Street Journal
-                        </h2>
-                        <p className="text-base text-amber-700 dark:text-amber-300 mb-4">
-                          Markets & Finance | Investing
+              <div className="mt-16 max-w-6xl mx-auto">
+                <a 
+                  href="https://www.wsj.com/finance/investing/meet-captain-condor-the-options-trader-whose-crew-can-move-markets-71e4942d"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block transition-transform hover:scale-[1.01] duration-300"
+                >
+                  <div className="bg-gradient-to-br from-slate-700 to-slate-800 rounded-3xl p-8 md:p-12 lg:p-16 border border-slate-600/30 hover:border-slate-500/50 transition-colors cursor-pointer">
+                    {/* Mobile: Stacked Layout */}
+                    <div className="lg:hidden text-center text-white">
+                      <div className="mb-8">
+                        <p className="text-sm font-medium text-slate-300 uppercase tracking-wider mb-4">
+                          AS FEATURED IN
                         </p>
-                        <p className="text-lg text-amber-800 dark:text-amber-200 max-w-2xl mx-auto leading-relaxed mb-8">
-                          &ldquo;Meet &apos;Captain Condor,&apos; the Options Trader Whose Crew Can Move Markets&rdquo;
-                        </p>
-                      </div>
-                      
-                      {/* Article Images Grid */}
-                      <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
-                          <img
-                            src="/wsj1.png"
-                            alt="Wall Street Journal article page 1 featuring David Chau as Captain Condor"
-                            className="w-full h-auto object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
-                        </div>
-                        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
-                          <img
-                            src="/wsj2.png"
-                            alt="Wall Street Journal article page 2 featuring David Chau as Captain Condor"
-                            className="w-full h-auto object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
+                        <div className="mb-6">
+                          <h2 className="wsj-font text-4xl md:text-5xl font-bold mb-2">WSJ</h2>
+                          <p className="text-sm text-slate-300">THE WALL STREET JOURNAL</p>
                         </div>
                       </div>
                       
-                      <div className="bg-white/80 dark:bg-black/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm border border-amber-200/30 dark:border-amber-700/30">
-                        <div className="flex items-start gap-4 mb-4">
-                          <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                            <span className="text-white text-sm font-bold">&ldquo;</span>
-                          </div>
-                          <div>
-                            <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed italic mb-4">
-                              &ldquo;An options trader&apos;s gutsy bets have drawn followers, and a few nicknames&rdquo;
-                            </p>
-                            <div className="flex items-center gap-3">
-                              <div className="wsj-font text-lg font-bold text-amber-900 dark:text-amber-100">
-                                The Wall Street Journal
-                              </div>
-                              <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                              <span className="text-sm text-amber-700 dark:text-amber-300">
-                                Click to read full article →
-                              </span>
-                            </div>
-                          </div>
-                        </div>
+                      <div>
+                        <h3 className="text-2xl md:text-3xl font-bold mb-6">Led by David Chau</h3>
+                        <p className="text-base leading-relaxed text-slate-200">
+                          An options trading expert known as &apos;Captain Condor&apos; and featured in The Wall Street Journal — SPX MGMT combines deep expertise with a disciplined, adaptable approach honed through years of live market execution. David&apos;s real-world trading insight and dedication to transparency empower clients to navigate volatile markets with confidence and clarity.
+                        </p>
                       </div>
                     </div>
-                  </a>
-                </div>
 
+                    {/* Desktop: Side by Side Layout */}
+                    <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center text-white">
+                      {/* Left Side - WSJ Logo */}
+                      <div className="text-center lg:text-left">
+                        <p className="text-sm font-medium text-slate-300 uppercase tracking-wider mb-6">
+                          AS FEATURED IN
+                        </p>
+                        <div>
+                          <h2 className="wsj-font text-6xl xl:text-7xl font-bold mb-3">WSJ</h2>
+                          <p className="text-sm text-slate-300 tracking-wide">THE WALL STREET JOURNAL</p>
+                        </div>
+                      </div>
+
+                      {/* Right Side - Content */}
+                      <div>
+                        <h3 className="text-3xl xl:text-4xl font-bold mb-6">Led by David Chau</h3>
+                        <p className="text-lg leading-relaxed text-slate-200">
+                          An options trading expert known as &apos;Captain Condor&apos; and featured in The Wall Street Journal — SPX MGMT combines deep expertise with a disciplined, adaptable approach honed through years of live market execution. David&apos;s real-world trading insight and dedication to transparency empower clients to navigate volatile markets with confidence and clarity.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div className="mx-auto max-w-4xl text-center">
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row">
                   <Button 
                     size="lg" 
