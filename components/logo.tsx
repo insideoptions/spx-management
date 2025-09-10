@@ -5,14 +5,14 @@ export const Logo = ({ className }: { className?: string }) => {
     return (
         <>
             <Image
-                src="/black.png"
+                src="/blacklog.png"
                 alt="SPX MGMT"
                 width={120}
                 height={40}
                 className={cn('h-8 w-auto dark:hidden', className)}
             />
             <Image
-                src="/white.png"
+                src="/whitelog.png"
                 alt="SPX MGMT"
                 width={120}
                 height={40}
