@@ -10,8 +10,7 @@ const menuItems = [
   { name: "Founder", href: "#founder" },
   { name: "Features", href: "#wsj" },
   { name: "Solution", href: "#link" },
-  { name: "Pricing", href: "#link" },
-  { name: "About", href: "#link" },
+  { name: "Contact Us", href: "#contact" },
 ];
 
 export const HeroHeader = () => {
