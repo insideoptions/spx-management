@@ -84,7 +84,7 @@ export function BackgroundPaths({
     }, []);
 
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+        <div className="relative min-h-screen md:min-h-screen h-screen md:h-auto w-full flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0">
                 <FloatingPaths position={1} />
                 {!isMobile && <FloatingPaths position={-1} />}
@@ -97,7 +97,7 @@ export function BackgroundPaths({
                     transition={{ duration: 2 }}
                     className="max-w-4xl mx-auto"
                 >
-                    <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-8 tracking-tighter">
+                    <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-4 sm:mb-6 md:mb-8 tracking-tighter">
                         {words.map((word, wordIndex) => (
                             <span
                                 key={wordIndex}
@@ -141,7 +141,7 @@ export function BackgroundPaths({
                                 ? { delay: 0.6, duration: 0.8 }
                                 : { delay: 1.5, duration: 0.8 }
                         }
-                        className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-neutral-600 dark:text-white max-w-4xl mx-auto leading-relaxed"
+                        className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8 text-neutral-600 dark:text-white max-w-4xl mx-auto leading-relaxed"
                     >
                         Unlike most quant strategies optimized only in backtests, ours was forged and<br />fine-tuned in live markets
                     </motion.p>
