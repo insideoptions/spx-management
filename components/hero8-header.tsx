@@ -60,20 +60,23 @@ export const HeroHeader = () => {
                         href={item.href}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
                         onClick={(e) => {
+                          e.preventDefault();
                           if (item.href === "#founder") {
-                            e.preventDefault();
                             const founderSection = document.querySelector('[data-section="founder"]') as HTMLElement;
                             if (founderSection) {
-                              // Use offsetTop for consistent positioning regardless of current scroll
                               const targetY = founderSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
                             }
                           } else if (item.href === "#wsj") {
-                            e.preventDefault();
                             const wsjSection = document.querySelector('[data-section="wsj"]') as HTMLElement;
                             if (wsjSection) {
-                              // Use offsetTop for consistent positioning regardless of current scroll
                               const targetY = wsjSection.offsetTop - 120;
+                              window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            }
+                          } else if (item.href === "#solutions") {
+                            const solutionsSection = document.querySelector('#solutions') as HTMLElement;
+                            if (solutionsSection) {
+                              const targetY = solutionsSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
                             }
                           }
@@ -96,22 +99,24 @@ export const HeroHeader = () => {
                         href={item.href}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
                         onClick={(e) => {
+                          e.preventDefault();
+                          setMenuState(false); // Close mobile menu first
                           if (item.href === "#founder") {
-                            e.preventDefault();
-                            setMenuState(false); // Close mobile menu first
                             const founderSection = document.querySelector('[data-section="founder"]') as HTMLElement;
                             if (founderSection) {
-                              // Use offsetTop for consistent positioning regardless of current scroll
                               const targetY = founderSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
                             }
                           } else if (item.href === "#wsj") {
-                            e.preventDefault();
-                            setMenuState(false); // Close mobile menu first
                             const wsjSection = document.querySelector('[data-section="wsj"]') as HTMLElement;
                             if (wsjSection) {
-                              // Use offsetTop for consistent positioning regardless of current scroll
                               const targetY = wsjSection.offsetTop - 120;
+                              window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            }
+                          } else if (item.href === "#solutions") {
+                            const solutionsSection = document.querySelector('#solutions') as HTMLElement;
+                            if (solutionsSection) {
+                              const targetY = solutionsSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
                             }
                           }
