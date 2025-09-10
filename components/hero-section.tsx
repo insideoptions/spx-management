@@ -95,60 +95,78 @@ export default function HeroSection() {
             <div className="relative mx-auto max-w-6xl px-6">
               <div className="mx-auto max-w-4xl text-center">
                 <div className="mt-16 max-w-6xl mx-auto">
-                  <div className="bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-950/20 dark:to-yellow-950/20 rounded-3xl p-8 md:p-12 border border-amber-200/50 dark:border-amber-800/30">
-                    <div className="text-center mb-8">
-                      <div className="inline-flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
-                          <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2L3.09 8.26L12 22L20.91 8.26L12 2Z"/>
-                          </svg>
+                  <a 
+                    href="https://www.wsj.com/finance/investing/meet-captain-condor-the-options-trader-whose-crew-can-move-markets-71e4942d"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block transition-transform hover:scale-[1.02] duration-300"
+                  >
+                    <div className="bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-950/20 dark:to-yellow-950/20 rounded-3xl p-8 md:p-12 border border-amber-200/50 dark:border-amber-800/30 hover:border-amber-300/70 dark:hover:border-amber-700/50 transition-colors cursor-pointer">
+                      <div className="text-center mb-8">
+                        <div className="inline-flex items-center gap-3 mb-4">
+                          <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
+                            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2L3.09 8.26L12 22L20.91 8.26L12 2Z"/>
+                            </svg>
+                          </div>
+                          <span className="text-sm font-medium text-amber-700 dark:text-amber-300 uppercase tracking-wider">
+                            As Featured In
+                          </span>
                         </div>
-                        <span className="text-sm font-medium text-amber-700 dark:text-amber-300 uppercase tracking-wider">
-                          As Featured In
-                        </span>
+                        <h2 className="wsj-font text-4xl md:text-5xl lg:text-6xl text-amber-900 dark:text-amber-100 mb-2">
+                          The Wall Street Journal
+                        </h2>
+                        <p className="text-base text-amber-700 dark:text-amber-300 mb-4">
+                          Markets & Finance | Investing
+                        </p>
+                        <p className="text-lg text-amber-800 dark:text-amber-200 max-w-2xl mx-auto leading-relaxed mb-8">
+                          &ldquo;Meet &apos;Captain Condor,&apos; the Options Trader Whose Crew Can Move Markets&rdquo;
+                        </p>
                       </div>
-                      <h2 className="wsj-font text-4xl md:text-5xl lg:text-6xl text-amber-900 dark:text-amber-100 mb-4">
-                        The Wall Street Journal
-                      </h2>
-                      <p className="text-lg text-amber-800 dark:text-amber-200 max-w-2xl mx-auto leading-relaxed mb-8">
-                        &ldquo;Meet &apos;Captain Condor,&apos; the Options Trader Whose Crew Can Move Markets&rdquo;
-                      </p>
-                    </div>
-                    
-                    {/* Article Screenshot */}
-                    <div className="mb-8">
-                      <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
-                        <img
-                          src="/Screenshot 2025-09-09 at 4.34.25 PM.png"
-                          alt="Wall Street Journal article featuring David Chau as Captain Condor"
-                          className="w-full h-auto"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-white/80 dark:bg-black/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm border border-amber-200/30 dark:border-amber-700/30">
-                      <div className="flex items-start gap-4 mb-4">
-                        <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                          <span className="text-white text-sm font-bold">&ldquo;</span>
+                      
+                      {/* Article Images Grid */}
+                      <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
+                          <img
+                            src="/wsj1.png"
+                            alt="Wall Street Journal article page 1 featuring David Chau as Captain Condor"
+                            className="w-full h-auto object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
                         </div>
-                        <div>
-                          <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed italic mb-4">
-                            &ldquo;An options trader&apos;s gutsy bets have drawn followers, and a few nicknames&rdquo;
-                          </p>
-                          <div className="flex items-center gap-3">
-                            <div className="wsj-font text-lg font-bold text-amber-900 dark:text-amber-100">
-                              The Wall Street Journal
+                        <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-white">
+                          <img
+                            src="/wsj2.png"
+                            alt="Wall Street Journal article page 2 featuring David Chau as Captain Condor"
+                            className="w-full h-auto object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none"></div>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-white/80 dark:bg-black/20 rounded-2xl p-6 md:p-8 backdrop-blur-sm border border-amber-200/30 dark:border-amber-700/30">
+                        <div className="flex items-start gap-4 mb-4">
+                          <div className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                            <span className="text-white text-sm font-bold">&ldquo;</span>
+                          </div>
+                          <div>
+                            <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed italic mb-4">
+                              &ldquo;An options trader&apos;s gutsy bets have drawn followers, and a few nicknames&rdquo;
+                            </p>
+                            <div className="flex items-center gap-3">
+                              <div className="wsj-font text-lg font-bold text-amber-900 dark:text-amber-100">
+                                The Wall Street Journal
+                              </div>
+                              <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+                              <span className="text-sm text-amber-700 dark:text-amber-300">
+                                Click to read full article →
+                              </span>
                             </div>
-                            <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
-                            <span className="text-sm text-amber-700 dark:text-amber-300">
-                              Markets & Finance | Investing
-                            </span>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
 
                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row">
