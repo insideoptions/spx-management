@@ -17,14 +17,14 @@ const GridBackground = ({
   
   // Theme-aware dot colors
   const themeDotColor = isDarkMode 
-    ? 'rgba(255, 255, 255, 0.4)' // White dots for dark mode
-    : 'rgba(0, 0, 0, 0.4)'; // Dark dots for light mode
+    ? 'rgba(255, 255, 255, 0.25)' // White dots for dark mode
+    : 'rgba(0, 0, 0, 0.25)'; // Dark dots for light mode
 
   return (
     <div className="absolute inset-0 min-h-screen overflow-hidden" style={{ backgroundColor }}>
       {/* Animated Grid Pattern */}
       <div 
-        className={`absolute inset-0 opacity-80 ${animated ? 'animate-pulse' : ''}`}
+        className={`absolute inset-0 opacity-60 ${animated ? 'animate-pulse' : ''}`}
         style={{
           backgroundImage: `
             radial-gradient(circle at center, ${themeDotColor} ${dotSize}px, transparent ${dotSize}px)
@@ -36,7 +36,7 @@ const GridBackground = ({
       
       {/* Secondary Grid Layer for Depth */}
       <div 
-        className="absolute inset-0 opacity-30"
+        className="absolute inset-0 opacity-20"
         style={{
           backgroundImage: `
             radial-gradient(circle at center, ${themeDotColor} 1px, transparent 1px)
