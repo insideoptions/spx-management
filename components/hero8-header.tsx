@@ -55,12 +55,14 @@ export const HeroHeader = () => {
                               const founderSection = document.querySelector('[data-section="founder"]');
                               console.log('Founder section found:', founderSection);
                               if (founderSection) {
-                                // Wait for any dynamic content to load, then scroll
+                                // Force layout recalculation and wait longer for content to stabilize
+                                founderSection.getBoundingClientRect(); // Force layout
                                 setTimeout(() => {
                                   const rect = founderSection.getBoundingClientRect();
                                   const offsetTop = window.pageYOffset + rect.top - 140;
+                                  console.log('Founder scroll calculation:', { rect, offsetTop, pageYOffset: window.pageYOffset });
                                   window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                                }, 100);
+                                }, 300);
                               }
                             }, 200);
                           } else if (item.href === "#wsj") {
@@ -68,14 +70,16 @@ export const HeroHeader = () => {
                             setTimeout(() => {
                               const wsjSection = document.querySelector('[data-section="wsj"]');
                               if (wsjSection) {
-                                // Wait for any dynamic content to load, then scroll
+                                // Force layout recalculation and wait longer for content to stabilize
+                                wsjSection.getBoundingClientRect(); // Force layout
                                 setTimeout(() => {
                                   const rect = wsjSection.getBoundingClientRect();
                                   const offsetTop = window.pageYOffset + rect.top - 140;
+                                  console.log('WSJ scroll calculation:', { rect, offsetTop, pageYOffset: window.pageYOffset });
                                   window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                                }, 100);
+                                }, 300);
                               }
-                            }, 100);
+                            }, 200);
                           }
                         }}
                       >
@@ -103,12 +107,14 @@ export const HeroHeader = () => {
                               const founderSection = document.querySelector('[data-section="founder"]');
                               console.log('Mobile founder section found:', founderSection);
                               if (founderSection) {
-                                // Wait for any dynamic content to load, then scroll
+                                // Force layout recalculation and wait longer for content to stabilize
+                                founderSection.getBoundingClientRect(); // Force layout
                                 setTimeout(() => {
                                   const rect = founderSection.getBoundingClientRect();
                                   const offsetTop = window.pageYOffset + rect.top - 140;
+                                  console.log('Mobile founder scroll calculation:', { rect, offsetTop, pageYOffset: window.pageYOffset });
                                   window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                                }, 100);
+                                }, 300);
                               }
                             }, 200);
                           } else if (item.href === "#wsj") {
@@ -117,14 +123,16 @@ export const HeroHeader = () => {
                             setTimeout(() => {
                               const wsjSection = document.querySelector('[data-section="wsj"]');
                               if (wsjSection) {
-                                // Wait for any dynamic content to load, then scroll
+                                // Force layout recalculation and wait longer for content to stabilize
+                                wsjSection.getBoundingClientRect(); // Force layout
                                 setTimeout(() => {
                                   const rect = wsjSection.getBoundingClientRect();
                                   const offsetTop = window.pageYOffset + rect.top - 140;
+                                  console.log('Mobile WSJ scroll calculation:', { rect, offsetTop, pageYOffset: window.pageYOffset });
                                   window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                                }, 100);
+                                }, 300);
                               }
-                            }, 100);
+                            }, 200);
                           }
                         }}
                       >
