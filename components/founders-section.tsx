@@ -6,18 +6,19 @@ export default function FoundersSection() {
   return (
     <section className="py-16 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-medium md:text-5xl lg:text-6xl mb-6">
-            Meet Our Founder
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Leadership driven by expertise, innovation, and a proven track record in quantitative trading
-          </p>
-        </div>
+        <div className="bg-white/10 dark:bg-black/20 backdrop-blur-sm border border-white/20 dark:border-white/10 rounded-2xl p-8 md:p-12">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-medium md:text-5xl lg:text-6xl mb-6 text-black dark:text-white">
+              Meet Our Founder
+            </h2>
+            <p className="text-lg text-black/70 dark:text-white/70 max-w-2xl mx-auto">
+              Leadership driven by expertise, innovation, and a proven track record in quantitative trading
+            </p>
+          </div>
 
-        <div className="max-w-4xl mx-auto">
-          <Card className="overflow-hidden border-0 shadow-lg bg-card/50 backdrop-blur-sm">
-            <CardContent className="p-8 md:p-12">
+          <div className="max-w-4xl mx-auto">
+            <Card className="overflow-hidden border-0 shadow-lg bg-white/50 dark:bg-black/30 backdrop-blur-sm border-white/30 dark:border-white/20">
+              <CardContent className="p-8 md:p-12">
               <div className="grid gap-8 md:grid-cols-3 md:gap-12">
                 {/* Placeholder for future photo */}
                 <div className="md:col-span-1">
@@ -34,13 +35,13 @@ export default function FoundersSection() {
                 {/* Bio Content */}
                 <div className="md:col-span-2 space-y-6">
                   <div>
-                    <h3 className="text-2xl font-semibold mb-2">
+                    <h3 className="text-2xl font-semibold mb-2 text-black dark:text-white">
                       David Chau, Founder and Chief Investment Officer
                     </h3>
                     <div className="w-12 h-1 bg-primary rounded-full mb-4"></div>
                   </div>
 
-                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <div className="space-y-4 text-black/70 dark:text-white/70 leading-relaxed">
                     <p>
                       David Chau is the Founder and Chief Investment Officer of SPX MGMT LLC, 
                       a boutique alternative investment firm specializing in non-directional 
@@ -80,6 +81,7 @@ export default function FoundersSection() {
               </div>
             </CardContent>
           </Card>
+        </div>
         </div>
       </div>
     </section>

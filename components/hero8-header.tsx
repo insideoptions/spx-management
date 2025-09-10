@@ -10,7 +10,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 const menuItems = [
   { name: "Founder", href: "#founder" },
   { name: "Features", href: "#wsj" },
-  { name: "Solution", href: "#link" },
+  { name: "Solution", href: "#solutions" },
   { name: "Contact Us", href: "#contact" },
 ];
 
