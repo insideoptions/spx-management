@@ -7,7 +7,7 @@ import React from "react";
 import { ModeToggle } from "./mode-toggle";
 
 const menuItems = [
-  { name: "Features", href: "#link" },
+  { name: "Founder", href: "#founder" },
   { name: "Solution", href: "#link" },
   { name: "Pricing", href: "#link" },
   { name: "About", href: "#link" },
@@ -48,6 +48,15 @@ export const HeroHeader = () => {
                       <Link
                         href={item.href}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                        onClick={(e) => {
+                          if (item.href === "#founder") {
+                            e.preventDefault();
+                            const founderSection = document.querySelector('[data-section="founder"]');
+                            if (founderSection) {
+                              founderSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                          }
+                        }}
                       >
                         <span>{item.name}</span>
                       </Link>
@@ -65,6 +74,16 @@ export const HeroHeader = () => {
                       <Link
                         href={item.href}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                        onClick={(e) => {
+                          if (item.href === "#founder") {
+                            e.preventDefault();
+                            const founderSection = document.querySelector('[data-section="founder"]');
+                            if (founderSection) {
+                              founderSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                            setMenuState(false); // Close mobile menu
+                          }
+                        }}
                       >
                         <span>{item.name}</span>
                       </Link>
