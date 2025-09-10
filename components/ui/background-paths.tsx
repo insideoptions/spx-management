@@ -3,67 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-
-function FloatingPaths({ position }: { position: number }) {
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-        
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
-    }, []);
-
-    // Reduce paths on mobile for better performance
-    const pathCount = isMobile ? 12 : 36;
-    const paths = Array.from({ length: pathCount }, (_, i) => ({
-        id: i,
-        d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
-            380 - i * 5 * position
-        } -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${
-            152 - i * 5 * position
-        } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${
-            684 - i * 5 * position
-        } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
-        color: `rgba(15,23,42,${0.1 + i * 0.03})`,
-        width: 0.5 + i * 0.03,
-    }));
-
-    return (
-        <div className="absolute inset-0 pointer-events-none">
-            <svg
-                className="w-full h-full text-slate-950 dark:text-white"
-                viewBox="0 0 696 316"
-                fill="none"
-            >
-                <title>Background Paths</title>
-                {paths.map((path) => (
-                    <motion.path
-                        key={path.id}
-                        d={path.d}
-                        stroke="currentColor"
-                        strokeWidth={path.width}
-                        strokeOpacity={isMobile ? 0.03 + path.id * 0.005 : 0.008 + path.id * 0.002}
-                        initial={{ pathLength: 0.3, opacity: isMobile ? 0.08 : 0.03 }}
-                        animate={{
-                            pathLength: 1,
-                            opacity: isMobile ? [0.04, 0.08, 0.04] : [0.015, 0.03, 0.015],
-                            pathOffset: [0, 1, 0],
-                        }}
-                        transition={{
-                            duration: isMobile ? 30 + Math.random() * 15 : 20 + Math.random() * 10,
-                            repeat: Number.POSITIVE_INFINITY,
-                            ease: "linear",
-                        }}
-                    />
-                ))}
-            </svg>
-        </div>
-    );
-}
+import Waves from "./waves";
 
 export function BackgroundPaths({
     title = "Background Paths",
@@ -86,8 +26,18 @@ export function BackgroundPaths({
     return (
         <div className="relative min-h-screen md:min-h-screen h-screen md:h-auto w-full flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0">
-                <FloatingPaths position={1} />
-                {!isMobile && <FloatingPaths position={-1} />}
+                <Waves 
+                    colors={['rgba(15,23,42,0.08)', 'rgba(15,23,42,0.06)', 'rgba(15,23,42,0.04)']}
+                    waveSpeed={0.015}
+                    waveAmpX={30}
+                    waveAmpY={15}
+                    xGap={isMobile ? 16 : 12}
+                    yGap={isMobile ? 16 : 12}
+                    friction={0.98}
+                    tension={0.008}
+                    maxCursorMove={80}
+                    className="animate-wave-pulse"
+                />
             </div>
 
             <div className="relative z-10 container mx-auto px-4 md:px-6 text-center transform translate-y-[-2vh] md:translate-y-0">

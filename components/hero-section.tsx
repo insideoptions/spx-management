@@ -113,11 +113,20 @@ export default function HeroSection() {
                         </div>
                       </div>
                       
-                      <div>
+                      <div className="mb-8">
                         <h3 className="text-2xl md:text-3xl font-bold mb-6">Led by David Chau</h3>
-                        <p className="text-base leading-relaxed text-slate-200">
+                        <p className="text-base leading-relaxed text-slate-200 mb-6">
                           An options trading expert known as &apos;Captain Condor&apos; and featured in The Wall Street Journal — SPX MGMT combines deep expertise with a disciplined, adaptable approach honed through years of live market execution. David&apos;s real-world trading insight and dedication to transparency empower clients to navigate volatile markets with confidence and clarity.
                         </p>
+                      </div>
+
+                      {/* Mobile WSJ3 Image */}
+                      <div className="flex justify-center">
+                        <img 
+                          src="/wsj3.png" 
+                          alt="Wall Street Journal Article Feature"
+                          className="w-full max-w-sm h-auto rounded-lg shadow-lg border border-slate-600/30"
+                        />
                       </div>
                     </div>
 
