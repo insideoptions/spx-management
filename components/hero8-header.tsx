@@ -55,9 +55,12 @@ export const HeroHeader = () => {
                               const founderSection = document.querySelector('[data-section="founder"]');
                               console.log('Founder section found:', founderSection);
                               if (founderSection) {
-                                const rect = founderSection.getBoundingClientRect();
-                                const offsetTop = window.pageYOffset + rect.top - 60;
-                                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                                // Wait for any dynamic content to load, then scroll
+                                setTimeout(() => {
+                                  const rect = founderSection.getBoundingClientRect();
+                                  const offsetTop = window.pageYOffset + rect.top - 60;
+                                  window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                                }, 100);
                               }
                             }, 200);
                           } else if (item.href === "#wsj") {
@@ -65,9 +68,12 @@ export const HeroHeader = () => {
                             setTimeout(() => {
                               const wsjSection = document.querySelector('[data-section="wsj"]');
                               if (wsjSection) {
-                                const rect = wsjSection.getBoundingClientRect();
-                                const offsetTop = window.pageYOffset + rect.top - 60;
-                                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                                // Wait for any dynamic content to load, then scroll
+                                setTimeout(() => {
+                                  const rect = wsjSection.getBoundingClientRect();
+                                  const offsetTop = window.pageYOffset + rect.top - 60;
+                                  window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                                }, 100);
                               }
                             }, 100);
                           }
@@ -97,9 +103,12 @@ export const HeroHeader = () => {
                               const founderSection = document.querySelector('[data-section="founder"]');
                               console.log('Mobile founder section found:', founderSection);
                               if (founderSection) {
-                                const rect = founderSection.getBoundingClientRect();
-                                const offsetTop = window.pageYOffset + rect.top - 60;
-                                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                                // Wait for any dynamic content to load, then scroll
+                                setTimeout(() => {
+                                  const rect = founderSection.getBoundingClientRect();
+                                  const offsetTop = window.pageYOffset + rect.top - 60;
+                                  window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                                }, 100);
                               }
                             }, 200);
                           } else if (item.href === "#wsj") {
@@ -108,9 +117,12 @@ export const HeroHeader = () => {
                             setTimeout(() => {
                               const wsjSection = document.querySelector('[data-section="wsj"]');
                               if (wsjSection) {
-                                const rect = wsjSection.getBoundingClientRect();
-                                const offsetTop = window.pageYOffset + rect.top - 60;
-                                window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                                // Wait for any dynamic content to load, then scroll
+                                setTimeout(() => {
+                                  const rect = wsjSection.getBoundingClientRect();
+                                  const offsetTop = window.pageYOffset + rect.top - 60;
+                                  window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                                }, 100);
                               }
                             }, 100);
                           }
