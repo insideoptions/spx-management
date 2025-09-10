@@ -34,12 +34,8 @@ const SPXPrice = () => {
       }
     };
 
+    // Fetch price only once on component mount
     fetchSPXPrice();
-    
-    // Refresh every 30 seconds during market hours
-    const interval = setInterval(fetchSPXPrice, 30000);
-    
-    return () => clearInterval(interval);
   }, []);
 
   if (loading) {
@@ -78,9 +74,6 @@ const SPXPrice = () => {
           {isPositive ? '+' : ''}{spxData.change.toFixed(2)} ({isPositive ? '+' : ''}{spxData.changePercent.toFixed(2)}%)
         </span>
       </div>
-      {!spxData.isMarketOpen && (
-        <span className="text-xs text-muted-foreground">(Closed)</span>
-      )}
     </div>
   );
 };
