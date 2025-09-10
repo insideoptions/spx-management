@@ -1,10 +1,11 @@
 "use client";
+import React, { useState } from "react";
 import Link from "next/link";
-import { Logo } from "./logo";
-import { Menu, X } from "lucide-react";
+import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
-import React from "react";
-import { ModeToggle } from "./mode-toggle";
+import { Menu, X } from "lucide-react";
+import SPXPrice from "@/components/spx-price";
+import { ModeToggle } from "@/components/mode-toggle";
 
 const menuItems = [
   { name: "Founder", href: "#founder" },
@@ -14,7 +15,7 @@ const menuItems = [
 ];
 
 export const HeroHeader = () => {
-  const [menuState, setMenuState] = React.useState(false);
+  const [menuState, setMenuState] = useState(false);
   return (
     <header>
       <nav
@@ -31,6 +32,11 @@ export const HeroHeader = () => {
               >
                 <Logo />
               </Link>
+              
+              {/* SPX Price - Center on mobile, hidden on desktop */}
+              <div className="lg:hidden">
+                <SPXPrice />
+              </div>
 
               <button
                 onClick={() => setMenuState(!menuState)}
@@ -41,7 +47,12 @@ export const HeroHeader = () => {
                 <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
               </button>
 
-              <div className="hidden lg:block">
+              <div className="hidden lg:flex lg:items-center lg:gap-8">
+                {/* SPX Price - Center on desktop */}
+                <div className="flex-1 flex justify-center">
+                  <SPXPrice />
+                </div>
+                
                 <ul className="flex gap-8 text-sm">
                   {menuItems.map((item, index) => (
                     <li key={index}>
