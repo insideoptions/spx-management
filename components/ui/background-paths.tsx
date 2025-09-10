@@ -108,14 +108,20 @@ export function BackgroundPaths({
                                         key={`${wordIndex}-${letterIndex}`}
                                         initial={{ y: 100, opacity: 0 }}
                                         animate={{ y: 0, opacity: 1 }}
-                                        transition={{
-                                            delay:
-                                                wordIndex * 0.1 +
-                                                letterIndex * 0.03,
-                                            type: "spring",
-                                            stiffness: 150,
-                                            damping: 25,
-                                        }}
+                                        transition={
+                            isMobile
+                                ? {
+                                      delay: wordIndex * 0.05 + letterIndex * 0.01,
+                                      duration: 0.3,
+                                      ease: "easeOut",
+                                  }
+                                : {
+                                      delay: wordIndex * 0.1 + letterIndex * 0.03,
+                                      type: "spring",
+                                      stiffness: 150,
+                                      damping: 25,
+                                  }
+                        }
                                                         className="inline-block text-transparent bg-clip-text 
                                         bg-gradient-to-r from-neutral-900 to-neutral-700/80 
                                         dark:from-white dark:to-white/80"
@@ -130,7 +136,11 @@ export function BackgroundPaths({
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.5, duration: 0.8 }}
+                        transition={
+                            isMobile
+                                ? { delay: 0.8, duration: 0.5 }
+                                : { delay: 1.5, duration: 0.8 }
+                        }
                         className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-neutral-600 dark:text-neutral-400 max-w-4xl mx-auto leading-relaxed"
                     >
                         Unlike most quant strategies optimized only in backtests, ours was forged and<br />fine-tuned in live markets
