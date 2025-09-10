@@ -41,7 +41,6 @@ const SPXPrice = () => {
   if (loading) {
     return (
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <span>SPX</span>
         <div className="w-16 h-4 bg-muted animate-pulse rounded"></div>
       </div>
     );
@@ -50,7 +49,6 @@ const SPXPrice = () => {
   if (error || !spxData) {
     return (
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <span>SPX</span>
         <span>--</span>
       </div>
     );
@@ -60,7 +58,6 @@ const SPXPrice = () => {
 
   return (
     <div className="flex items-center gap-2 text-sm">
-      <span className="text-muted-foreground">SPX</span>
       <span className="font-medium">
         ${spxData.price.toFixed(2)}
       </span>
