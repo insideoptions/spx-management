@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import Waves from "./waves";
+import { Waves } from "./waves";
 
 export function BackgroundPaths({
     title = "Background Paths",
@@ -27,15 +27,17 @@ export function BackgroundPaths({
         <div className="relative min-h-screen md:min-h-screen h-screen md:h-auto w-full flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0">
                 <Waves 
-                    colors={['rgba(15,23,42,0.08)', 'rgba(15,23,42,0.06)', 'rgba(15,23,42,0.04)']}
-                    waveSpeed={0.015}
-                    waveAmpX={30}
-                    waveAmpY={15}
-                    xGap={isMobile ? 16 : 12}
-                    yGap={isMobile ? 16 : 12}
-                    friction={0.98}
-                    tension={0.008}
-                    maxCursorMove={80}
+                    lineColor="rgba(var(--wave-color), 0.3)"
+                    backgroundColor="transparent"
+                    waveSpeedX={0.0125}
+                    waveSpeedY={0.005}
+                    waveAmpX={32}
+                    waveAmpY={16}
+                    xGap={isMobile ? 16 : 10}
+                    yGap={isMobile ? 40 : 32}
+                    friction={0.925}
+                    tension={0.005}
+                    maxCursorMove={100}
                     className="animate-wave-pulse"
                 />
             </div>

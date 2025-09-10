@@ -146,3 +146,12 @@
   0%, 100% { opacity: 0.4; }
   50% { opacity: 0.7; }
 }
+
+/* Wave color variables for dark/light mode */
+:root {
+  --wave-color: 59, 130, 246; /* Blue for light mode */
+}
+
+.dark {
+  --wave-color: 255, 255, 255; /* White for dark mode */
+}
