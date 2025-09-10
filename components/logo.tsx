@@ -12,7 +12,7 @@ export const Logo = ({ className }: { className?: string }) => {
                 className={cn('h-8 w-auto dark:hidden', className)}
             />
             <Image
-                src="/logo.png"
+                src="/logoblack.png"
                 alt="SPX MGMT"
                 width={120}
                 height={40}
