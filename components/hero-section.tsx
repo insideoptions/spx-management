@@ -80,8 +80,16 @@ export default function HeroSection() {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
 
-                {/* Wall Street Journal Featured Section */}
+        {/* Wall Street Journal Featured Section */}
+        <AnimatedSection className="relative" delay={0.4}>
+          <div className="relative z-20 pb-16 pt-4 md:pb-24 md:pt-8 lg:pb-32 lg:pt-12">
+            <div className="relative mx-auto max-w-6xl px-6">
+              <div className="mx-auto max-w-4xl text-center">
                 <div className="mt-16 max-w-6xl mx-auto">
                   <div className="bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-950/20 dark:to-yellow-950/20 rounded-3xl p-8 md:p-12 border border-amber-200/50 dark:border-amber-800/30">
                     <div className="text-center mb-8">
@@ -157,7 +165,7 @@ export default function HeroSection() {
           </div>
         </AnimatedSection>
         
-        <AnimatedSection className="pb-16 md:pb-32" delay={0.4}>
+        <AnimatedSection className="pb-16 md:pb-32" delay={0.6}>
           <div className="group relative m-auto max-w-6xl px-6">
             <div className="flex flex-col items-center md:flex-row">
               <div className="md:max-w-44 md:border-r md:pr-6">
