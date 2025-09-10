@@ -1,68 +1,48 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Settings2, Sparkles, Zap } from "lucide-react";
+import { Activity, TrendingUp } from "lucide-react";
 import { ReactNode } from "react";
 
 export default function Features() {
   return (
     <section className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent">
-      <div className="@container mx-auto max-w-5xl px-6">
-        <div className="text-center">
-          <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
-            Built to cover your needs
+      <div className="@container mx-auto max-w-6xl px-6">
+        <div className="text-center mb-12 md:mb-20">
+          <h2 className="text-balance text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
+            Our strategies are designed to deliver{" "}
+            <span className="text-blue-600 dark:text-blue-400">non-correlated returns</span>{" "}
+            while actively managing market risk, making them{" "}
+            <span className="text-blue-600 dark:text-blue-400">well-suited for sophisticated investors</span>{" "}
+            seeking alternatives to traditional active trading.
           </h2>
-          <p className="mt-4">
-            Libero sapiente aliquam quibusdam aspernatur, praesentium iusto
-            repellendus.
-          </p>
         </div>
-        <div className="@min-4xl:max-w-full @min-4xl:grid-cols-3 mx-auto mt-8 grid max-w-sm gap-6 *:text-center md:mt-16">
-          <Card className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
+        
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+          <Card className="group shadow-zinc-950/5 p-8">
+            <CardHeader className="pb-6 text-center">
               <CardDecorator>
-                <Zap className="size-6" aria-hidden />
+                <Activity className="size-8" aria-hidden />
               </CardDecorator>
-
-              <h3 className="mt-6 font-medium">Customizable</h3>
+              <h3 className="mt-6 text-xl font-semibold">Precision Risk Management</h3>
             </CardHeader>
 
-            <CardContent>
-              <p className="text-sm">
-                Extensive customization options, allowing you to tailor every
-                aspect to meet your specific needs.
+            <CardContent className="text-center">
+              <p className="text-base leading-relaxed text-muted-foreground">
+                Each trade is selected with precision, using structured risk management to protect your capital in any market environment.
               </p>
             </CardContent>
           </Card>
 
-          <Card className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
+          <Card className="group shadow-zinc-950/5 p-8">
+            <CardHeader className="pb-6 text-center">
               <CardDecorator>
-                <Settings2 className="size-6" aria-hidden />
+                <TrendingUp className="size-8" aria-hidden />
               </CardDecorator>
-
-              <h3 className="mt-6 font-medium">You have full control</h3>
+              <h3 className="mt-6 text-xl font-semibold">You invest — he executes.</h3>
             </CardHeader>
 
-            <CardContent>
-              <p className="mt-3 text-sm">
-                From design elements to functionality, you have complete control
-                to create a unique and personalized experience.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card className="group shadow-zinc-950/5">
-            <CardHeader className="pb-3">
-              <CardDecorator>
-                <Sparkles className="size-6" aria-hidden />
-              </CardDecorator>
-
-              <h3 className="mt-6 font-medium">Powered By AI</h3>
-            </CardHeader>
-
-            <CardContent>
-              <p className="mt-3 text-sm">
-                Elements to functionality, you have complete control to create a
-                unique experience.
+            <CardContent className="text-center">
+              <p className="text-base leading-relaxed text-muted-foreground">
+                David personally manages your capital using proven, non-directional strategies refined in live market conditions.
               </p>
             </CardContent>
           </Card>
