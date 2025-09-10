@@ -73,7 +73,7 @@ export const HeroHeader = () => {
                                 });
                                 // Add additional offset after scroll completes
                                 setTimeout(() => {
-                                  window.scrollBy({ top: -120, behavior: 'smooth' });
+                                  window.scrollBy({ top: -80, behavior: 'smooth' });
                                 }, 800);
                               }
                             }, 100);
@@ -89,7 +89,7 @@ export const HeroHeader = () => {
                                 });
                                 // Add additional offset after scroll completes
                                 setTimeout(() => {
-                                  window.scrollBy({ top: -120, behavior: 'smooth' });
+                                  window.scrollBy({ top: -80, behavior: 'smooth' });
                                 }, 800);
                               }
                             }, 100);
@@ -127,7 +127,7 @@ export const HeroHeader = () => {
                                 });
                                 // Add additional offset after scroll completes
                                 setTimeout(() => {
-                                  window.scrollBy({ top: -120, behavior: 'smooth' });
+                                  window.scrollBy({ top: -80, behavior: 'smooth' });
                                 }, 800);
                               }
                             }, 300);
@@ -144,7 +144,7 @@ export const HeroHeader = () => {
                                 });
                                 // Add additional offset after scroll completes
                                 setTimeout(() => {
-                                  window.scrollBy({ top: -120, behavior: 'smooth' });
+                                  window.scrollBy({ top: -80, behavior: 'smooth' });
                                 }, 800);
                               }
                             }, 300);
