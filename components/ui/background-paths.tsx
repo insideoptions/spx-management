@@ -105,9 +105,9 @@ export function BackgroundPaths({
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 1.5, duration: 0.8 }}
-                        className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-neutral-600 dark:text-neutral-400 max-w-4xl mx-auto leading-relaxed lg:whitespace-nowrap"
+                        className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-neutral-600 dark:text-neutral-400 max-w-4xl mx-auto leading-relaxed"
                     >
-                        Unlike most quant strategies optimized only in backtests, ours was forged and fine-tuned in live markets
+                        Unlike most quant strategies optimized only in backtests, ours was forged and<br />fine-tuned in live markets
                     </motion.p>
 
                     <div
