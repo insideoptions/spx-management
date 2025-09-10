@@ -54,10 +54,11 @@ export const HeroHeader = () => {
                             e.preventDefault();
                             setTimeout(() => {
                               const founderSection = document.querySelector('[data-section="founder"]');
+                              console.log('Founder section found:', founderSection);
                               if (founderSection) {
-                                founderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                founderSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
                               }
-                            }, 100);
+                            }, 200);
                           } else if (item.href === "#wsj") {
                             e.preventDefault();
                             setTimeout(() => {
@@ -91,10 +92,11 @@ export const HeroHeader = () => {
                             setMenuState(false); // Close mobile menu first
                             setTimeout(() => {
                               const founderSection = document.querySelector('[data-section="founder"]');
+                              console.log('Mobile founder section found:', founderSection);
                               if (founderSection) {
-                                founderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                founderSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
                               }
-                            }, 100);
+                            }, 200);
                           } else if (item.href === "#wsj") {
                             e.preventDefault();
                             setMenuState(false); // Close mobile menu first
