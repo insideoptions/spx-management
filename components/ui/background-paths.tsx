@@ -84,7 +84,7 @@ export function BackgroundPaths({
     }, []);
 
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
+        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden md:items-center items-start pt-16 sm:pt-12">
             <div className="absolute inset-0">
                 <FloatingPaths position={1} />
                 {!isMobile && <FloatingPaths position={-1} />}
