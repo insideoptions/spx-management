@@ -15,15 +15,15 @@ export default function HeroSection() {
         <section className="relative">
           <BackgroundPaths title="SPXMGMT" />
           <div className="absolute inset-0 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm"></div>
-          <div className="relative z-20 pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-44">
+          <div className="relative z-20 pb-16 pt-8 md:pb-24 lg:pb-32 lg:pt-16">
             <div className="relative mx-auto max-w-6xl px-6">
               <div className="mx-auto max-w-4xl text-center">
-                <h1 className="mt-8 max-w-4xl text-balance text-5xl font-medium md:text-6xl lg:mt-16 xl:text-7xl">
+                <h1 className="mt-4 max-w-4xl text-balance text-5xl font-medium md:text-6xl lg:mt-8 xl:text-7xl">
                   Meet Our Founder
                 </h1>
                 
                 {/* Video Interview Centerpiece */}
-                <div className="mt-12 max-w-4xl mx-auto">
+                <div className="mt-8 max-w-4xl mx-auto">
                   <div className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black/5 dark:bg-white/5">
                     <iframe
                       src="https://fintech.tv/?p=33722&embed=1"
@@ -38,8 +38,8 @@ export default function HeroSection() {
                   </p>
                 </div>
 
-                <div className="mt-16 max-w-4xl mx-auto">
-                  <div className="text-center mb-12">
+                <div className="mt-12 max-w-4xl mx-auto">
+                  <div className="text-center mb-8">
                     <h2 className="text-3xl font-bold mb-4">
                       David Chau
                     </h2>
@@ -83,7 +83,7 @@ export default function HeroSection() {
                 </div>
 
                 {/* Wall Street Journal Featured Section */}
-                <div className="mt-24 max-w-6xl mx-auto">
+                <div className="mt-16 max-w-6xl mx-auto">
                   <div className="bg-gradient-to-br from-amber-50 to-yellow-50 dark:from-amber-950/20 dark:to-yellow-950/20 rounded-3xl p-8 md:p-12 border border-amber-200/50 dark:border-amber-800/30">
                     <div className="text-center mb-8">
                       <div className="inline-flex items-center gap-3 mb-4">
