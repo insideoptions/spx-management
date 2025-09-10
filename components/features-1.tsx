@@ -8,11 +8,7 @@ export default function Features() {
       <div className="@container mx-auto max-w-6xl px-6">
         <div className="text-center mb-12 md:mb-20">
           <h2 className="text-balance text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
-            Our strategies are designed to deliver{" "}
-            <span className="text-blue-600 dark:text-blue-400">non-correlated returns</span>{" "}
-            while actively managing market risk, making them{" "}
-            <span className="text-blue-600 dark:text-blue-400">well-suited for sophisticated investors</span>{" "}
-            seeking alternatives to traditional active trading.
+            SPX MGMT LLC is an alternative investment firm formed in 2023 to provide sophisticated investors with an alternative to traditional active trading. Our strategies were developed and refined in live markets, not just back-tests, with the goal of delivering consistent returns while managing market risk.
           </h2>
         </div>
         
@@ -22,12 +18,12 @@ export default function Features() {
               <CardDecorator>
                 <Activity className="size-8" aria-hidden />
               </CardDecorator>
-              <h3 className="mt-6 text-xl font-semibold">Precision Risk Management</h3>
+              <h3 className="mt-6 text-xl font-semibold">Non-Correlated Returns</h3>
             </CardHeader>
 
             <CardContent className="text-center">
               <p className="text-base leading-relaxed text-muted-foreground">
-                Each trade is selected with precision, using structured risk management to protect your capital in any market environment.
+                Built to perform independently of market direction, the approach provides diversification benefits while managing exposure across varying conditions.
               </p>
             </CardContent>
           </Card>
@@ -37,12 +33,12 @@ export default function Features() {
               <CardDecorator>
                 <TrendingUp className="size-8" aria-hidden />
               </CardDecorator>
-              <h3 className="mt-6 text-xl font-semibold">You invest — he executes.</h3>
+              <h3 className="mt-6 text-xl font-semibold">Structured for Consistency</h3>
             </CardHeader>
 
             <CardContent className="text-center">
               <p className="text-base leading-relaxed text-muted-foreground">
-                David personally manages your capital using proven, non-directional strategies refined in live market conditions.
+                By targeting predictable money flows and option pricing dynamics, our objective is to generate high average monthly returns while maintaining balanced market risk.
               </p>
             </CardContent>
           </Card>
