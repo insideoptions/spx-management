@@ -71,7 +71,7 @@ export const HeroHeader = () => {
                                 requestAnimationFrame(() => {
                                   requestAnimationFrame(() => {
                                     const rect = founderSection.getBoundingClientRect();
-                                    const targetY = window.pageYOffset + rect.top - 60;
+                                    const targetY = window.pageYOffset + rect.top - 120;
                                     window.scrollTo({ top: targetY, behavior: 'smooth' });
                                   });
                                 });
@@ -88,7 +88,7 @@ export const HeroHeader = () => {
                                 requestAnimationFrame(() => {
                                   requestAnimationFrame(() => {
                                     const rect = wsjSection.getBoundingClientRect();
-                                    const targetY = window.pageYOffset + rect.top - 60;
+                                    const targetY = window.pageYOffset + rect.top - 120;
                                     window.scrollTo({ top: targetY, behavior: 'smooth' });
                                   });
                                 });
@@ -126,7 +126,7 @@ export const HeroHeader = () => {
                                 requestAnimationFrame(() => {
                                   requestAnimationFrame(() => {
                                     const rect = founderSection.getBoundingClientRect();
-                                    const targetY = window.pageYOffset + rect.top - 60;
+                                    const targetY = window.pageYOffset + rect.top - 120;
                                     window.scrollTo({ top: targetY, behavior: 'smooth' });
                                   });
                                 });
@@ -144,7 +144,7 @@ export const HeroHeader = () => {
                                 requestAnimationFrame(() => {
                                   requestAnimationFrame(() => {
                                     const rect = wsjSection.getBoundingClientRect();
-                                    const targetY = window.pageYOffset + rect.top - 60;
+                                    const targetY = window.pageYOffset + rect.top - 120;
                                     window.scrollTo({ top: targetY, behavior: 'smooth' });
                                   });
                                 });
