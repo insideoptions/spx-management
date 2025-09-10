@@ -12,7 +12,7 @@ const AnimatedSection = ({ children, className = "", delay = 0, ...props }: {
   const ref = useRef(null);
   const isInView = useInView(ref, { 
     once: false, 
-    margin: "-20%" 
+    margin: "-10%" 
   });
 
   const sectionVariants: Variants = {
