@@ -29,10 +29,10 @@ export async function GET() {
     
     if (isMarketOpen) {
       // Get real-time data during market hours
-      url = `https://api.polygon.io/v2/aggs/ticker/SPY/prev?adjusted=true&apikey=${POLYGON_API_KEY}`;
+      url = `https://api.polygon.io/v2/aggs/ticker/I:SPX/prev?adjusted=true&apikey=${POLYGON_API_KEY}`;
     } else {
       // Get previous close data when market is closed
-      url = `https://api.polygon.io/v2/aggs/ticker/SPY/range/1/day/${dateStr}/${dateStr}?adjusted=true&sort=asc&limit=1&apikey=${POLYGON_API_KEY}`;
+      url = `https://api.polygon.io/v2/aggs/ticker/I:SPX/range/1/day/${dateStr}/${dateStr}?adjusted=true&sort=asc&limit=1&apikey=${POLYGON_API_KEY}`;
     }
     
     const response = await fetch(url);
@@ -53,13 +53,10 @@ export async function GET() {
     const change = price - open;
     const changePercent = (change / open) * 100;
     
-    // Convert SPY to SPX (multiply by ~10 for approximation)
-    const spxPrice = price * 10;
-    const spxChange = change * 10;
-    
+    // I:SPX is already the actual SPX index, no conversion needed
     return NextResponse.json({
-      price: spxPrice,
-      change: spxChange,
+      price: price,
+      change: change,
       changePercent: changePercent,
       isMarketOpen: isMarketOpen
     });
