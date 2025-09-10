@@ -62,37 +62,38 @@ export const HeroHeader = () => {
                         onClick={(e) => {
                           if (item.href === "#founder") {
                             e.preventDefault();
+                            // Wait for any animations/layout changes to complete
                             setTimeout(() => {
                               const founderSection = document.querySelector('[data-section="founder"]');
-                              console.log('Founder section found:', founderSection);
                               if (founderSection) {
-                                founderSection.scrollIntoView({ 
-                                  behavior: 'smooth', 
-                                  block: 'start',
-                                  inline: 'nearest'
+                                // Force multiple layout recalculations to ensure accurate positioning
+                                founderSection.getBoundingClientRect();
+                                requestAnimationFrame(() => {
+                                  requestAnimationFrame(() => {
+                                    const rect = founderSection.getBoundingClientRect();
+                                    const targetY = window.pageYOffset + rect.top - 60;
+                                    window.scrollTo({ top: targetY, behavior: 'smooth' });
+                                  });
                                 });
-                                // Add additional offset after scroll completes
-                                setTimeout(() => {
-                                  window.scrollBy({ top: -80, behavior: 'smooth' });
-                                }, 800);
                               }
-                            }, 100);
+                            }, 200);
                           } else if (item.href === "#wsj") {
                             e.preventDefault();
+                            // Wait for any animations/layout changes to complete
                             setTimeout(() => {
                               const wsjSection = document.querySelector('[data-section="wsj"]');
                               if (wsjSection) {
-                                wsjSection.scrollIntoView({ 
-                                  behavior: 'smooth', 
-                                  block: 'start',
-                                  inline: 'nearest'
+                                // Force multiple layout recalculations to ensure accurate positioning
+                                wsjSection.getBoundingClientRect();
+                                requestAnimationFrame(() => {
+                                  requestAnimationFrame(() => {
+                                    const rect = wsjSection.getBoundingClientRect();
+                                    const targetY = window.pageYOffset + rect.top - 60;
+                                    window.scrollTo({ top: targetY, behavior: 'smooth' });
+                                  });
                                 });
-                                // Add additional offset after scroll completes
-                                setTimeout(() => {
-                                  window.scrollBy({ top: -80, behavior: 'smooth' });
-                                }, 800);
                               }
-                            }, 100);
+                            }, 200);
                           }
                         }}
                       >
@@ -116,38 +117,39 @@ export const HeroHeader = () => {
                           if (item.href === "#founder") {
                             e.preventDefault();
                             setMenuState(false); // Close mobile menu first
+                            // Wait for menu close animation and layout changes
                             setTimeout(() => {
                               const founderSection = document.querySelector('[data-section="founder"]');
-                              console.log('Mobile founder section found:', founderSection);
                               if (founderSection) {
-                                founderSection.scrollIntoView({ 
-                                  behavior: 'smooth', 
-                                  block: 'start',
-                                  inline: 'nearest'
+                                // Force multiple layout recalculations to ensure accurate positioning
+                                founderSection.getBoundingClientRect();
+                                requestAnimationFrame(() => {
+                                  requestAnimationFrame(() => {
+                                    const rect = founderSection.getBoundingClientRect();
+                                    const targetY = window.pageYOffset + rect.top - 60;
+                                    window.scrollTo({ top: targetY, behavior: 'smooth' });
+                                  });
                                 });
-                                // Add additional offset after scroll completes
-                                setTimeout(() => {
-                                  window.scrollBy({ top: -80, behavior: 'smooth' });
-                                }, 800);
                               }
-                            }, 300);
+                            }, 400);
                           } else if (item.href === "#wsj") {
                             e.preventDefault();
                             setMenuState(false); // Close mobile menu first
+                            // Wait for menu close animation and layout changes
                             setTimeout(() => {
                               const wsjSection = document.querySelector('[data-section="wsj"]');
                               if (wsjSection) {
-                                wsjSection.scrollIntoView({ 
-                                  behavior: 'smooth', 
-                                  block: 'start',
-                                  inline: 'nearest'
+                                // Force multiple layout recalculations to ensure accurate positioning
+                                wsjSection.getBoundingClientRect();
+                                requestAnimationFrame(() => {
+                                  requestAnimationFrame(() => {
+                                    const rect = wsjSection.getBoundingClientRect();
+                                    const targetY = window.pageYOffset + rect.top - 60;
+                                    window.scrollTo({ top: targetY, behavior: 'smooth' });
+                                  });
                                 });
-                                // Add additional offset after scroll completes
-                                setTimeout(() => {
-                                  window.scrollBy({ top: -80, behavior: 'smooth' });
-                                }, 800);
                               }
-                            }, 300);
+                            }, 400);
                           }
                         }}
                       >
