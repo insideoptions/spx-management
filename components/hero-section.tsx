@@ -18,9 +18,12 @@ export default function HeroSection() {
           <div className="relative z-20 pb-16 pt-8 md:pb-24 lg:pb-32 lg:pt-16">
             <div className="relative mx-auto max-w-6xl px-6">
               <div className="mx-auto max-w-4xl text-center">
-                <h1 className="mt-4 max-w-4xl text-balance text-5xl font-medium md:text-6xl lg:mt-8 xl:text-7xl">
+                <h1 className="mt-4 max-w-4xl text-balance text-3xl font-medium md:text-4xl lg:mt-8 xl:text-5xl">
                   Meet Our Founder
                 </h1>
+                <p className="mt-4 text-xl md:text-2xl font-semibold text-muted-foreground">
+                  David Chau &ldquo;aka&rdquo; Captain Condor
+                </p>
                 
                 {/* Video Interview Centerpiece */}
                 <div className="mt-8 max-w-4xl mx-auto">
