@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTheme } from 'next-themes';
 
 const GridBackground = ({ 
@@ -11,20 +11,30 @@ const GridBackground = ({
   animated = true 
 }) => {
   const { resolvedTheme } = useTheme();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Determine if we're in dark mode
   const isDarkMode = resolvedTheme === 'dark';
   
-  // Theme-aware dot colors
+  // Theme-aware dot colors with mobile enhancement
   const themeDotColor = isDarkMode 
-    ? 'rgba(255, 255, 255, 0.25)' // White dots for dark mode
-    : 'rgba(0, 0, 0, 0.25)'; // Dark dots for light mode
+    ? `rgba(255, 255, 255, ${isMobile ? 0.4 : 0.25})` // Enhanced for mobile
+    : `rgba(0, 0, 0, ${isMobile ? 0.4 : 0.25})`; // Enhanced for mobile
 
   return (
     <div className="absolute inset-0 min-h-screen overflow-hidden" style={{ backgroundColor }}>
       {/* Animated Grid Pattern */}
       <div 
-        className={`absolute inset-0 opacity-60 ${animated ? 'animate-pulse' : ''}`}
+        className={`absolute inset-0 ${isMobile ? 'opacity-80' : 'opacity-60'} ${animated ? 'animate-pulse' : ''}`}
         style={{
           backgroundImage: `
             radial-gradient(circle at center, ${themeDotColor} ${dotSize}px, transparent ${dotSize}px)
@@ -36,7 +46,7 @@ const GridBackground = ({
       
       {/* Secondary Grid Layer for Depth */}
       <div 
-        className="absolute inset-0 opacity-20"
+        className={`absolute inset-0 ${isMobile ? 'opacity-30' : 'opacity-20'}`}
         style={{
           backgroundImage: `
             radial-gradient(circle at center, ${themeDotColor} 1px, transparent 1px)
