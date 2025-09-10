@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useTheme } from 'next-themes';
 
 const GridBackground = ({ 
@@ -10,67 +10,47 @@ const GridBackground = ({
   backgroundColor = '#000000',
   animated = true 
 }) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const { theme, resolvedTheme } = useTheme();
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  const { resolvedTheme } = useTheme();
 
   // Determine if we're in dark mode
   const isDarkMode = resolvedTheme === 'dark';
   
-  // Mobile optimizations - revert to original lower opacity
-  const mobileGridSize = isMobile ? gridSize : gridSize;
-  const mobileOpacity = isMobile ? 0.4 : 0.6; // Reverted mobile opacity back to 0.4
-  const showSecondaryGrid = true;
-  const showGlowEffects = !isMobile && animated;
-
   // Theme-aware dot colors
   const themeDotColor = isDarkMode 
     ? 'rgba(255, 255, 255, 0.3)' // White dots for dark mode
-    : 'rgba(0, 0, 0, 0.15)'; // Dark dots for light mode
+    : 'rgba(0, 0, 0, 0.3)'; // Dark dots for light mode
 
   return (
     <div className="absolute inset-0 min-h-screen overflow-hidden" style={{ backgroundColor }}>
-      {/* Primary Grid Pattern */}
+      {/* Animated Grid Pattern */}
       <div 
-        className={`absolute inset-0 ${animated && !isMobile ? 'animate-pulse' : ''}`}
+        className={`absolute inset-0 opacity-60 ${animated ? 'animate-pulse' : ''}`}
         style={{
-          opacity: mobileOpacity,
           backgroundImage: `
             radial-gradient(circle at center, ${themeDotColor} ${dotSize}px, transparent ${dotSize}px)
           `,
-          backgroundSize: `${mobileGridSize}px ${mobileGridSize}px`,
+          backgroundSize: `${gridSize}px ${gridSize}px`,
           backgroundPosition: '0 0, 20px 20px'
         }}
       />
       
       {/* Secondary Grid Layer for Depth */}
-      {showSecondaryGrid && (
-        <div 
-          className={`absolute inset-0 ${isMobile ? 'opacity-10' : 'opacity-20'}`}
-          style={{
-            backgroundImage: `
-              radial-gradient(circle at center, ${themeDotColor} 1px, transparent 1px)
-            `,
-            backgroundSize: `${mobileGridSize * 2}px ${mobileGridSize * 2}px`,
-            backgroundPosition: `${mobileGridSize}px ${mobileGridSize}px`
-          }}
-        />
-      )}
+      <div 
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at center, ${themeDotColor} 1px, transparent 1px)
+          `,
+          backgroundSize: `${gridSize * 2}px ${gridSize * 2}px`,
+          backgroundPosition: `${gridSize}px ${gridSize}px`
+        }}
+      />
 
       {/* Gradient Overlay for Visual Interest */}
       <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20" />
       
-      {/* Animated Glow Effect - Desktop Only */}
-      {showGlowEffects && (
+      {/* Animated Glow Effect */}
+      {animated && (
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
