@@ -143,7 +143,7 @@ export function BackgroundPaths({
                         }
                         className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8 text-neutral-600 dark:text-white max-w-4xl mx-auto leading-relaxed"
                     >
-                        Unlike most quant strategies optimized only in backtests, ours was forged and<br />fine-tuned in live markets
+                        Unlike most quant strategies optimized only in backtests, ours was forged and<br />fine-tuned in live markets, adapting to real-world dynamics to deliver a distinct performance edge.
                     </motion.p>
 
                     <div
