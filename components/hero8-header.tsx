@@ -58,7 +58,7 @@ export const HeroHeader = () => {
                                 // Wait for any dynamic content to load, then scroll
                                 setTimeout(() => {
                                   const rect = founderSection.getBoundingClientRect();
-                                  const offsetTop = window.pageYOffset + rect.top - 100;
+                                  const offsetTop = window.pageYOffset + rect.top - 140;
                                   window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                                 }, 100);
                               }
@@ -71,7 +71,7 @@ export const HeroHeader = () => {
                                 // Wait for any dynamic content to load, then scroll
                                 setTimeout(() => {
                                   const rect = wsjSection.getBoundingClientRect();
-                                  const offsetTop = window.pageYOffset + rect.top - 100;
+                                  const offsetTop = window.pageYOffset + rect.top - 140;
                                   window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                                 }, 100);
                               }
@@ -106,7 +106,7 @@ export const HeroHeader = () => {
                                 // Wait for any dynamic content to load, then scroll
                                 setTimeout(() => {
                                   const rect = founderSection.getBoundingClientRect();
-                                  const offsetTop = window.pageYOffset + rect.top - 100;
+                                  const offsetTop = window.pageYOffset + rect.top - 140;
                                   window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                                 }, 100);
                               }
@@ -120,7 +120,7 @@ export const HeroHeader = () => {
                                 // Wait for any dynamic content to load, then scroll
                                 setTimeout(() => {
                                   const rect = wsjSection.getBoundingClientRect();
-                                  const offsetTop = window.pageYOffset + rect.top - 100;
+                                  const offsetTop = window.pageYOffset + rect.top - 140;
                                   window.scrollTo({ top: offsetTop, behavior: 'smooth' });
                                 }, 100);
                               }
