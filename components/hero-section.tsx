@@ -130,25 +130,34 @@ export default function HeroSection() {
                       </div>
                     </div>
 
-                    {/* Desktop: Side by Side Layout */}
-                    <div className="hidden lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center text-white">
+                    {/* Desktop: Three Column Layout */}
+                    <div className="hidden lg:grid lg:grid-cols-3 lg:gap-12 lg:items-center text-white">
                       {/* Left Side - WSJ Logo */}
                       <div className="text-center lg:text-left">
                         <p className="text-sm font-medium text-slate-300 uppercase tracking-wider mb-6">
                           AS FEATURED IN
                         </p>
                         <div>
-                          <h2 className="wsj-font text-6xl xl:text-7xl font-bold mb-3">WSJ</h2>
+                          <h2 className="wsj-font text-5xl xl:text-6xl font-bold mb-3">WSJ</h2>
                           <p className="text-sm text-slate-300 tracking-wide">THE WALL STREET JOURNAL</p>
                         </div>
                       </div>
 
-                      {/* Right Side - Content */}
+                      {/* Middle - Content */}
                       <div>
-                        <h3 className="text-3xl xl:text-4xl font-bold mb-6">Led by David Chau</h3>
-                        <p className="text-lg leading-relaxed text-slate-200">
-                          An options trading expert known as &apos;Captain Condor&apos; and featured in The Wall Street Journal — SPX MGMT combines deep expertise with a disciplined, adaptable approach honed through years of live market execution. David&apos;s real-world trading insight and dedication to transparency empower clients to navigate volatile markets with confidence and clarity.
+                        <h3 className="text-2xl xl:text-3xl font-bold mb-4">Led by David Chau</h3>
+                        <p className="text-base xl:text-lg leading-relaxed text-slate-200">
+                          An options trading expert known as &apos;Captain Condor&apos; and featured in The Wall Street Journal — SPX MGMT combines deep expertise with a disciplined, adaptable approach honed through years of live market execution.
                         </p>
+                      </div>
+
+                      {/* Right Side - WSJ3 Image */}
+                      <div className="flex justify-center lg:justify-end">
+                        <img 
+                          src="/wsj3.png" 
+                          alt="Wall Street Journal Article Feature"
+                          className="w-full max-w-xs xl:max-w-sm h-auto rounded-lg shadow-xl border border-slate-600/30 hover:shadow-2xl transition-shadow duration-300"
+                        />
                       </div>
                     </div>
                   </div>
