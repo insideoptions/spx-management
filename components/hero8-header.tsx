@@ -66,7 +66,6 @@ export const HeroHeader = () => {
                             if (founderSection) {
                               // Use offsetTop for consistent positioning regardless of current scroll
                               const targetY = founderSection.offsetTop - 120;
-                              console.log('FOUNDER CLICK - OffsetTop:', founderSection.offsetTop, 'Target Y:', targetY);
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
                             }
                           } else if (item.href === "#wsj") {
