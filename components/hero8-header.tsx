@@ -51,23 +51,46 @@ export const HeroHeader = () => {
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
                         onClick={(e) => {
                           e.preventDefault();
+                          console.log(`Desktop nav clicked: ${item.name} -> ${item.href}`);
                           if (item.href === "#founder") {
+                            console.log("Looking for founder section...");
                             const founderSection = document.querySelector('[data-section="founder"]') as HTMLElement;
                             if (founderSection) {
+                              console.log("Found founder section, scrolling...");
                               const targetY = founderSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            } else {
+                              console.log("Founder section not found!");
                             }
                           } else if (item.href === "#wsj") {
+                            console.log("Looking for WSJ section...");
                             const wsjSection = document.querySelector('[data-section="wsj"]') as HTMLElement;
                             if (wsjSection) {
+                              console.log("Found WSJ section, scrolling...");
                               const targetY = wsjSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            } else {
+                              console.log("WSJ section not found!");
                             }
                           } else if (item.href === "#solutions") {
+                            console.log("Looking for solutions section...");
                             const solutionsSection = document.querySelector('#solutions') as HTMLElement;
                             if (solutionsSection) {
+                              console.log("Found solutions section, scrolling...");
                               const targetY = solutionsSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            } else {
+                              console.log("Solutions section not found!");
+                            }
+                          } else if (item.href === "#contact") {
+                            console.log("Looking for contact section...");
+                            const contactSection = document.querySelector('#contact') as HTMLElement;
+                            if (contactSection) {
+                              console.log("Found contact section, scrolling...");
+                              const targetY = contactSection.offsetTop - 120;
+                              window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            } else {
+                              console.log("Contact section not found!");
                             }
                           }
                         }}
@@ -91,23 +114,46 @@ export const HeroHeader = () => {
                         onClick={(e) => {
                           e.preventDefault();
                           setMenuState(false); // Close mobile menu first
+                          console.log(`Mobile nav clicked: ${item.name} -> ${item.href}`);
                           if (item.href === "#founder") {
+                            console.log("Mobile: Looking for founder section...");
                             const founderSection = document.querySelector('[data-section="founder"]') as HTMLElement;
                             if (founderSection) {
+                              console.log("Mobile: Found founder section, scrolling...");
                               const targetY = founderSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            } else {
+                              console.log("Mobile: Founder section not found!");
                             }
                           } else if (item.href === "#wsj") {
+                            console.log("Mobile: Looking for WSJ section...");
                             const wsjSection = document.querySelector('[data-section="wsj"]') as HTMLElement;
                             if (wsjSection) {
+                              console.log("Mobile: Found WSJ section, scrolling...");
                               const targetY = wsjSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            } else {
+                              console.log("Mobile: WSJ section not found!");
                             }
                           } else if (item.href === "#solutions") {
+                            console.log("Mobile: Looking for solutions section...");
                             const solutionsSection = document.querySelector('#solutions') as HTMLElement;
                             if (solutionsSection) {
+                              console.log("Mobile: Found solutions section, scrolling...");
                               const targetY = solutionsSection.offsetTop - 120;
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            } else {
+                              console.log("Mobile: Solutions section not found!");
+                            }
+                          } else if (item.href === "#contact") {
+                            console.log("Mobile: Looking for contact section...");
+                            const contactSection = document.querySelector('#contact') as HTMLElement;
+                            if (contactSection) {
+                              console.log("Mobile: Found contact section, scrolling...");
+                              const targetY = contactSection.offsetTop - 120;
+                              window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            } else {
+                              console.log("Mobile: Contact section not found!");
                             }
                           }
                         }}
