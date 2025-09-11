@@ -25,7 +25,7 @@ export default function HeroSection() {
             <div className="relative mx-auto max-w-6xl px-6">
               {/* Header - centered on all devices */}
               <div className="mx-auto max-w-4xl text-center mb-12">
-                <h1 className="mt-2 max-w-4xl text-balance text-3xl font-medium md:text-4xl lg:mt-4 xl:text-5xl">
+                <h1 className="mt-2 max-w-4xl text-balance text-3xl md:text-4xl lg:text-5xl font-bold lg:mt-4">
                   Meet Our Founder
                 </h1>
                 <p className="mt-3 text-lg md:text-xl font-medium text-muted-foreground">
