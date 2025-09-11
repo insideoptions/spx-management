@@ -28,6 +28,7 @@ export default function ContactForm() {
 
   return (
     <section className="py-16 md:py-32">
+      <div id="contact" className="absolute -top-32"></div>
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
