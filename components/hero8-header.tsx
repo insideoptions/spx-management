@@ -9,7 +9,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 const menuItems = [
   { name: "Founder", href: "#founder" },
   { name: "Solution", href: "#solutions" },
-  { name: "Features", href: "#wsj" },
+  { name: "Features", href: "#features" },
   { name: "Contact Us", href: "#contact" },
 ];
 
@@ -46,8 +46,7 @@ export const HeroHeader = () => {
                 <ul className="flex gap-8 text-sm">
                   {menuItems.map((item, index) => (
                     <li key={index}>
-                      <Link
-                        href={item.href}
+                      <button
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
                         onClick={(e) => {
                           e.preventDefault();
@@ -96,7 +95,7 @@ export const HeroHeader = () => {
                         }}
                       >
                         <span>{item.name}</span>
-                      </Link>
+                      </button>
                     </li>
                   ))}
                 </ul>
@@ -108,8 +107,7 @@ export const HeroHeader = () => {
                 <ul className="space-y-6 text-base">
                   {menuItems.map((item, index) => (
                     <li key={index}>
-                      <Link
-                        href={item.href}
+                      <button
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
                         onClick={(e) => {
                           e.preventDefault();
@@ -159,7 +157,7 @@ export const HeroHeader = () => {
                         }}
                       >
                         <span>{item.name}</span>
-                      </Link>
+                      </button>
                     </li>
                   ))}
                 </ul>

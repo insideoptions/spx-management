@@ -34,9 +34,8 @@ export default function FooterSection() {
 
           <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
             {links.map((link, index) => (
-              <Link
+              <button
                 key={index}
-                href={link.href}
                 className="text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white block duration-150"
                 onClick={(e) => {
                   e.preventDefault();
@@ -52,7 +51,7 @@ export default function FooterSection() {
                 }}
               >
                 <span>{link.title}</span>
-              </Link>
+              </button>
             ))}
           </div>
           <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
