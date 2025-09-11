@@ -30,16 +30,16 @@ const GridBackground = ({
   
   // Always visible dot colors - default to white dots for dark theme
   const themeDotColor = isDarkMode 
-    ? `rgba(255, 255, 255, ${isMobile ? 0.4 : 0.25})` // White dots for dark theme
-    : `rgba(0, 0, 0, ${isMobile ? 0.4 : 0.25})`; // Black dots for light theme
+    ? `rgba(255, 255, 255, ${isMobile ? 0.08 : 0.05})` // White dots for dark theme
+    : `rgba(0, 0, 0, ${isMobile ? 0.08 : 0.05})`; // Black dots for light theme
 
   // Force render immediately without waiting for hydration
   if (!mounted) {
-    const fallbackDotColor = `rgba(255, 255, 255, ${isMobile ? 0.4 : 0.25})`;
+    const fallbackDotColor = `rgba(255, 255, 255, ${isMobile ? 0.08 : 0.05})`;
     return (
       <div className="absolute inset-0 min-h-screen overflow-hidden" style={{ backgroundColor }}>
         <div 
-          className={`absolute inset-0 ${isMobile ? 'opacity-80' : 'opacity-60'}`}
+          className={`absolute inset-0 ${isMobile ? 'opacity-20' : 'opacity-15'}`}
           style={{
             backgroundImage: `radial-gradient(circle at center, ${fallbackDotColor} ${dotSize}px, transparent ${dotSize}px)`,
             backgroundSize: `${gridSize}px ${gridSize}px`,
@@ -47,7 +47,7 @@ const GridBackground = ({
           }}
         />
         <div 
-          className={`absolute inset-0 ${isMobile ? 'opacity-30' : 'opacity-20'}`}
+          className={`absolute inset-0 ${isMobile ? 'opacity-10' : 'opacity-8'}`}
           style={{
             backgroundImage: `radial-gradient(circle at center, ${fallbackDotColor} 1px, transparent 1px)`,
             backgroundSize: `${gridSize * 2}px ${gridSize * 2}px`,
@@ -69,7 +69,7 @@ const GridBackground = ({
     <div className="absolute inset-0 min-h-screen overflow-hidden" style={{ backgroundColor }}>
       {/* Animated Grid Pattern - Always visible */}
       <div 
-        className={`absolute inset-0 ${isMobile ? 'opacity-80' : 'opacity-60'} ${animated ? 'animate-pulse' : ''}`}
+        className={`absolute inset-0 ${isMobile ? 'opacity-20' : 'opacity-15'} ${animated ? 'animate-pulse' : ''}`}
         style={{
           backgroundImage: `
             radial-gradient(circle at center, ${themeDotColor} ${dotSize}px, transparent ${dotSize}px)
@@ -81,7 +81,7 @@ const GridBackground = ({
       
       {/* Secondary Grid Layer for Depth */}
       <div 
-        className={`absolute inset-0 ${isMobile ? 'opacity-30' : 'opacity-20'}`}
+        className={`absolute inset-0 ${isMobile ? 'opacity-10' : 'opacity-8'}`}
         style={{
           backgroundImage: `
             radial-gradient(circle at center, ${themeDotColor} 1px, transparent 1px)
