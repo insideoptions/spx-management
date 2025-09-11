@@ -3,6 +3,7 @@ import Features from "@/components/features-1";
 import ContentSection from "@/components/content-1";
 import CallToAction from "@/components/call-to-action";
 import FooterSection from "@/components/footer";
+import { ScrollDebugger } from "@/components/scroll-debugger";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <ContentSection />
       <CallToAction />
       <FooterSection />
+      <ScrollDebugger />
     </>
   );
 }
