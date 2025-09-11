@@ -86,8 +86,14 @@ export const HeroHeader = () => {
                             const contactSection = document.querySelector('#contact') as HTMLElement;
                             if (contactSection) {
                               console.log("Found contact section, scrolling...");
+                              console.log("Contact section offsetTop:", contactSection.offsetTop);
+                              console.log("Current scroll position:", window.scrollY);
                               const targetY = contactSection.offsetTop - 120;
+                              console.log("Target scroll position:", targetY);
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
+                              setTimeout(() => {
+                                console.log("Scroll position after 1s:", window.scrollY);
+                              }, 1000);
                             } else {
                               console.log("Contact section not found!");
                             }
@@ -148,8 +154,14 @@ export const HeroHeader = () => {
                             const contactSection = document.querySelector('#contact') as HTMLElement;
                             if (contactSection) {
                               console.log("Mobile: Found contact section, scrolling...");
+                              console.log("Mobile: Contact section offsetTop:", contactSection.offsetTop);
+                              console.log("Mobile: Current scroll position:", window.scrollY);
                               const targetY = contactSection.offsetTop - 120;
+                              console.log("Mobile: Target scroll position:", targetY);
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
+                              setTimeout(() => {
+                                console.log("Mobile: Scroll position after 1s:", window.scrollY);
+                              }, 1000);
                             } else {
                               console.log("Mobile: Contact section not found!");
                             }
