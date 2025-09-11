@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { HeroHeader } from "@/components/hero8-header";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
-import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import { motion } from "framer-motion";
 import { BackgroundPaths } from "@/components/ui/background-paths";
+import SPXPrice from "@/components/spx-price";
+import Features from "@/components/features-1";
 import VideoPlayer from "@/components/ui/video-player";
 import { AnimatedSection, ScrollProgress } from "@/components/ui/scroll-animations";
 
@@ -88,6 +90,9 @@ export default function HeroSection() {
             </div>
           </div>
         </AnimatedSection>
+
+        {/* Solutions Section */}
+        <Features />
 
         {/* Wall Street Journal Featured Section */}
         <AnimatedSection className="relative" delay={0.4} data-section="wsj">
