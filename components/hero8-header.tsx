@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import SPXPrice from "@/components/spx-price";
 import { ModeToggle } from "@/components/mode-toggle";
 
 const menuItems = [
@@ -33,10 +32,6 @@ export const HeroHeader = () => {
                 <Logo />
               </Link>
               
-              {/* SPX Price - Center on mobile, hidden on desktop */}
-              <div className="lg:hidden">
-                <SPXPrice />
-              </div>
 
               <button
                 onClick={() => setMenuState(!menuState)}
@@ -48,11 +43,6 @@ export const HeroHeader = () => {
               </button>
 
               <div className="hidden lg:flex lg:items-center lg:gap-8">
-                {/* SPX Price - Center on desktop */}
-                <div className="flex-1 flex justify-center">
-                  <SPXPrice />
-                </div>
-                
                 <ul className="flex gap-8 text-sm">
                   {menuItems.map((item, index) => (
                     <li key={index}>
