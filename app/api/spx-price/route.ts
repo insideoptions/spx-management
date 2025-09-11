@@ -4,11 +4,15 @@ const POLYGON_API_KEY = '8sphNbdn_3hpMn3pOclzACAgKNLpP2Nm';
 
 export async function GET() {
   try {
+    console.log('SPX API called at:', new Date().toISOString());
+    
     // Get current date for market hours check
     const now = new Date();
     const easternTime = new Date(now.toLocaleString("en-US", {timeZone: "America/New_York"}));
     const hour = easternTime.getHours();
     const day = easternTime.getDay();
+    
+    console.log('Market check - Hour:', hour, 'Day:', day);
     
     // Market is open Monday-Friday 9:30 AM - 4:00 PM ET
     const minute = easternTime.getMinutes();
@@ -39,13 +43,16 @@ export async function GET() {
     }
     
     // Fetch current day data
+    console.log('Fetching from URL:', currentUrl);
     const response = await fetch(currentUrl);
     
     if (!response.ok) {
+      console.error('Polygon API error:', response.status, response.statusText);
       throw new Error(`Polygon API error: ${response.status}`);
     }
     
     const data = await response.json();
+    console.log('Polygon API response:', JSON.stringify(data, null, 2));
     
     let price;
     
@@ -126,8 +133,10 @@ export async function GET() {
     
   } catch (error) {
     console.error('Error fetching SPX data:', error);
+    console.error('Error details:', error instanceof Error ? error.message : 'Unknown error');
+    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
     return NextResponse.json(
-      { error: 'Failed to fetch SPX data' },
+      { error: 'Failed to fetch SPX data', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }
