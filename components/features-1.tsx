@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
+// Removed Card imports - using plain divs for better layout control
 import { Activity, TrendingUp } from "lucide-react";
 import { ReactNode } from "react";
 import { AnimatedSection } from "@/components/ui/scroll-animations";
@@ -19,37 +19,37 @@ export default function Features() {
             
             <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
               <AnimatedSection delay={0.4}>
-                <Card className="group shadow-zinc-950/5 p-8 backdrop-blur-sm border border-white/10 dark:border-white/5">
-                  <CardHeader className="pb-6 text-center">
+                <div className="group shadow-zinc-950/5 p-8 backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl">
+                  <div className="pb-6 text-center">
                     <CardDecorator>
                       <Activity className="size-8 text-black dark:text-white" aria-hidden />
                     </CardDecorator>
                     <h3 className="mt-6 text-xl font-semibold text-black dark:text-white">Non-Correlated Returns</h3>
-                  </CardHeader>
+                  </div>
 
-                  <CardContent className="text-center">
+                  <div className="text-center">
                     <p className="text-base leading-relaxed text-black/70 dark:text-white/70">
                       Built to perform independently of market direction, the approach provides diversification benefits while managing exposure across varying conditions.
                     </p>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </AnimatedSection>
 
               <AnimatedSection delay={0.5}>
-                <Card className="group shadow-zinc-950/5 p-8 backdrop-blur-sm border border-white/10 dark:border-white/5">
-                  <CardHeader className="pb-6 text-center">
+                <div className="group shadow-zinc-950/5 p-8 backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl">
+                  <div className="pb-6 text-center">
                     <CardDecorator>
                       <TrendingUp className="size-8 text-black dark:text-white" aria-hidden />
                     </CardDecorator>
                     <h3 className="mt-6 text-xl font-semibold text-black dark:text-white">Structured for Consistency</h3>
-                  </CardHeader>
+                  </div>
 
-                  <CardContent className="text-center">
+                  <div className="text-center">
                     <p className="text-base leading-relaxed text-black/70 dark:text-white/70">
                       By targeting predictable money flows and option pricing dynamics, our objective is to generate high average monthly returns while maintaining balanced market risk.
                     </p>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
               </AnimatedSection>
             </div>
           </div>
