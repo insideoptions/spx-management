@@ -39,29 +39,46 @@ export default function FooterSection() {
                 className="text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white block duration-150"
                 onClick={(e) => {
                   e.preventDefault();
+                  console.log(`=== Footer ${link.title} Button Clicked ===`);
                   if (link.href === "#founder") {
                     const founderSection = document.querySelector('[data-section="founder"]') as HTMLElement;
                     if (founderSection) {
                       const targetY = founderSection.offsetTop - 120;
+                      console.log(`Footer ${link.title} - Element found at offsetTop: ${founderSection.offsetTop}px`);
+                      console.log(`Footer ${link.title} - Target scroll position: ${targetY}px (offsetTop - 120)`);
                       window.scrollTo({ top: targetY, behavior: 'smooth' });
+                    } else {
+                      console.log(`Footer ${link.title} - Element not found!`);
                     }
                   } else if (link.href === "#wsj") {
                     const wsjSection = document.querySelector('[data-section="wsj"]') as HTMLElement;
                     if (wsjSection) {
                       const targetY = wsjSection.offsetTop - 120;
+                      console.log(`Footer ${link.title} - Element found at offsetTop: ${wsjSection.offsetTop}px`);
+                      console.log(`Footer ${link.title} - Target scroll position: ${targetY}px (offsetTop - 120)`);
                       window.scrollTo({ top: targetY, behavior: 'smooth' });
+                    } else {
+                      console.log(`Footer ${link.title} - Element not found!`);
                     }
                   } else if (link.href === "#solutions") {
                     const solutionsSection = document.querySelector('#solutions') as HTMLElement;
                     if (solutionsSection) {
                       const targetY = solutionsSection.offsetTop - 120;
+                      console.log(`Footer ${link.title} - Element found at offsetTop: ${solutionsSection.offsetTop}px`);
+                      console.log(`Footer ${link.title} - Target scroll position: ${targetY}px (offsetTop - 120)`);
                       window.scrollTo({ top: targetY, behavior: 'smooth' });
+                    } else {
+                      console.log(`Footer ${link.title} - Element not found!`);
                     }
                   } else if (link.href === "#contact") {
                     const contactSection = document.querySelector('#contact') as HTMLElement;
                     if (contactSection) {
                       const targetY = contactSection.offsetTop - 120;
+                      console.log(`Footer ${link.title} - Element found at offsetTop: ${contactSection.offsetTop}px`);
+                      console.log(`Footer ${link.title} - Target scroll position: ${targetY}px (offsetTop - 120)`);
                       window.scrollTo({ top: targetY, behavior: 'smooth' });
+                    } else {
+                      console.log(`Footer ${link.title} - Element not found!`);
                     }
                   }
                 }}
