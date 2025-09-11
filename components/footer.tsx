@@ -15,7 +15,7 @@ const links = [
   },
   {
     title: "Features",
-    href: "#features",
+    href: "#wsj",
   },
   {
     title: "Contact Us",
