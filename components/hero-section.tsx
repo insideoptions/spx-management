@@ -92,7 +92,9 @@ export default function HeroSection() {
         </AnimatedSection>
 
         {/* Solutions Section */}
-        <Features />
+        <div id="solutions">
+          <Features />
+        </div>
 
         {/* Wall Street Journal Featured Section */}
         <AnimatedSection className="relative" delay={0.4} data-section="wsj">
