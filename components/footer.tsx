@@ -39,14 +39,10 @@ export default function FooterSection() {
                 className="text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white block duration-150"
                 onClick={(e) => {
                   e.preventDefault();
-                  console.log(`Footer nav clicked: ${link.title} -> ${link.href}`);
                   const element = document.querySelector(link.href) as HTMLElement;
                   if (element) {
-                    console.log(`Found ${link.title} section, scrolling...`);
                     const targetY = element.offsetTop - 120;
                     window.scrollTo({ top: targetY, behavior: 'smooth' });
-                  } else {
-                    console.log(`${link.title} section not found!`);
                   }
                 }}
               >
