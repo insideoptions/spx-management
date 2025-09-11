@@ -21,7 +21,7 @@ export default function HeroSection() {
         </AnimatedSection>
         
         <AnimatedSection className="relative" delay={0.2} data-section="founder">
-          <div className="relative z-20 pb-16 pt-4 md:pb-24 md:pt-8 lg:pb-32 lg:pt-12">
+          <div id="founder" className="relative z-20 pb-16 pt-4 md:pb-24 md:pt-8 lg:pb-32 lg:pt-12">
             <div className="relative mx-auto max-w-6xl px-6">
               {/* Header - centered on all devices */}
               <div className="mx-auto max-w-4xl text-center mb-12">
@@ -166,21 +166,6 @@ export default function HeroSection() {
                 </a>
               </div>
 
-              <div className="mx-auto max-w-4xl text-center">
-                <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row">
-                  <Button 
-                    size="lg" 
-                    className="px-8 py-3 text-base font-semibold"
-                    disabled
-                  >
-                    Learn More About Our Approach
-                    <span className="ml-2 opacity-60">→</span>
-                  </Button>
-                  <p className="text-sm text-muted-foreground mt-2">
-                    Form submission coming soon
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </AnimatedSection>

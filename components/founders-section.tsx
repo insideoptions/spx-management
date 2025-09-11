@@ -64,19 +64,6 @@ export default function FoundersSection() {
                     </p>
                   </div>
 
-                  <div className="pt-6">
-                    <Button 
-                      size="lg" 
-                      className="px-8 py-3 text-base font-semibold"
-                      disabled
-                    >
-                      Learn More About Our Approach
-                      <span className="ml-2 opacity-60">→</span>
-                    </Button>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Form submission coming soon
-                    </p>
-                  </div>
                 </div>
               </div>
             </CardContent>

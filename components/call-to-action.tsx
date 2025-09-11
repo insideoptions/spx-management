@@ -125,7 +125,7 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="email@example.com"
-                className="w-full px-4 py-3 rounded-lg bg-white/10 dark:bg-white/10 border border-white/20 dark:border-white/20 text-white dark:text-white placeholder-white/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                className="w-full px-4 py-3 rounded-lg bg-black/10 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder-black/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                 required
               />
             </div>
