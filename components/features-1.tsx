@@ -1,52 +1,61 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Activity, TrendingUp } from "lucide-react";
 import { ReactNode } from "react";
+import { AnimatedSection } from "@/components/ui/scroll-animations";
 
 export default function Features() {
   return (
-    <section id="solutions" className="py-16 md:py-32">
-      <div className="@container mx-auto max-w-6xl px-6">
-        <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12">
-          <div className="text-center mb-12 md:mb-20">
-            <p className="text-balance text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-black dark:text-white max-w-4xl mx-auto">
-              SPX MGMT LLC is an alternative investment firm formed in 2023 to provide sophisticated investors with an alternative to traditional active trading. Our strategies were developed and refined in live markets, not just back-tests, with the goal of delivering consistent returns while managing market risk.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
-            <Card className="group shadow-zinc-950/5 p-8 backdrop-blur-sm border border-white/10 dark:border-white/5">
-              <CardHeader className="pb-6 text-center">
-                <CardDecorator>
-                  <Activity className="size-8 text-black dark:text-white" aria-hidden />
-                </CardDecorator>
-                <h3 className="mt-6 text-xl font-semibold text-black dark:text-white">Non-Correlated Returns</h3>
-              </CardHeader>
-
-              <CardContent className="text-center">
-                <p className="text-base leading-relaxed text-black/70 dark:text-white/70">
-                  Built to perform independently of market direction, the approach provides diversification benefits while managing exposure across varying conditions.
+    <AnimatedSection className="relative" delay={0.2}>
+      <section id="solutions" className="py-16 md:py-32">
+        <div className="@container mx-auto max-w-6xl px-6">
+          <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12">
+            <AnimatedSection delay={0.3}>
+              <div className="text-center mb-12 md:mb-20">
+                <p className="text-balance text-lg md:text-xl lg:text-2xl font-medium leading-relaxed text-black dark:text-white max-w-4xl mx-auto">
+                  SPX MGMT LLC is an alternative investment firm formed in 2023 to provide sophisticated investors with an alternative to traditional active trading. Our strategies were developed and refined in live markets, not just back-tests, with the goal of delivering consistent returns while managing market risk.
                 </p>
-              </CardContent>
-            </Card>
+              </div>
+            </AnimatedSection>
+            
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+              <AnimatedSection delay={0.4}>
+                <Card className="group shadow-zinc-950/5 p-8 backdrop-blur-sm border border-white/10 dark:border-white/5">
+                  <CardHeader className="pb-6 text-center">
+                    <CardDecorator>
+                      <Activity className="size-8 text-black dark:text-white" aria-hidden />
+                    </CardDecorator>
+                    <h3 className="mt-6 text-xl font-semibold text-black dark:text-white">Non-Correlated Returns</h3>
+                  </CardHeader>
 
-            <Card className="group shadow-zinc-950/5 p-8 backdrop-blur-sm border border-white/10 dark:border-white/5">
-              <CardHeader className="pb-6 text-center">
-                <CardDecorator>
-                  <TrendingUp className="size-8 text-black dark:text-white" aria-hidden />
-                </CardDecorator>
-                <h3 className="mt-6 text-xl font-semibold text-black dark:text-white">Structured for Consistency</h3>
-              </CardHeader>
+                  <CardContent className="text-center">
+                    <p className="text-base leading-relaxed text-black/70 dark:text-white/70">
+                      Built to perform independently of market direction, the approach provides diversification benefits while managing exposure across varying conditions.
+                    </p>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
 
-              <CardContent className="text-center">
-                <p className="text-base leading-relaxed text-black/70 dark:text-white/70">
-                  By targeting predictable money flows and option pricing dynamics, our objective is to generate high average monthly returns while maintaining balanced market risk.
-                </p>
-              </CardContent>
-            </Card>
+              <AnimatedSection delay={0.5}>
+                <Card className="group shadow-zinc-950/5 p-8 backdrop-blur-sm border border-white/10 dark:border-white/5">
+                  <CardHeader className="pb-6 text-center">
+                    <CardDecorator>
+                      <TrendingUp className="size-8 text-black dark:text-white" aria-hidden />
+                    </CardDecorator>
+                    <h3 className="mt-6 text-xl font-semibold text-black dark:text-white">Structured for Consistency</h3>
+                  </CardHeader>
+
+                  <CardContent className="text-center">
+                    <p className="text-base leading-relaxed text-black/70 dark:text-white/70">
+                      By targeting predictable money flows and option pricing dynamics, our objective is to generate high average monthly returns while maintaining balanced market risk.
+                    </p>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </AnimatedSection>
   );
 }
 
