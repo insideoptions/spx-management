@@ -6,7 +6,6 @@ import { HeroHeader } from "@/components/hero8-header";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { motion } from "framer-motion";
 import { BackgroundPaths } from "@/components/ui/background-paths";
-import SPXPrice from "@/components/spx-price";
 import Features from "@/components/features-1";
 import VideoPlayer from "@/components/ui/video-player";
 import { AnimatedSection, ScrollProgress } from "@/components/ui/scroll-animations";
