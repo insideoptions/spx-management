@@ -10,10 +10,13 @@ export default function Features() {
           <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12">
             <div className="text-center mb-12 md:mb-20">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-8">
-                Solution
+                What We Do
               </h2>
               <p className="text-balance text-lg md:text-xl lg:text-2xl leading-relaxed text-black dark:text-white max-w-4xl mx-auto">
-                SPX MGMT LLC is an alternative investment firm formed in 2023 to provide sophisticated investors with an alternative to traditional active trading. Our strategies were developed and refined in live markets, not just back-tests, with the goal of delivering consistent returns while managing market risk.
+                SPX MGMT LLC is an alternative investment firm established in 2023 to provide investors with a systematic, risk-managed approach to trading index options. Our strategies are grounded in non-directional frameworks and have been refined in live market environments, rather than relying solely on back-tested results.
+              </p>
+              <p className="text-balance text-lg md:text-xl lg:text-2xl leading-relaxed text-black dark:text-white max-w-4xl mx-auto mt-6">
+                By focusing on statistical edge and disciplined execution, we seek to deliver consistent, risk-adjusted returns while preserving capital through varying market conditions. Our process emphasizes transparency, repeatability, and institutional-level risk controls, offering sophisticated investors an alternative to traditional active trading models.
               </p>
             </div>
               
