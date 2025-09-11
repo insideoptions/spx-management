@@ -1,5 +1,8 @@
-import { Logo } from "@/components/logo";
+"use client";
+
 import Link from "next/link";
+import { Logo } from "@/components/logo";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const links = [
   {
