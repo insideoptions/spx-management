@@ -31,7 +31,7 @@ export default function ContactForm() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
-          <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12 bg-black/5 dark:bg-white/5">
+          <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12 bg-black/20 dark:bg-white/5">
             <div className="space-y-6">
               {/* Logo */}
               <div className="flex justify-center mb-6">
@@ -78,7 +78,7 @@ export default function ContactForm() {
           </div>
 
           {/* Contact Form */}
-          <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12 bg-black/5 dark:bg-white/5">
+          <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12 bg-black/20 dark:bg-white/5">
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

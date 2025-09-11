@@ -21,7 +21,8 @@ export default function HeroSection() {
         </AnimatedSection>
         
         <AnimatedSection className="relative" delay={0.2} data-section="founder">
-          <div id="founder" className="relative z-20 pb-16 pt-4 md:pb-24 md:pt-8 lg:pb-32 lg:pt-12">
+          <div className="relative z-20 pb-16 pt-4 md:pb-24 md:pt-8 lg:pb-32 lg:pt-12">
+            <div id="founder" className="absolute -top-32"></div>
             <div className="relative mx-auto max-w-6xl px-6">
               {/* Header - centered on all devices */}
               <div className="mx-auto max-w-4xl text-center mb-12">
