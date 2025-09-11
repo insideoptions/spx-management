@@ -30,17 +30,9 @@ export default function ContactForm() {
       <div className="mx-auto max-w-2xl px-6">
         <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12 bg-black/5 dark:bg-white/5">
           <div className="text-center mb-8">
-            <h2 className="text-balance text-3xl font-semibold lg:text-4xl text-white dark:text-white mb-4">
-              Book Your Free 30 Minute, No Obligation
+            <h2 className="text-balance text-3xl font-semibold lg:text-4xl text-white dark:text-white mb-6">
+              Learn more about SPX MGMT LLC
             </h2>
-            <h3 className="text-balance text-2xl font-semibold lg:text-3xl text-primary dark:text-primary mb-6">
-              Strategy Call Now
-            </h3>
-            <p className="text-white/80 dark:text-white/80 leading-relaxed">
-              Join 1,100+ traders who discovered how to win in the market with just one 
-              trade a day— making their money work smarter, not harder, while they live life 
-              on their own terms.
-            </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -119,7 +111,7 @@ export default function ContactForm() {
               size="lg" 
               className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 text-lg"
             >
-              Schedule Free Strategy Call Now
+              Submit
             </Button>
           </form>
         </div>
