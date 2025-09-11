@@ -25,7 +25,7 @@ const links = [
 
 export default function FooterSection() {
   return (
-    <footer className="py-16 md:py-32">
+    <footer className="py-20 sm:py-24 md:py-32">
       <div className="mx-auto max-w-5xl px-6">
         <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12">
           <Link href="/" aria-label="go home" className="mx-auto block size-fit">

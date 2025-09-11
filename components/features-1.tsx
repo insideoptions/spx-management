@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/ui/scroll-animations";
 
 export default function Features() {
   return (
-    <section className="py-16 md:py-32">
+    <section id="solutions" className="py-20 sm:py-24 md:py-32">
         <div className="@container mx-auto max-w-6xl px-6">
           <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12">
             <div className="text-center mb-12 md:mb-20">

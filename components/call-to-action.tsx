@@ -27,9 +27,9 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-32">
+    <section id="contact" className="py-20 sm:py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-12">
           {/* Contact Information */}
           <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12 bg-black/20 dark:bg-white/5">
             <div className="space-y-6">

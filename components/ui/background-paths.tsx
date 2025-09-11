@@ -62,7 +62,7 @@ export function BackgroundPaths({
                     transition={{ duration: 2 }}
                     className="max-w-4xl mx-auto"
                 >
-                    <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-4 sm:mb-6 md:mb-8 tracking-tighter">
+                    <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold mb-8 sm:mb-10 md:mb-12 tracking-tighter">
                         {words.map((word, wordIndex) => (
                             <span
                                 key={wordIndex}
@@ -106,7 +106,7 @@ export function BackgroundPaths({
                                 ? { delay: 0.6, duration: 0.8 }
                                 : { delay: 1.5, duration: 0.8 }
                         }
-                        className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8 text-neutral-600 dark:text-white max-w-4xl mx-auto leading-relaxed"
+                        className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 md:mb-12 text-neutral-600 dark:text-white max-w-4xl mx-auto leading-relaxed"
                     >
                         Unlike most quant strategies optimized only in backtests, ours was forged and<br />fine-tuned in live markets, adapting to real-world dynamics to deliver a distinct performance edge.
                     </motion.p>
