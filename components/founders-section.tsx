@@ -8,7 +8,7 @@ export default function FoundersSection() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-medium md:text-5xl lg:text-6xl mb-6 text-black dark:text-white">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white mb-8">
               Meet Our Founder
             </h2>
             <p className="text-lg text-black/70 dark:text-white/70 max-w-2xl mx-auto">
