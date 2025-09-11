@@ -123,6 +123,19 @@ export function BackgroundPaths({
                             text-black dark:text-white transition-all duration-300 
                             group-hover:-translate-y-0.5 border border-black/10 dark:border-white/10
                             hover:shadow-md dark:hover:shadow-neutral-800/50"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                console.log("=== Discover Excellence Button Clicked ===");
+                                const solutionsSection = document.querySelector('#solutions') as HTMLElement;
+                                if (solutionsSection) {
+                                    const targetY = solutionsSection.offsetTop - 120;
+                                    console.log(`Discover Excellence - Element found at offsetTop: ${solutionsSection.offsetTop}px`);
+                                    console.log(`Discover Excellence - Target scroll position: ${targetY}px (offsetTop - 120)`);
+                                    window.scrollTo({ top: targetY, behavior: 'smooth' });
+                                } else {
+                                    console.log("Discover Excellence - Solutions section not found!");
+                                }
+                            }}
                         >
                             <span className="opacity-90 group-hover:opacity-100 transition-opacity">
                                 Discover Excellence
