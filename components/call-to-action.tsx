@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import Image from "next/image";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -32,6 +33,24 @@ export default function ContactForm() {
           {/* Contact Information */}
           <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12 bg-black/5 dark:bg-white/5">
             <div className="space-y-6">
+              {/* Logo */}
+              <div className="flex justify-center mb-6">
+                <Image
+                  src="/blacklog.png"
+                  alt="SPX MGMT LLC Logo"
+                  width={200}
+                  height={80}
+                  className="block dark:hidden"
+                />
+                <Image
+                  src="/whitelog.png"
+                  alt="SPX MGMT LLC Logo"
+                  width={200}
+                  height={80}
+                  className="hidden dark:block"
+                />
+              </div>
+              
               <p className="text-lg leading-relaxed text-black dark:text-white">
                 To learn more about our strategy, please contact us.
               </p>
