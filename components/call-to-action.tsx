@@ -31,7 +31,7 @@ export default function ContactForm() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 sm:gap-16 lg:gap-12">
           {/* Contact Information */}
-          <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12 bg-black/20 dark:bg-white/5">
+          <div className="backdrop-blur-sm border border-black/10 dark:border-white/5 rounded-2xl p-8 md:p-12 bg-white/95 dark:bg-white/5">
             <div className="space-y-6">
               {/* Logo */}
               <div className="flex justify-center mb-6">
@@ -78,7 +78,7 @@ export default function ContactForm() {
           </div>
 
           {/* Contact Form */}
-          <div className="backdrop-blur-sm border border-white/10 dark:border-white/5 rounded-2xl p-8 md:p-12 bg-black/20 dark:bg-white/5">
+          <div className="backdrop-blur-sm border border-black/10 dark:border-white/5 rounded-2xl p-8 md:p-12 bg-white/95 dark:bg-white/5">
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -93,7 +93,7 @@ export default function ContactForm() {
                   value={formData.firstName}
                   onChange={handleInputChange}
                   placeholder="First Name"
-                  className="w-full px-4 py-3 rounded-lg bg-black/10 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder-black/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-white/80 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder-black/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                   required
                 />
               </div>
@@ -108,7 +108,7 @@ export default function ContactForm() {
                   value={formData.lastName}
                   onChange={handleInputChange}
                   placeholder="Last Name"
-                  className="w-full px-4 py-3 rounded-lg bg-black/10 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder-black/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 rounded-lg bg-white/80 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder-black/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                   required
                 />
               </div>
@@ -135,7 +135,7 @@ export default function ContactForm() {
                 PHONE NUMBER
               </label>
               <div className="flex">
-                <div className="flex items-center px-3 py-3 bg-black/10 dark:bg-white/10 border border-black/20 dark:border-white/20 border-r-0 rounded-l-lg">
+                <div className="flex items-center px-3 py-3 bg-white/80 dark:bg-white/10 border border-black/20 dark:border-white/20 border-r-0 rounded-l-lg">
                   <span className="text-black/80 dark:text-white/80 text-sm">🇺🇸 +1</span>
                 </div>
                 <input
@@ -145,7 +145,7 @@ export default function ContactForm() {
                   value={formData.phone}
                   onChange={handleInputChange}
                   placeholder="(000) 000 0000"
-                  className="flex-1 px-4 py-3 rounded-r-lg bg-black/10 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder-black/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                  className="flex-1 px-4 py-3 rounded-r-lg bg-white/80 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder-black/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                   required
                 />
               </div>
