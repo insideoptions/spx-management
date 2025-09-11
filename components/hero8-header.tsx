@@ -50,29 +50,46 @@ export const HeroHeader = () => {
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
                         onClick={(e) => {
                           e.preventDefault();
+                          console.log(`=== ${item.name} Button Clicked ===`);
                           if (item.href === "#founder") {
                             const founderSection = document.querySelector('[data-section="founder"]') as HTMLElement;
                             if (founderSection) {
                               const targetY = founderSection.offsetTop - 120;
+                              console.log(`${item.name} - Element found at offsetTop: ${founderSection.offsetTop}px`);
+                              console.log(`${item.name} - Target scroll position: ${targetY}px (offsetTop - 120)`);
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            } else {
+                              console.log(`${item.name} - Element not found!`);
                             }
                           } else if (item.href === "#wsj") {
                             const wsjSection = document.querySelector('[data-section="wsj"]') as HTMLElement;
                             if (wsjSection) {
                               const targetY = wsjSection.offsetTop - 120;
+                              console.log(`${item.name} - Element found at offsetTop: ${wsjSection.offsetTop}px`);
+                              console.log(`${item.name} - Target scroll position: ${targetY}px (offsetTop - 120)`);
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            } else {
+                              console.log(`${item.name} - Element not found!`);
                             }
                           } else if (item.href === "#solutions") {
                             const solutionsSection = document.querySelector('#solutions') as HTMLElement;
                             if (solutionsSection) {
                               const targetY = solutionsSection.offsetTop - 120;
+                              console.log(`${item.name} - Element found at offsetTop: ${solutionsSection.offsetTop}px`);
+                              console.log(`${item.name} - Target scroll position: ${targetY}px (offsetTop - 120)`);
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            } else {
+                              console.log(`${item.name} - Element not found!`);
                             }
                           } else if (item.href === "#contact") {
                             const contactSection = document.querySelector('#contact') as HTMLElement;
                             if (contactSection) {
                               const targetY = contactSection.offsetTop - 120;
+                              console.log(`${item.name} - Element found at offsetTop: ${contactSection.offsetTop}px`);
+                              console.log(`${item.name} - Target scroll position: ${targetY}px (offsetTop - 120)`);
                               window.scrollTo({ top: targetY, behavior: 'smooth' });
+                            } else {
+                              console.log(`${item.name} - Element not found!`);
                             }
                           }
                         }}
