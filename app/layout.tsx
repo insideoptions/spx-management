@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "SPX MGMT LLC – Quantitative Fund | Managed by David Chau \"Captain Condor\"",
-  description: "Unlike most quant strategies optimized only in backtests, ours was forged and fine-tuned in live markets",
+  description: "Our quant strategy, developed through live trading rather than theoretical models, adapts to real-world dynamics to deliver a distinct performance edge.",
   icons: {
     icon: '/favicon.ico',
   },

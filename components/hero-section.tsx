@@ -76,8 +76,7 @@ export default function HeroSection() {
                     
                     <div className="bg-muted/30 rounded-2xl p-6 lg:p-8">
                       <p className="text-base italic text-muted-foreground leading-relaxed">
-                        &ldquo;Unlike most quant strategies optimized only in backtests, ours was 
-                        forged and fine-tuned in live markets. As CIO of SPX MGMT LLC, I&apos;m 
+                        &ldquo;Our quant strategy, developed through live trading rather than theoretical models, adapts to real-world dynamics to deliver a distinct performance edge. As CIO of SPX MGMT LLC, I&apos;m 
                         responsible for all investment management and trading decisions, 
                         bringing a systematic, risk-managed approach to every aspect of 
                         our firm&apos;s strategy.&rdquo;
