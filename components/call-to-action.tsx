@@ -30,8 +30,8 @@ export default function ContactForm() {
     setSubmitError("");
 
     try {
-      // Replace this URL with your actual Zapier webhook URL
-      const zapierWebhookUrl = process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL || 'YOUR_ZAPIER_WEBHOOK_URL_HERE';
+      // Zapier webhook URL - using environment variable with fallback
+      const zapierWebhookUrl = process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL || 'https://hooks.zapier.com/hooks/catch/13379760/u1w3v6x/';
       
       const response = await fetch(zapierWebhookUrl, {
         method: 'POST',
