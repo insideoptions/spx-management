@@ -14,3 +14,6 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
+  env:
+    variables:
+      NEXT_PUBLIC_ZAPIER_WEBHOOK_URL: https://hooks.zapier.com/hooks/catch/13379760/u1w3v6x/
