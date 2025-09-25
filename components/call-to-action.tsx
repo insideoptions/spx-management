@@ -132,7 +132,7 @@ export default function ContactForm() {
                 <div>
                   <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Thank You!</h3>
                   <p className="text-lg text-black/80 dark:text-white/80 mb-4">
-                    We've received your message and will get back to you shortly.
+                    We&apos;ve received your message and will get back to you shortly.
                   </p>
                   <p className="text-sm text-black/60 dark:text-white/60">
                     We typically respond within 24 hours during business days.
