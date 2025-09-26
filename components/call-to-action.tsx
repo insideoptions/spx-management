@@ -33,19 +33,18 @@ export default function ContactForm() {
       // Zapier webhook URL - using environment variable with fallback
       const zapierWebhookUrl = process.env.NEXT_PUBLIC_ZAPIER_WEBHOOK_URL || 'https://hooks.zapier.com/hooks/catch/13379760/u1w3v6x/';
       
+      // Create form data for Zapier webhook
+      const formDataToSend = new FormData();
+      formDataToSend.append('firstName', formData.firstName);
+      formDataToSend.append('lastName', formData.lastName);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('timestamp', new Date().toISOString());
+      formDataToSend.append('source', 'SPX Management Website');
+
       const response = await fetch(zapierWebhookUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          email: formData.email,
-          phone: formData.phone,
-          timestamp: new Date().toISOString(),
-          source: 'SPX Management Website'
-        }),
+        body: formDataToSend,
       });
 
       if (response.ok) {
