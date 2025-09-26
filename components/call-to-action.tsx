@@ -102,8 +102,8 @@ export default function ContactForm() {
                 </div>
                 
                 <div className="space-y-2">
-                  <p>7880 Hoback Drive</p>
-                  <p>Sparks, NV 89436</p>
+                  <p>3827 S Carson St #3169</p>
+                  <p>Carson City, NV 89701</p>
                 </div>
                 
                 <div>
