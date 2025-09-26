@@ -1,0 +1,25 @@
+{
+  "name": "SPXMGMT - David Chau Quantitative Trading Fund",
+  "short_name": "SPXMGMT",
+  "description": "David Chau's quantitative trading strategy developed through live trading rather than theoretical models.",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "investment", "trading"],
+  "lang": "en-US"
+}
