@@ -125,20 +125,20 @@ export function BackgroundPaths({
                             hover:shadow-md dark:hover:shadow-neutral-800/50"
                             onClick={(e) => {
                                 e.preventDefault();
-                                console.log("=== Discover Excellence Button Clicked ===");
+                                console.log("=== Firm Highlights Button Clicked ===");
                                 const solutionsSection = document.querySelector('#solutions') as HTMLElement;
                                 if (solutionsSection) {
                                     const targetY = solutionsSection.offsetTop - 120;
-                                    console.log(`Discover Excellence - Element found at offsetTop: ${solutionsSection.offsetTop}px`);
-                                    console.log(`Discover Excellence - Target scroll position: ${targetY}px (offsetTop - 120)`);
+                                    console.log(`Firm Highlights - Element found at offsetTop: ${solutionsSection.offsetTop}px`);
+                                    console.log(`Firm Highlights - Target scroll position: ${targetY}px (offsetTop - 120)`);
                                     window.scrollTo({ top: targetY, behavior: 'smooth' });
                                 } else {
-                                    console.log("Discover Excellence - Solutions section not found!");
+                                    console.log("Firm Highlights - Solutions section not found!");
                                 }
                             }}
                         >
                             <span className="opacity-90 group-hover:opacity-100 transition-opacity">
-                                Discover Excellence
+                                Firm Highlights
                             </span>
                             <span
                                 className="ml-3 opacity-70 group-hover:opacity-100 group-hover:translate-x-1.5 
