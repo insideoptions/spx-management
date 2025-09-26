@@ -13,7 +13,7 @@ export default function Features() {
                 What We Do
               </h2>
               <p className="text-balance text-lg md:text-xl lg:text-2xl leading-relaxed text-black dark:text-white max-w-4xl mx-auto">
-                SPX MGMT LLC is an alternative investment firm established in 2023 to provide investors with a systematic, risk-managed approach to trading index options. Our strategies are grounded in non-directional frameworks and have been refined in live market environments, rather than relying solely on back-tested results.
+                SPX MGMT LLC is an alternative investment firm established in 2023 to provide sophisticated, qualified clients with a systematic, risk-managed approach to trading index options. Our strategies are grounded in non-directional frameworks and have been refined in live market environments, rather than relying solely on back-tested results.
               </p>
               <p className="text-balance text-lg md:text-xl lg:text-2xl leading-relaxed text-black dark:text-white max-w-4xl mx-auto mt-6">
                 By focusing on statistical edge and disciplined execution, we seek to deliver consistent, risk-adjusted returns while preserving capital through varying market conditions. Our process emphasizes transparency, repeatability, and institutional-level risk controls, offering sophisticated investors an alternative to traditional active trading models.
