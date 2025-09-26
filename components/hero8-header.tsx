@@ -146,6 +146,8 @@ export const HeroHeader = () => {
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+                {/* Login and Sign Up buttons hidden until backend is ready */}
+                {/* 
                 <Button asChild variant="outline" size="sm">
                   <Link href="#">
                     <span>Login</span>
@@ -156,6 +158,7 @@ export const HeroHeader = () => {
                     <span>Sign Up</span>
                   </Link>
                 </Button>
+                */}
                 <ModeToggle />
               </div>
             </div>
