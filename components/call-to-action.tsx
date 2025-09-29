@@ -9,14 +9,15 @@ export default function ContactForm() {
     firstName: "",
     lastName: "",
     email: "",
-    phone: ""
+    phone: "",
+    message: ""
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -39,6 +40,7 @@ export default function ContactForm() {
       formDataToSend.append('lastName', formData.lastName);
       formDataToSend.append('email', formData.email);
       formDataToSend.append('phone', formData.phone);
+      formDataToSend.append('message', formData.message);
       formDataToSend.append('timestamp', new Date().toISOString());
       formDataToSend.append('source', 'SPX Management Website');
 
@@ -54,7 +56,8 @@ export default function ContactForm() {
           firstName: "",
           lastName: "",
           email: "",
-          phone: ""
+          phone: "",
+          message: ""
         });
       } else {
         throw new Error('Failed to submit form');
@@ -181,42 +184,58 @@ export default function ContactForm() {
               </div>
             </div>
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-black/90 dark:text-white/90 mb-2">
-                EMAIL
-              </label>
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-black/90 dark:text-white/90 mb-2">
+              EMAIL
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              placeholder="email@example.com"
+              className="w-full px-4 py-3 rounded-lg bg-black/10 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder-black/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="phone" className="block text-sm font-medium text-black/90 dark:text-white/90 mb-2">
+              PHONE NUMBER
+            </label>
+            <div className="flex">
+              <div className="flex items-center px-3 py-3 bg-white/80 dark:bg-white/10 border border-black/20 dark:border-white/20 border-r-0 rounded-l-lg">
+                <span className="text-black/80 dark:text-white/80 text-sm">🇺🇸 +1</span>
+              </div>
               <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
+                type="tel"
+                id="phone"
+                name="phone"
+                value={formData.phone}
                 onChange={handleInputChange}
-                placeholder="email@example.com"
-                className="w-full px-4 py-3 rounded-lg bg-black/10 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder-black/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                placeholder="(000) 000 0000"
+                className="flex-1 px-4 py-3 rounded-r-lg bg-white/80 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder-black/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
                 required
               />
             </div>
+          </div>
 
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-black/90 dark:text-white/90 mb-2">
-                PHONE NUMBER
-              </label>
-              <div className="flex">
-                <div className="flex items-center px-3 py-3 bg-white/80 dark:bg-white/10 border border-black/20 dark:border-white/20 border-r-0 rounded-l-lg">
-                  <span className="text-black/80 dark:text-white/80 text-sm">🇺🇸 +1</span>
-                </div>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  placeholder="(000) 000 0000"
-                  className="flex-1 px-4 py-3 rounded-r-lg bg-white/80 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder-black/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
-                  required
-                />
-              </div>
-            </div>
+          <div>
+            <label htmlFor="message" className="block text-sm font-medium text-black/90 dark:text-white/90 mb-2">
+              MESSAGE
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              placeholder="How can we help?"
+              rows={5}
+              className="w-full px-4 py-3 rounded-lg bg-white/80 dark:bg-white/10 border border-black/20 dark:border-white/20 text-black dark:text-white placeholder-black/60 dark:placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+              required
+            />
+          </div>
 
             {submitError && (
               <div className="p-4 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 rounded-lg">
