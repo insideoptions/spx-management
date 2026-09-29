@@ -3,15 +3,15 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "motion/react";
 
 // A conceptual Gaussian field, not a live market feed or investment performance.
-function fieldPath(row, phase, cross = false) {
+function fieldPath(row, phase, cross = false, pointer = { x: 0, y: 0 }) {
   const points = [];
   for (let step = 0; step <= 56; step++) {
     const a = -3 + (step * 6) / 56;
     const b = -3 + (row * 6) / 26;
     const x = cross ? b : a;
     const y = cross ? a : b;
-    const shift = Math.sin(phase) * 0.28;
-    const z = Math.exp(-((x - shift) ** 2 / 2.4 + y ** 2 / 3.1)) * 165;
+    const shift = Math.sin(phase) * 0.28 + pointer.x * 0.85;
+    const z = Math.exp(-((x - shift) ** 2 / 2.4 + (y - pointer.y * 0.65) ** 2 / 3.1)) * 165;
     const sx = 300 + x * 57 + y * 29;
     const sy = 275 + y * 27 - x * 13 - z;
     points.push(`${step ? "L" : "M"}${sx.toFixed(2)},${sy.toFixed(2)}`);
@@ -24,11 +24,28 @@ export default function QuantSurface() {
   const reduced = useReducedMotion();
   const [paused, setPaused] = useState(false);
   const [phase, setPhase] = useState(0);
+  const target = useRef({ x: 0, y: 0 });
+  const [pointer, setPointer] = useState({ x: 0, y: 0 });
+  function movePointer(event) {
+    if (reduced || paused || event.pointerType === "touch") return;
+    const bounds = event.currentTarget.getBoundingClientRect();
+    target.current = {
+      x: Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width) * 2 - 1)),
+      y: Math.max(-1, Math.min(1, ((event.clientY - bounds.top) / bounds.height) * 2 - 1)),
+    };
+  }
+  function resetPointer() { target.current = { x: 0, y: 0 }; }
   useEffect(() => {
     if (!visible || reduced || paused) return;
     const timer = setInterval(() => {
-      if (!document.hidden) setPhase((value) => value + 0.065);
-    }, 90);
+      if (!document.hidden) {
+        setPhase((value) => value + 0.036);
+        setPointer((value) => ({
+          x: value.x + (target.current.x - value.x) * 0.18,
+          y: value.y + (target.current.y - value.y) * 0.18,
+        }));
+      }
+    }, 50);
     return () => clearInterval(timer);
   }, [visible, reduced, paused]);
   return (
@@ -37,10 +54,19 @@ export default function QuantSurface() {
         <span>
           <i /> QUANTITATIVE PERSPECTIVE
         </span>
-        <span>FIG. 001</span>
+        <span>{reduced ? "FIG. 001" : "MOVE YOUR MOUSE · EXPLORE"}</span>
       </div>
       <motion.svg
         viewBox="0 0 600 420"
+        onPointerMove={movePointer}
+        onPointerLeave={resetPointer}
+        onPointerCancel={resetPointer}
+        style={{
+          transformPerspective: 900,
+          rotateX: reduced ? 0 : -pointer.y * 5,
+          rotateY: reduced ? 0 : pointer.x * 7,
+          cursor: reduced || paused ? "default" : "crosshair",
+        }}
         role="img"
         aria-label="Animated conceptual probability surface, shown as a three-dimensional green wireframe"
         initial={false}
@@ -81,20 +107,20 @@ export default function QuantSurface() {
           {Array.from({ length: 27 }, (_, i) => (
             <path
               key={`row${i}`}
-              d={fieldPath(i, phase)}
+              d={fieldPath(i, phase, false, reduced ? undefined : pointer)}
               opacity={0.25 + i / 42}
             />
           ))}
           {Array.from({ length: 27 }, (_, i) => (
             <path
               key={`cross${i}`}
-              d={fieldPath(i, phase, true)}
+              d={fieldPath(i, phase, true, reduced ? undefined : pointer)}
               opacity=".37"
             />
           ))}
         </g>
         <path
-          d={fieldPath(13, phase)}
+          d={fieldPath(13, phase, false, reduced ? undefined : pointer)}
           stroke="#caf4ba"
           strokeWidth="1.7"
           fill="none"
