@@ -22,12 +22,11 @@ export default function QuantSurface() {
   const ref = useRef(null);
   const visible = useInView(ref, { amount: 0.15 });
   const reduced = useReducedMotion();
-  const [paused, setPaused] = useState(false);
   const [phase, setPhase] = useState(0);
   const target = useRef({ x: 0, y: 0 });
   const [pointer, setPointer] = useState({ x: 0, y: 0 });
   function movePointer(event) {
-    if (reduced || paused || event.pointerType === "touch") return;
+    if (reduced || event.pointerType === "touch") return;
     const bounds = event.currentTarget.getBoundingClientRect();
     target.current = {
       x: Math.max(-1, Math.min(1, ((event.clientX - bounds.left) / bounds.width) * 2 - 1)),
@@ -36,7 +35,7 @@ export default function QuantSurface() {
   }
   function resetPointer() { target.current = { x: 0, y: 0 }; }
   useEffect(() => {
-    if (!visible || reduced || paused) return;
+    if (!visible || reduced) return;
     const timer = setInterval(() => {
       if (!document.hidden) {
         setPhase((value) => value + 0.036);
@@ -47,7 +46,7 @@ export default function QuantSurface() {
       }
     }, 50);
     return () => clearInterval(timer);
-  }, [visible, reduced, paused]);
+  }, [visible, reduced]);
   return (
     <div className="quant-surface" ref={ref}>
       <div className="quant-top">
@@ -65,15 +64,15 @@ export default function QuantSurface() {
           transformPerspective: 900,
           rotateX: reduced ? 0 : -pointer.y * 5,
           rotateY: reduced ? 0 : pointer.x * 7,
-          cursor: reduced || paused ? "default" : "crosshair",
+          cursor: reduced ? "default" : "crosshair",
         }}
         role="img"
         aria-label="Animated conceptual probability surface, shown as a three-dimensional green wireframe"
         initial={false}
-        animate={{ y: reduced || paused ? 0 : [0, -6, 0] }}
+        animate={{ y: reduced ? 0 : [0, -6, 0] }}
         transition={{
           duration: 9,
-          repeat: reduced || paused ? 0 : Infinity,
+          repeat: reduced ? 0 : Infinity,
           ease: "easeInOut",
         }}
       >
@@ -149,18 +148,7 @@ export default function QuantSurface() {
         <span className="axis-line" />
         <span>ADAPT</span>
       </div>
-      <div className="quant-bottom">
-        <span>CONCEPTUAL VISUALIZATION · NOT MARKET DATA</span>
-        <button
-          type="button"
-          onClick={() => setPaused(!paused)}
-          aria-pressed={paused}
-          disabled={!!reduced}
-          aria-label={paused ? "Play visualization" : "Pause visualization"}
-        >
-          {reduced ? "STATIC" : paused ? "PLAY ▷" : "PAUSE Ⅱ"}
-        </button>
-      </div>
+
     </div>
   );
 }
