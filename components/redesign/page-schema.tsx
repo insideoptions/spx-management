@@ -14,7 +14,7 @@ export default function PageSchema({ path }: { path: keyof typeof pages }) {
       description: "David Chau discusses quantitative trading, delta-neutral options strategies, and market efficiency with FinTech TV.",
       thumbnailUrl: "https://static.fintech.tv/v3/wp-content/uploads/2025/09/02153515/frame_01.jpg",
       uploadDate: "2025-09-02T15:45:53+00:00", duration: "PT4M30S",
-      embedUrl: "https://cms.fintech.tv/?p=33722&embed=1",
+      embedUrl: "https://cms.fintech.tv/understanding-market-efficiency-a-deep-dive-into-quantitative-trading-strategies/?embed=1",
       publisher: { "@type": "Organization", name: "FinTech TV", url: "https://fintech.tv" },
     }} : {}),
   };
