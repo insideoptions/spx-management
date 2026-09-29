@@ -8,7 +8,7 @@ This is the Next.js project deployed by AWS Amplify app `d370sik724g4hm` in `us-
 - Page-specific canonical, Open Graph, Twitter, and structured-data URLs on `https://spxmgmt.com`.
 - Generated sitemap and robots files; no fragment URLs or invented modification dates.
 - A working social preview image at `/opengraph-image`.
-- Permanent Next.js host redirects for the production Amplify address and `www.spxmgmt.com`, preserving paths and query strings. Local previews are unaffected.
+- AWS-host-only middleware adds `X-Robots-Tag: noindex, follow` to its permanent redirect. The primary domain remains indexable. Permanent host redirects for the production Amplify address and `www.spxmgmt.com`, preserving paths and query strings. Local previews are unaffected.
 - Dark responsive redesign with the live site's WSJ-section image (`public/wsj3.png`) and FinTech TV interview. The original Zapier contact payload and integration are preserved.
 
 ## Publishing
@@ -16,7 +16,7 @@ This is the Next.js project deployed by AWS Amplify app `d370sik724g4hm` in `us-
 Review the preview before publishing. No deployment or production settings have been changed by this work.
 
 1. Build with `npm run build`. Deploy through the existing Amplify main branch once reviewed.
-2. Replace the legacy Amplify SPA `404-200 /index.html` fallback with `deployment/amplify-redirects.json`. This uses domain-only rules, as required by Amplify. Next.js owns page routing and real 404 responses. These edge redirects reinforce the application redirects.
+2. Replace the legacy Amplify SPA `404-200 /index.html` fallback with `deployment/amplify-redirects.json`. This uses domain-only rules, as required by Amplify. Next.js owns page routing and real 404 responses. These optional edge redirects run before the application. Omit the AWS edge rule if the explicit AWS noindex header is required: the application middleware already redirects that host and adds the header.
 3. Confirm `https://spxmgmt.com` returns 200 with the correct canonical, and the AWS and www hosts redirect to it without loops. Verify `/about` and a URL containing a query string as well.
 4. Submit `https://spxmgmt.com/sitemap.xml` in the domain's Google Search Console property. Also submit the same sitemap in Bing Webmaster Tools. Request indexing of the homepage and updated key pages. Search results change after Google recrawls; the code cannot force an immediate replacement.
 
