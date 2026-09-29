@@ -1,15 +1,5 @@
-import HeroSection from "@/components/hero-section";
-import ContentSection from "@/components/content-1";
-import CallToAction from "@/components/call-to-action";
-import FooterSection from "@/components/footer";
-
-export default function Home() {
-  return (
-    <>
-      <HeroSection />
-      <ContentSection />
-      <CallToAction />
-      <FooterSection />
-    </>
-  );
-}
+import PageSchema from "@/components/redesign/page-schema";
+import { Home } from "@/components/redesign/pages";
+import { pageMetadata } from "@/lib/metadata";
+export const metadata = pageMetadata("/");
+export default function Page() { return <><PageSchema path="/" /><Home /></>; }

@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return ["main.d370sik724g4hm.amplifyapp.com", "www.spxmgmt.com"].map((host) => ({
+      source: "/:path*",
+      has: [{ type: "host" as const, value: host.replace(/\./g, "\\.") }],
+      destination: "https://spxmgmt.com/:path*",
+      permanent: true,
+    }));
+  },
   images: {
     remotePatterns: [
       {

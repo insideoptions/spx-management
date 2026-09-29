@@ -1,0 +1,12 @@
+[
+  {
+    "source": "https://main.d370sik724g4hm.amplifyapp.com",
+    "target": "https://spxmgmt.com",
+    "status": "301"
+  },
+  {
+    "source": "https://www.spxmgmt.com",
+    "target": "https://spxmgmt.com",
+    "status": "301"
+  }
+]
