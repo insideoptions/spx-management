@@ -206,6 +206,7 @@ export function Home() {
           ))}
         </div>
       </section>
+      <Interview />
       <section id="contact">
         <Invitation />
       </section>
@@ -400,21 +401,7 @@ export function Founder() {
         </blockquote>
         <p>— David Chau, Founder & Chief Investment Officer</p>
       </section>
-      <section id="interview" className="interview-section wrap">
-        <div>
-          <Eyebrow>THE FOUNDER’S PERSPECTIVE</Eyebrow>
-          <h2>
-            In conversation
-            <br />
-            with FinTech TV.
-          </h2>
-          <p>David on quantitative trading strategies and market efficiency.</p>
-        </div>
-        <div className="interview-player">
-          <iframe src="https://cms.fintech.tv/?p=33722&embed=1" title="David Chau on FinTech TV: Understanding Market Efficiency" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
-          <p className="fineprint">FinTech TV · September 2, 2025 · 4:30</p>
-        </div>
-      </section>
+      <Interview />
       <Invitation />
     </>
   );
@@ -497,5 +484,25 @@ export function Footer() {
         </p>
       </div>
     </footer>
+  );
+}
+
+export function Interview() {
+  return (
+      <section id="interview" className="interview-section wrap">
+        <div>
+          <Eyebrow>THE FOUNDER’S PERSPECTIVE</Eyebrow>
+          <h2>
+            In conversation
+            <br />
+            with FinTech TV.
+          </h2>
+          <p>David on quantitative trading strategies and market efficiency.</p>
+        </div>
+        <div className="interview-player">
+          <iframe src="https://cms.fintech.tv/?p=33722&embed=1" title="David Chau on FinTech TV: Understanding Market Efficiency" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+          <p className="fineprint">FinTech TV · September 2, 2025 · 4:30</p>
+        </div>
+      </section>
   );
 }

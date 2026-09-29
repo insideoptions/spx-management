@@ -8,7 +8,7 @@ export default function PageSchema({ path }: { path: keyof typeof pages }) {
     name: page.title, description: page.description, inLanguage: "en-US",
     isPartOf: { "@id": origin + "/#website" },
     about: { "@id": origin + (path === "/about" ? "/#founder" : "/#organization") },
-    ...(path === "/about" ? { video: {
+    ...(["/", "/about"].includes(path) ? { video: {
       "@type": "VideoObject",
       name: "Understanding Market Efficiency: A Deep Dive into Quantitative Trading Strategies",
       description: "David Chau discusses quantitative trading, delta-neutral options strategies, and market efficiency with FinTech TV.",
