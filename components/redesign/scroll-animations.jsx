@@ -9,7 +9,7 @@ export default function ScrollAnimations() {
   useEffect(() => {
     if (reducedMotion) return;
     const controls = [];
-    const targets = document.querySelectorAll("main section > h1, main section > h2, main section > p, main section > div:not(.article-grid), main .article, main .principle");
+    const targets = document.querySelectorAll("main section > h1, main section > h2, main section > p, main section > div:not(.article-grid):not(.interview-player), main .article, main .principle");
     // Content remains fully visible in server HTML and if JavaScript is unavailable.
     const stops = Array.from(targets).map((element, index) => inView(element, () => {
       const control = animate(element, { opacity: [0.35, 1], y: [22, 0] }, {

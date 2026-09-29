@@ -500,7 +500,9 @@ export function Interview() {
           <p>David on quantitative trading strategies and market efficiency.</p>
         </div>
         <div className="interview-player">
-          <iframe src="https://cms.fintech.tv/understanding-market-efficiency-a-deep-dive-into-quantitative-trading-strategies/?embed=1" title="David Chau on FinTech TV: Understanding Market Efficiency" loading="eager" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+          <div className="interview-frame">
+          <iframe scrolling="no" src="https://cms.fintech.tv/understanding-market-efficiency-a-deep-dive-into-quantitative-trading-strategies/?embed=1" title="David Chau on FinTech TV: Understanding Market Efficiency" loading="eager" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
+          </div>
           <p className="fineprint">FinTech TV · September 2, 2025 · 4:30</p>
         </div>
       </section>

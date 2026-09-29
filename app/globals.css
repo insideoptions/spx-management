@@ -1497,3 +1497,6 @@ em {
 .interview-player { min-width: 0; }
 .interview-player iframe { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line); background: #000; }
 .interview-player .fineprint { margin-top: 12px; }
+
+.interview-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); border-radius: 5px; background: #000; }
+.interview-frame iframe { position: absolute; inset: 0; display: block; width: 100%; height: 100%; margin: 0; border: 0; border-radius: 0; }
