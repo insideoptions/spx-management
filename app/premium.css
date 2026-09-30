@@ -267,3 +267,17 @@ p { text-wrap: pretty; }
 .interview-caption { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
 .interview-caption button { background: transparent; border: 0; color: var(--muted); font-size: 11px; text-decoration: underline; text-underline-offset: 4px; }
 .interview-caption .fineprint { margin-bottom: 0; }
+
+/* Scroll entrances use transforms only; the document keeps its natural height. */
+.press-strip::before, .press-strip::after, .invitation::before {
+  transform: scaleX(var(--rule-progress, 1));
+  transform-origin: left;
+}
+.process-row { position: relative; border-top-color: transparent; }
+.process-row::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: var(--line); transform: scaleX(var(--rule-progress, 1)); transform-origin: left;
+}
+@media (prefers-reduced-motion: reduce) {
+  .press-strip::before, .press-strip::after, .invitation::before, .process-row::before { transform: none; }
+}
