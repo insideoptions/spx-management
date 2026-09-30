@@ -1,10 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    // An observer avoids updating React on every scroll event.
+    const marker = document.getElementById("header-threshold");
+    if (!marker) return;
+    const observer = new IntersectionObserver(([entry]) => setScrolled(!entry.isIntersecting));
+    observer.observe(marker);
+    return () => observer.disconnect();
+  }, []);
   const links = [
     ["/strategy", "Our approach"],
     ["/about", "Our founder"],
@@ -12,7 +21,9 @@ export default function Header() {
     ["/contact", "Let’s talk ↗"],
   ];
   return (
-    <header className="site-header">
+    <>
+    <span id="header-threshold" aria-hidden="true" />
+    <header className={`site-header${scrolled || open ? " is-scrolled" : ""}`}>
       <div className="header-inner">
         <Link
           className="brand"
@@ -64,5 +75,6 @@ export default function Header() {
         </nav>
       </div>
     </header>
+    </>
   );
 }

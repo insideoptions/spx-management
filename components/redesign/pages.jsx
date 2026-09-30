@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { articles } from "@/lib/site";
+import PremiumBackground from "@/components/effects/PremiumBackground";
+import FintechEmbed from "./fintech-embed";
 import QuantSurface from "./quant-surface";
 export const Arrow = () => <span aria-hidden="true">↗</span>;
 export function Brand() {
@@ -76,6 +78,8 @@ const principles = [
 export function Home() {
   return (
     <>
+      <div className="hero-stage">
+      <PremiumBackground position="hero" intensity="standard" />
       <section className="hero wrap">
         <div className="hero-copy">
           <Eyebrow>SYSTEMATIC THINKING. QUANTITATIVE PRECISION.</Eyebrow>
@@ -98,6 +102,7 @@ export function Home() {
         </div>
         <QuantSurface />
       </section>
+      </div>
       <section className="press-strip wrap" aria-label="Media coverage">
         <span>OUR FOUNDER IN THE NEWS</span>
         <a
@@ -155,6 +160,7 @@ export function Home() {
         </Link>
       </section>
       <section id="founder" className="founder-band">
+        <PremiumBackground position="section" />
         <div className="wrap founder-grid">
           <div className="founder-photo">
             <Image
@@ -454,6 +460,7 @@ export function NotFound() {
 export function Footer() {
   return (
     <footer className="site-footer">
+      <PremiumBackground position="footer" />
       <div className="wrap">
         <div className="footer-top">
           <Brand />
@@ -499,12 +506,7 @@ export function Interview() {
           </h2>
           <p>David on quantitative trading strategies and market efficiency.</p>
         </div>
-        <div className="interview-player">
-          <div className="interview-frame">
-          <iframe scrolling="no" src="https://cms.fintech.tv/understanding-market-efficiency-a-deep-dive-into-quantitative-trading-strategies/?embed=1" title="David Chau on FinTech TV: Understanding Market Efficiency" loading="eager" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowFullScreen />
-          </div>
-          <p className="fineprint">FinTech TV · September 2, 2025 · 4:30</p>
-        </div>
+        <FintechEmbed />
       </section>
   );
 }

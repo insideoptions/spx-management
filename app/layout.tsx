@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./premium.css";
+import PremiumBackground from "@/components/effects/PremiumBackground";
 import ScrollAnimations from "@/components/redesign/scroll-animations";
 import Header from "@/components/redesign/header";
 import { Footer } from "@/components/redesign/pages";
@@ -74,6 +76,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <PremiumBackground position="global" intensity="subtle" />
         <a className="skip-link" href="#main">
           Skip to content
         </a>
