@@ -4,6 +4,7 @@ import Link from "next/link";
 import { articles } from "@/lib/site";
 import PremiumBackground from "@/components/effects/PremiumBackground";
 import FintechEmbed from "./fintech-embed";
+import ArticleLink from "./article-link";
 import SignalField from "@/components/effects/SignalField";
 export const Arrow = () => <span aria-hidden="true">↗</span>;
 export function Brand() {
@@ -106,14 +107,14 @@ export function Home() {
       </div>
       <section className="press-strip wrap" aria-label="Media coverage">
         <span>OUR FOUNDER IN THE NEWS</span>
-        <a
+        <ArticleLink
           href={articles[0].url}
           target="_blank"
           rel="noreferrer"
           className="wsj-wordmark"
         >
           THE WALL STREET JOURNAL.
-        </a>
+        </ArticleLink>
         <a
           href={articles[1].url}
           className="fintech-wordmark"
@@ -222,7 +223,7 @@ export function Home() {
 }
 export function Article({ article, index }) {
   return (
-    <a
+    <ArticleLink
       className={`article article-${index % 2}`}
       href={article.url}
       target={article.url.startsWith("/") ? undefined : "_blank"}
@@ -239,7 +240,7 @@ export function Article({ article, index }) {
           {article.category === "Video interview" ? "Watch the interview" : "Read the story"} <span aria-hidden="true">↗</span>
         </span>
       </div>
-    </a>
+    </ArticleLink>
   );
 }
 export function PageHero({ eyebrow, title, text = "" }) {
@@ -434,7 +435,7 @@ export function Media() {
           ))}
         </div>
         <p className="fineprint">
-          The Wall Street Journal opens a third-party publication and may require a subscription.
+          The Wall Street Journal opens in an article viewer and may require a subscription. If the embedded view is unavailable, open the article on WSJ.
           Coverage does not constitute an endorsement of SPX MGMT or its
           investments.
         </p>
