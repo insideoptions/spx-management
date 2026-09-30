@@ -4,7 +4,7 @@ import Link from "next/link";
 import { articles } from "@/lib/site";
 import PremiumBackground from "@/components/effects/PremiumBackground";
 import FintechEmbed from "./fintech-embed";
-import QuantSurface from "./quant-surface";
+import SignalField from "@/components/effects/SignalField";
 export const Arrow = () => <span aria-hidden="true">↗</span>;
 export function Brand() {
   return (
@@ -80,6 +80,7 @@ export function Home() {
     <>
       <div className="hero-stage">
       <PremiumBackground position="hero" intensity="standard" />
+      <SignalField />
       <section className="hero wrap">
         <div className="hero-copy">
           <Eyebrow>SYSTEMATIC THINKING. QUANTITATIVE PRECISION.</Eyebrow>
@@ -100,7 +101,7 @@ export function Home() {
             INDEPENDENT.
           </div>
         </div>
-        <QuantSurface />
+
       </section>
       </div>
       <section className="press-strip wrap" aria-label="Media coverage">
